@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guida per gli insegnanti · Via Per Via Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <style>
+    /* ── VARIABILI ── */
+    :root {
+      --blue-dark:  #0A2A40;
+      --blue-main:  #0B6E9E;
+      --blue-mid:   #4A9EC8;
+      --blue-pale:  #CCE8F8;
+      --amber:      #D4801A;
+      --amber-light:#FFF5E0;
+      --cream:      #F0F7FF;
+      --gray-dark:  #222222;
+      --gray-mid:   #666666;
+      --gray-light: #E0DBD0;
+      --coral:      #C75A3A;
+    }
+
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 15px; overflow-x: hidden; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--gray-dark);
+      background: white;
+      line-height: 1.7;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 2.5rem 5rem;
+    }
+
+    /* ── COPERTINA ── */
+    .cover {
+      background: var(--blue-dark);
+      color: white;
+      padding: 3rem 2.5rem 2.5rem;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      margin-left: -50vw;
+      margin-bottom: 3rem;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(11,110,158,0.5) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cover-inner { position: relative; max-width: 1080px; margin: 0 auto; }
+    .cover-label {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: rgba(255,255,255,0.6);
+      margin-bottom: 1rem;
+    }
+    .cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem; font-weight: 700; line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .cover-subtitle {
+      font-size: 1rem; color: rgba(255,255,255,0.72);
+      white-space: nowrap; line-height: 1.7; margin-bottom: 2rem;
+    }
+    .cover-meta {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .cover-pill {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px; padding: 0.2rem 0.75rem;
+      font-size: 0.7rem; color: rgba(255,255,255,0.8);
+    }
+
+    /* ── INDICE ── */
+    .toc {
+      background: var(--cream);
+      border: 1px solid var(--blue-pale);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+    }
+    .toc-title {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--blue-main); margin-bottom: 1rem;
+    }
+    .toc ol { padding-left: 1.2rem; }
+    .toc li { font-size: 0.88rem; color: var(--blue-dark); line-height: 2; }
+    .toc li.optional { color: var(--gray-mid); font-style: italic; }
+
+    /* ── SEZIONI ── */
+    section { margin-bottom: 3rem; }
+
+    .step-header {
+      display: flex; align-items: flex-start; gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .step-number {
+      flex-shrink: 0;
+      width: 2.2rem; height: 2.2rem;
+      background: var(--blue-main); color: white;
+      border-radius: 50%;
+      font-size: 0.82rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step-number.optional-n {
+      background: white;
+      border: 2px dashed var(--gray-light);
+      color: var(--gray-mid);
+    }
+    .step-title-wrap { flex: 1; }
+    .step-label {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--blue-mid); margin-bottom: 0.2rem;
+    }
+    .step-label.optional-l { color: var(--amber); }
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem; font-weight: 700; color: var(--blue-dark); line-height: 1.25;
+    }
+
+    p { color: var(--gray-mid); margin-bottom: 0.9rem; line-height: 1.8; }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--gray-dark); font-weight: 600; }
+
+    /* liste */
+    ul, ol { padding-left: 1.4rem; margin-bottom: 0.9rem; }
+    li { color: var(--gray-mid); line-height: 1.8; margin-bottom: 0.15rem; }
+    li strong { color: var(--gray-dark); }
+
+    /* callout box */
+    .callout {
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      font-size: 0.88rem;
+    }
+    .callout-blue {
+      background: var(--cream);
+      border-left: 4px solid var(--blue-main);
+    }
+    .callout-amber {
+      background: var(--amber-light);
+      border-left: 4px solid var(--amber);
+    }
+    .callout-title {
+      font-weight: 700; font-size: 0.72rem; letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: 0.4rem;
+    }
+    .callout-blue .callout-title { color: var(--blue-main); }
+    .callout-amber .callout-title { color: var(--amber); }
+    .callout p { margin-bottom: 0; font-size: 0.88rem; }
+
+    /* codice/url */
+    code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.82rem;
+      background: var(--cream);
+      border: 1px solid var(--blue-pale);
+      border-radius: 4px;
+      padding: 0.1rem 0.4rem;
+      color: var(--blue-dark);
+      word-break: break-all;
+    }
+
+    /* steps numerati interni */
+    .steps-list { counter-reset: step; list-style: none; padding-left: 0; }
+    .steps-list li {
+      counter-increment: step;
+      padding-left: 2rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+    .steps-list li::before {
+      content: counter(step);
+      position: absolute; left: 0;
+      width: 1.4rem; height: 1.4rem;
+      background: var(--blue-pale); color: var(--blue-main);
+      border-radius: 50%; font-size: 0.7rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      top: 0.2rem;
+    }
+
+    /* divisore */
+    hr {
+      border: none;
+      border-top: 1px solid var(--gray-light);
+      margin: 2.5rem 0;
+    }
+
+    /* screenshot placeholder */
+    .screenshot {
+      width: 100%; border-radius: 8px;
+      border: 1px solid var(--gray-light);
+      background: var(--cream);
+      padding: 1rem; text-align: center;
+      font-size: 0.75rem; color: var(--gray-mid);
+      margin: 1rem 0;
+    }
+
+    /* footer */
+    .doc-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--gray-light);
+      font-size: 0.75rem; color: var(--gray-mid);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .doc-footer strong { color: var(--blue-dark); }
+
+  </style>
+</head>
+<body>
+
+<!-- COPERTINA -->
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-label">Via Per Via Education · Starter Kit</div>
+    <h1 class="cover-title">Guida per gli insegnanti</h1>
+    <p class="cover-subtitle">
+      Come portare Via Per Via nella tua classe: dalla scelta della via
+      alla pubblicazione del contributo sul sito del progetto.
+    </p>
+    <div class="cover-meta">
+      <span class="cover-pill">Tutti i gradi scolastici</span>
+      <span class="cover-pill">Educazione civica · Geografia · Storia</span>
+      <span class="cover-pill">A.S. 2025/2026</span>
+    </div>
+  </div>
+</div>
+
+<!-- INDICE -->
+<nav class="toc">
+  <div class="toc-title">Indice</div>
+  <ol>
+    <li>Cos'è Via Per Via</li>
+    <li>Come scegliere la via</li>
+    <li>Come fare la ricerca storica</li>
+    <li>Come documentare: foto e testi degli studenti</li>
+    <li class="optional">Opzionale — Intervista a un esperto locale</li>
+    <li class="optional">Opzionale — Intervista a un abitante della via</li>
+    <li>Come usare il template HTML</li>
+    <li>Come trovare le coordinate geografiche (Nominatim)</li>
+    <li>Come consegnare il materiale</li>
+  </ol>
+</nav>
+
+
+<!-- 1 -->
+<section>
+  <div class="step-header">
+    <div class="step-number">1</div>
+    <div class="step-title-wrap">
+      <div class="step-label">Il progetto</div>
+      <h2 class="step-title">Cos'è Via Per Via</h2>
+    </div>
+  </div>
+  <p>
+    <strong>Via Per Via</strong> è un progetto educativo nazionale che invita le classi di ogni
+    ordine e grado a documentare una via della propria città: la sua storia, i suoi abitanti,
+    i luoghi e le storie che custodisce. I contributi di tutte le scuole partecipanti confluiscono
+    in una mappa interattiva pubblica, dove chiunque può esplorare l'Italia attraverso le strade
+    raccontate dai ragazzi.
+  </p>
+  <p>
+    Il titolo gioca sul doppio senso dell'espressione: <em>via per via</em> come "strada per strada",
+    ma anche come modo di procedere lentamente, con curiosità, scoprendo il mondo che ci circonda.
+    Ogni contributo inizia con la formula <strong>«...per via di»</strong>, che introduce chi o cosa
+    ha dato il nome alla strada scelta.
+  </p>
+  <div class="callout callout-blue">
+    <div class="callout-title">Obiettivi didattici</div>
+    <p>Competenze geografiche e storiche; cittadinanza attiva; scrittura creativa e documentaria;
+    uso responsabile delle fonti; cooperazione e lavoro di gruppo.</p>
+  </div>
+</section>
+
+<hr>
+
+<!-- 2 -->
+<section>
+  <div class="step-header">
+    <div class="step-number">2</div>
+    <div class="step-title-wrap">
+      <div class="step-label">Prima fase</div>
+      <h2 class="step-title">Come scegliere la via</h2>
+    </div>
+  </div>
+  <p>
+    Non esiste una via giusta o sbagliata. Il criterio principale è che la classe
+    abbia la possibilità di <strong>visitarla di persona</strong> almeno una volta.
+    Alcuni criteri utili per orientare la scelta:
+  </p>
+  <ul>
+    <li><strong>Vicinanza alla scuola</strong> — una via raggiungibile a piedi semplifica
+    l'organizzazione dell'uscita sul campo.</li>
+    <li><strong>Legame col territorio</strong> — una via che gli studenti già conoscono
+    o che li incuriosisce per qualche motivo.</li>
+    <li><strong>Nome evocativo</strong> — vie dedicate a personaggi storici, eventi,
+    luoghi o mestieri offrono spunti di ricerca immediati.</li>
+    <li><strong>Varietà rispetto agli altri contributi</strong> — consulta la mappa del
+    progetto per verificare che la via non sia già stata documentata da un'altra classe.</li>
+  </ul>
+  <div class="callout callout-amber">
+    <div class="callout-title">Consiglio</div>
+    <p>Coinvolgi la classe nella scelta: proponi tre o quattro vie candidate e discutete insieme
+    quale documentare. L'interesse degli studenti sarà il motore dell'intero progetto.</p>
+  </div>
+</section>
+
+<hr>
+
+<!-- 3 -->
+<section>
+  <div class="step-header">
+    <div class="step-number">3</div>
+    <div class="step-title-wrap">
+      <div class="step-label">Seconda fase</div>
+      <h2 class="step-title">Come fare la ricerca storica</h2>
+    </div>
+  </div>
+  <p>
+    La ricerca ha l'obiettivo di rispondere alla domanda fondamentale: <strong>per via di chi
+    o di cosa si chiama così questa strada?</strong> Le fonti principali da esplorare:
+  </p>
+  <ul>
+    <li><strong>Biblioteca scolastica e comunale</strong> — enciclopedie locali, monografie
+    sulla città, raccolte di toponomastica.</li>
+    <li><strong>Archivio storico comunale</strong> — molti comuni conservano le delibere
+    originali di intitolazione delle vie, spesso consultabili gratuitamente.</li>
+    <li><strong>Sito del Comune</strong> — diverse città pubblicano online l'elenco delle
+    vie con note storiche.</li>
+    <li><strong>Wikipedia e fonti web</strong> — utili come punto di partenza, ma da
+    verificare sempre con almeno un'altra fonte.</li>
+    <li><strong>Museo civico o storico locale</strong> — spesso dispone di materiali
+    fotografici d'epoca sulla via o sul personaggio a cui è dedicata.</li>
+  </ul>
+  <p>
+    Incoraggia gli studenti a <strong>citare le fonti</strong> che usano: è una competenza
+    fondamentale e rende il contributo più autorevole.
+  </p>
+</section>
+
+<hr>
+
+<!-- 4 -->
+<section>
+  <div class="step-header">
+    <div class="step-number">4</div>
+    <div class="step-title-wrap">
+      <div class="step-label">Terza fase</div>
+      <h2 class="step-title">Come documentare: foto e testi</h2>
+    </div>
+  </div>
+  <p>
+    L'uscita sul campo è il cuore del progetto. Prima di uscire, prepara con la classe
+    una piccola lista di <strong>cose da cercare e fotografare</strong>:
+  </p>
+  <ul>
+    <li>La targa stradale (possibilmente dall'inizio e dalla fine della via)</li>
+    <li>Gli edifici più significativi o particolari</li>
+    <li>Dettagli architettonici: portoni, insegne storiche, decorazioni</li>
+    <li>La vita quotidiana: negozi, persone, bambini che giocano</li>
+    <li>Eventuali targhe commemorative, lapidi o monumenti</li>
+  </ul>
+  <p>
+    Dopo la visita, chiedi a ogni studente di scrivere un breve testo libero: cosa ha
+    notato, cosa lo ha sorpreso, cosa ha imparato. Anche poche righe sono preziose.
+    Queste <strong>«voci dalla classe»</strong> saranno la parte più viva del contributo.
+  </p>
+  <div class="callout callout-blue">
+    <div class="callout-title">Sulla privacy nelle fotografie</div>
+    <p>Evita di fotografare persone riconoscibili senza consenso, in particolare minori.
+    Concentra le riprese sull'architettura, i dettagli e le insegne.</p>
+  </div>
+</section>
+
+<hr>
+
+<!-- 4a OPZIONALE -->
+<section>
+  <div class="step-header">
+    <div class="step-number optional-n">✦</div>
+    <div class="step-title-wrap">
+      <div class="step-label optional-l">Opzionale · Approfondimento</div>
+      <h2 class="step-title">Intervista a un esperto locale</h2>
+    </div>
+  </div>
+  <p>
+    Se la ricerca rivela un legame con un personaggio storico, un evento particolare
+    o un'attività artigianale tradizionale, considera di contattare un esperto che
+    possa parlarne alla classe: uno <strong>storico locale</strong>, un curatore di museo,
+    un rappresentante di un'associazione culturale, o l'archivista del comune.
+  </p>
+  <p>
+    Un'intervista in aula o una visita guidata sul campo arricchisce enormemente
+    la ricerca e offre agli studenti un modello concreto di come si costruisce
+    la conoscenza storica attraverso le fonti vive.
+  </p>
+  <div class="callout callout-amber">
+    <div class="callout-title">Come organizzarla</div>
+    <p>Prepara le domande insieme alla classe prima dell'incontro. Chiedi all'esperto
+    il consenso a essere citato nel contributo pubblicato.</p>
+  </div>
+</section>
+
+<hr>
+
+<!-- 4b OPZIONALE -->
+<section>
+  <div class="step-header">
+    <div class="step-number optional-n">✦</div>
+    <div class="step-title-wrap">
+      <div class="step-label optional-l">Opzionale · Approfondimento</div>
+      <h2 class="step-title">Intervista a un abitante della via</h2>
+    </div>
+  </div>
+  <p>
+    Spesso le storie più interessanti non sono nei libri. Durante l'uscita sul campo,
+    se l'occasione si presenta naturalmente, incoraggia gli studenti a <strong>rivolgere
+    qualche domanda a un commerciante, a un residente anziano o a chiunque sembri
+    avere un legame speciale con quella strada</strong>: da quanti anni vive lì,
+    com'era la via quando era giovane, cosa è cambiato, cosa ama di quel posto.
+  </p>
+  <p>
+    Anche una sola risposta spontanea — poche righe, un aneddoto, un ricordo —
+    può diventare la parte più memorabile dell'intero contributo.
+  </p>
+  <div class="callout callout-amber">
+    <div class="callout-title">Attenzione</div>
+    <p>Chiedi sempre il consenso esplicito prima di registrare o citare una persona
+    per nome. In caso di dubbio, parafrasa il contenuto senza attribuirlo direttamente.</p>
+  </div>
+</section>
+
+<hr>
+
+<!-- 5 -->
+<section>
+  <div class="step-header">
+    <div class="step-number">5</div>
+    <div class="step-title-wrap">
+      <div class="step-label">Quarta fase</div>
+      <h2 class="step-title">Come usare il template HTML</h2>
+    </div>
+  </div>
+  <p>
+    Nel kit hai trovato il file <code>_template.html</code>. È la struttura base della
+    pagina che sarà pubblicata sul sito di Via Per Via. Non richiede competenze tecniche:
+    basta aprirlo con un editor di testo (Blocco Note, TextEdit, o qualsiasi editor
+    di testo semplice) e sostituire i testi in MAIUSCOLO con i contenuti reali.
+  </p>
+
+  <ol class="steps-list">
+    <li>Crea una cartella con il nome della tua scuola e della via
+    (es. <code>bologna-manzoni/via-indipendenza/</code>).</li>
+    <li>Copia il file <code>_template.html</code> nella cartella e rinominalo <code>index.html</code>.</li>
+    <li>Apri <code>index.html</code> con un editor di testo e sostituisci tutti
+    i testi scritti in MAIUSCOLO.</li>
+    <li>Per aggiungere le foto: copia i file immagine nella stessa cartella
+    e sostituisci i blocchi <code>&lt;div class="gallery-placeholder"&gt;</code>
+    con <code>&lt;img src="nomefoto.jpg" alt="descrizione"&gt;</code>.</li>
+    <li>Non modificare la sezione dell'header (dal commento
+    <em>NON MODIFICARE</em> in poi): contiene la navigazione del sito.</li>
+    <li>Invia la cartella completa secondo le istruzioni al punto 7.</li>
+  </ol>
+
+  <div class="callout callout-blue">
+    <div class="callout-title">Formato delle immagini</div>
+    <p>Preferisci file <strong>.jpg</strong> per le fotografie. Dimensione massima consigliata:
+    2 MB per immagine. Se hai foto scattate con smartphone, puoi ridimensionarle
+    gratuitamente su <code>squoosh.app</code>.</p>
+  </div>
+</section>
+
+<hr>
+
+<!-- 6 -->
+<section>
+  <div class="step-header">
+    <div class="step-number">6</div>
+    <div class="step-title-wrap">
+      <div class="step-label">Coordinate geografiche</div>
+      <h2 class="step-title">Come trovare le coordinate con Nominatim</h2>
+    </div>
+  </div>
+  <p>
+    Per posizionare la tua scuola sulla mappa interattiva del progetto, abbiamo bisogno
+    delle coordinate geografiche (latitudine e longitudine) della via che hai documentato.
+    Si ricavano in pochi secondi con <strong>Nominatim</strong>, il servizio di ricerca
+    geografica di OpenStreetMap, completamente gratuito.
+  </p>
+
+  <ol class="steps-list">
+    <li>Apri il browser e vai su <code>nominatim.openstreetmap.org</code>.</li>
+    <li>Nel campo di ricerca digita il nome completo della via e la città,
+    per esempio: <code>Via Pietro Micca, Torino</code>.</li>
+    <li>Clicca sul risultato corretto nell'elenco.</li>
+    <li>Nella pagina del risultato trovi le coordinate nel riquadro in alto a destra,
+    in formato <code>lat, lon</code> — per esempio: <code>45.0744, 7.6825</code>.</li>
+    <li>Copia questi due valori e includili nel modulo di consegna (punto 7).</li>
+  </ol>
+
+  <div class="callout callout-blue">
+    <div class="callout-title">Nota</div>
+    <p>Se la via non compare nei risultati, prova con il nome del comune
+    per esteso o con la forma abbreviata (es. <code>V. Pietro Micca</code>).
+    In caso di difficoltà, il team di Via Per Via può ricavare le coordinate per te.</p>
+  </div>
+</section>
+
+<hr>
+
+<!-- 7 -->
+<section>
+  <div class="step-header">
+    <div class="step-number">7</div>
+    <div class="step-title-wrap">
+      <div class="step-label">Consegna</div>
+      <h2 class="step-title">Come consegnare il materiale</h2>
+    </div>
+  </div>
+  <p>
+    Quando il contributo è pronto, invia al team di Via Per Via:
+  </p>
+  <ul>
+    <li>La <strong>cartella</strong> con il file <code>index.html</code> e tutte le immagini,
+    compressa in un archivio <code>.zip</code>.</li>
+    <li>Le <strong>coordinate geografiche</strong> della via (latitudine e longitudine,
+    ricavate con Nominatim come descritto sopra).</li>
+    <li>Il <strong>nome completo dell'istituto</strong>, la classe e l'anno scolastico.</li>
+  </ul>
+  <p>
+    Invia tutto via e-mail a <strong>info@viapervia.edu</strong> con oggetto:
+    <em>Contributo — [Nome scuola] — [Nome via] — [Città]</em>.
+  </p>
+  <div class="callout callout-amber">
+    <div class="callout-title">Tempi di pubblicazione</div>
+    <p>Il contributo viene verificato e pubblicato entro 5-7 giorni lavorativi dalla
+    ricezione. Riceverai una mail di conferma con il link alla pagina pubblicata.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  <span><a href="../index.html" style="color:inherit;text-decoration:none;"><strong>Via Per Via Education</strong></a></span>
+  <span>Starter Kit · A.S. 2025/2026</span>
+</div>
+
+</body>
+</html>

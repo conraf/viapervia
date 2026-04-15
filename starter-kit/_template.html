@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <!--
+    ╔══════════════════════════════════════════════════════╗
+    ║   VIA PER VIA EDUCATION — Template pagina scuola     ║
+    ╠══════════════════════════════════════════════════════╣
+    ║  Struttura cartelle:                                 ║
+    ║    scuole/                                           ║
+    ║      nome-scuola/          ← cartella della scuola   ║
+    ║        nome-via/           ← una cartella per via    ║
+    ║          index.html  ← copia e compila questo file   ║
+    ║          foto1.jpg   ← metti qui le immagini         ║
+    ║        altra-via/    ← altra via della stessa scuola ║
+    ║          index.html                                  ║
+    ║                                                      ║
+    ║  Istruzioni:                                         ║
+    ║  1. Crea la cartella nome-scuola/nome-via/           ║
+    ║  2. Copia questo file come index.html                ║
+    ║  3. Sostituisci i testi in MAIUSCOLO                 ║
+    ║  4. Non modificare header, footer e gli script       ║
+    ╚══════════════════════════════════════════════════════╝
+  -->
+  <title>NOME VIA · Via Per Via Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../vpv.css">
+</head>
+<body>
+
+<!-- ═══════ NON MODIFICARE: header del sito ═══════ -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../../../index.html">Home</a>
+  <a href="../../../index.html">Il progetto</a>
+  <a href="../../../index.html">Per gli insegnanti</a>
+  <a href="../../../mappa.html">Mappa</a>
+  <a class="mobile-menu-cta" href="../../../index.html">Simulazione →</a>
+</div>
+<header>
+  <a class="logo-wrap" href="../../../index.html">
+    <img class="logo-img" src="../../../ViaPerViaLogo-400.png" alt="Via Per Via Education">
+    <div class="logo-text">
+      <span class="logo-name">Via Per Via</span>
+      <span class="logo-tagline">progetto educativo</span>
+    </div>
+  </a>
+  <nav>
+    <a href="../../../index.html">Home</a>
+    <a href="../../../index.html">Il progetto</a>
+    <a href="../../../index.html">Per gli insegnanti</a>
+    <a href="../../../mappa.html">Mappa</a>
+    <a href="../../../index.html" class="nav-cta">Simulazione →</a>
+  </nav>
+  <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<!-- ════════════════════════════════════════════════ -->
+
+
+<!-- ════════════════════════════════════════════════
+     CONTENUTO DELLA SCUOLA — modifica da qui in poi
+     ════════════════════════════════════════════════ -->
+<main class="school-page">
+
+
+  <!-- ── 1. HERO ──────────────────────────────────
+       Intestazione della via documentata.
+       Sostituisci i testi in MAIUSCOLO.
+  ─────────────────────────────────────────────── -->
+  <section class="via-hero">
+    <div class="container">
+
+      <nav class="via-breadcrumb">
+        <a href="../../../mappa.html">← Mappa delle scuole</a>
+        <span>/</span>
+        <span>NOME SCUOLA</span>
+      </nav>
+
+      <div class="via-badge">Via documentata</div>
+      <h1 class="via-title">Via NOME DELLA VIA</h1>
+      <p class="via-subtitle">
+        BREVE DESCRIZIONE DELLA VIA: quartiere, carattere, perché la classe l'ha scelta.
+      </p>
+
+      <div class="via-meta">
+        <span class="via-meta-pill">📍 CITTÀ</span>
+        <span class="via-meta-pill">🏫 NOME SCUOLA</span>
+        <span class="via-meta-pill">👩‍🎓 CLASSE · GRADO</span>
+        <span class="via-meta-pill">📅 ANNO SCOLASTICO</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── 2. STORIA DELLA VIA ───────────────────────
+       Il titolo inizia sempre con "...per via di"
+       seguito dal nome o motivo dell'intitolazione.
+       Puoi aggiungere più paragrafi <p> e più
+       blocchi .quote-block con citazioni/fonti.
+  ─────────────────────────────────────────────── -->
+  <section class="school-section">
+    <div class="container">
+      <span class="sec-label">Ricerca storica</span>
+      <h2>...per via di NOME O MOTIVO DELL'INTITOLAZIONE</h2>
+
+      <p>SCRIVI QUI LA STORIA DELLA VIA: origini del nome, personaggi o eventi a cui è dedicata, trasformazioni nel tempo.</p>
+      <p>Puoi aggiungere un secondo paragrafo con ulteriori dettagli storici o curiosità trovate durante la ricerca.</p>
+
+      <div class="quote-block">
+        <p>"INSERITE QUI UNA CITAZIONE DA UNA FONTE STORICA, DA UN DOCUMENTO D'ARCHIVIO O DA UN TESTO SCRITTO DALLA CLASSE."</p>
+        <cite>— FONTE O NOME STUDENTE, CLASSE</cite>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── 3. GALLERIA FOTOGRAFICA ──────────────────
+       Foto scattate durante la visita sul campo.
+       Metti i file immagine nella stessa cartella
+       di questo index.html.
+       Sostituisci i placeholder con:
+         <img src="foto1.jpg" alt="descrizione">
+  ─────────────────────────────────────────────── -->
+  <section class="school-section">
+    <div class="container">
+      <span class="sec-label">Documentazione fotografica</span>
+      <h2>La via oggi</h2>
+      <p>BREVE INTRODUZIONE ALLA GALLERIA: cosa mostra, quando sono state scattate.</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item"><div class="gallery-placeholder">Foto 1</div></div>
+        <div class="gallery-item"><div class="gallery-placeholder">Foto 2</div></div>
+        <div class="gallery-item"><div class="gallery-placeholder">Foto 3</div></div>
+        <div class="gallery-item"><div class="gallery-placeholder">Foto 4</div></div>
+        <!-- aggiungi altri <div class="gallery-item"> secondo necessità -->
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── 4. SCHEDA TECNICA ─────────────────────────
+       Dati sintetici sulla via.
+       Aggiungi o rimuovi .info-card liberamente.
+  ─────────────────────────────────────────────── -->
+  <section class="school-section">
+    <div class="container">
+      <span class="sec-label">Scheda tecnica</span>
+      <h2>Informazioni sulla via</h2>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="ic-label">Quartiere</div>
+          <div class="ic-value">NOME QUARTIERE</div>
+        </div>
+        <div class="info-card">
+          <div class="ic-label">Intitolazione</div>
+          <div class="ic-value">A CHI È DEDICATA</div>
+        </div>
+        <div class="info-card">
+          <div class="ic-label">Anno intitolazione</div>
+          <div class="ic-value">ANNO</div>
+        </div>
+        <div class="info-card">
+          <div class="ic-label">Lunghezza</div>
+          <div class="ic-value">~ XX m</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── 5. VOCI DALLA CLASSE ──────────────────────
+       Elaborati, riflessioni o testi degli studenti.
+       Aggiungi quanti .quote-block vuoi.
+  ─────────────────────────────────────────────── -->
+  <section class="school-section">
+    <div class="container">
+      <span class="sec-label">Voci dalla classe</span>
+      <h2>Cosa ci racconta questa via</h2>
+
+      <p>INTRODUZIONE AGLI ELABORATI: come li avete prodotti, che cosa avete voluto comunicare.</p>
+
+      <div class="quote-block">
+        <p>"TESTO SCRITTO DA UNO STUDENTE."</p>
+        <cite>— NOME STUDENTE</cite>
+      </div>
+
+      <div class="quote-block">
+        <p>"TESTO SCRITTO DA UN ALTRO STUDENTE."</p>
+        <cite>— NOME STUDENTE</cite>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── SEZIONI AGGIUNTIVE ────────────────────────
+       Puoi aggiungere altre sezioni copiando
+       il blocco seguente e personalizzandolo.
+
+  <section class="school-section">
+    <div class="container">
+      <span class="sec-label">ETICHETTA</span>
+      <h2>TITOLO SEZIONE</h2>
+      <p>CONTENUTO</p>
+    </div>
+  </section>
+
+  ─────────────────────────────────────────────── -->
+
+
+</main>
+<!-- ═══════ FINE CONTENUTO SCUOLA ═══════ -->
+
+
+<!-- ═══════ NON MODIFICARE: footer e script ═══════ -->
+<footer class="school-footer">
+  <p>
+    Contributo di <strong style="color:rgba(255,255,255,0.85)">NOME SCUOLA</strong> ·
+    <a href="../../../index.html">Via Per Via Education</a> ·
+    <a href="../../../mappa.html">Torna alla mappa</a> ·
+    <a href="../../../starter-kit/guida-insegnanti.html">Guida per gli insegnanti</a>
+  </p>
+</footer>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const btn  = document.getElementById('hamburgerBtn');
+  const open = menu.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+const BREAKPOINT = 768;
+function updateLayout() {
+  const nav  = document.querySelector('header nav');
+  const btn  = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('mobileMenu');
+  if (!nav || !btn) return;
+  if (window.innerWidth <= BREAKPOINT) {
+    nav.style.display  = 'none';
+    btn.style.display  = 'flex';
+  } else {
+    nav.style.display  = 'flex';
+    btn.style.display  = 'none';
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+window.addEventListener('resize', updateLayout);
+window.addEventListener('DOMContentLoaded', updateLayout);
+updateLayout();
+</script>
+<!-- ════════════════════════════════════════════════ -->
+
+</body>
+</html>
