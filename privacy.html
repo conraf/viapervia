@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Privacy Policy · Via Per Via Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue-dark:   #0A2A40;
+      --blue-main:   #0B6E9E;
+      --blue-mid:    #4A9EC8;
+      --blue-light:  #7ABCE0;
+      --blue-pale:   #CCE8F8;
+      --amber:       #D4801A;
+      --amber-light: #FFF5E0;
+      --cream:       #F0F7FF;
+      --gray-dark:   #222222;
+      --gray-mid:    #666666;
+      --gray-light:  #E0DBD0;
+      --white:       #FFFFFF;
+      --coral:       #C75A3A;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family:'DM Sans',sans-serif;
+      background:var(--cream); color:var(--gray-dark);
+      overflow-x:hidden; line-height:1.6;
+    }
+
+    /* HEADER */
+    header {
+      position:fixed; top:0; left:0; right:0; z-index:260;
+      background:rgba(240,247,255,0.94); backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--gray-light);
+      padding:0.65rem 2.5rem;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .logo-wrap {
+      display:flex; align-items:center; gap:0.75rem;
+      text-decoration:none;
+    }
+    .logo-img { height:50px; width:auto; display:block; filter:drop-shadow(0 2px 8px rgba(10,42,64,0.22)); }
+    .logo-text { display:flex; flex-direction:column; line-height:1.2; }
+    .logo-text .logo-name { font-size:0.82rem; font-weight:700; letter-spacing:0.08em; color:var(--blue-dark); text-transform:uppercase; }
+    .logo-text .logo-tagline { font-size:0.6rem; color:var(--blue-mid); letter-spacing:0.06em; font-weight:500; }
+    nav { display:flex; gap:1.8rem; align-items:center; }
+    nav a {
+      font-size:0.82rem; font-weight:500; color:var(--gray-mid);
+      text-decoration:none; cursor:pointer; transition:color 0.2s;
+    }
+    nav a:hover { color:var(--blue-main); }
+    .nav-cta {
+      background:var(--blue-main) !important; color:white !important;
+      padding:0.45rem 1.1rem !important; border-radius:100px;
+      transition:background 0.2s !important;
+    }
+    .nav-cta:hover { background:var(--blue-dark) !important; }
+
+    /* HAMBURGER + MOBILE MENU */
+    .hamburger {
+      display:none; flex-direction:column; justify-content:center;
+      gap:5px; cursor:pointer; padding:6px; background:none; border:none;
+      z-index:300; -webkit-tap-highlight-color:transparent;
+    }
+    .hamburger span {
+      display:block; width:24px; height:2px;
+      background:var(--blue-dark); border-radius:2px;
+      transition:all 0.3s ease;
+    }
+    .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display:none; position:fixed; inset:0; z-index:250;
+      background:rgba(240,247,255,0.98); backdrop-filter:blur(16px);
+      flex-direction:column; align-items:center; justify-content:center;
+      gap:0; padding:2rem;
+    }
+    .mobile-menu.open { display:flex; animation:fadeIn 0.25s ease; }
+    .mobile-menu a {
+      font-family:'DM Sans',sans-serif; font-size:1.4rem; font-weight:600;
+      color:var(--blue-dark); text-decoration:none;
+      padding:1rem 0; width:100%; text-align:center;
+      border-bottom:1px solid rgba(11,110,158,0.1);
+      transition:color 0.2s;
+    }
+    .mobile-menu a:last-child { border-bottom:none; }
+    .mobile-menu a:hover { color:var(--blue-main); }
+    .mobile-menu-cta {
+      margin-top:1.5rem !important; background:var(--blue-main) !important;
+      color:white !important; border-radius:10px !important;
+      border-bottom:none !important; padding:1rem 2rem !important;
+      width:auto !important;
+    }
+    .mobile-menu-cta:hover { background:var(--blue-dark) !important; color:white !important; }
+
+    @keyframes fadeIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+    /* PAGE */
+    .page-wrap {
+      max-width:780px; margin:0 auto;
+      padding:6rem 2rem 4rem;
+    }
+
+    /* HERO */
+    .privacy-hero {
+      margin-bottom:3rem;
+      padding-bottom:2rem;
+      border-bottom:2px solid var(--blue-pale);
+    }
+    .sec-label {
+      display:inline-block; font-size:0.68rem; font-weight:700;
+      letter-spacing:0.22em; text-transform:uppercase;
+      color:var(--blue-main); margin-bottom:0.8rem;
+    }
+    .privacy-hero h1 {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700;
+      color:var(--blue-dark); line-height:1.2; margin-bottom:0.9rem;
+    }
+    .privacy-hero p {
+      font-size:0.9rem; color:var(--gray-mid); line-height:1.8;
+    }
+    .privacy-date {
+      display:inline-block; margin-top:0.8rem;
+      font-size:0.72rem; color:var(--blue-mid);
+      font-weight:500; letter-spacing:0.04em;
+    }
+
+    /* NOTICE BANNER */
+    .notice-banner {
+      background:var(--amber-light);
+      border-left:4px solid var(--amber);
+      border-radius:0 8px 8px 0;
+      padding:1rem 1.25rem;
+      margin-bottom:2.5rem;
+      font-size:0.84rem; color:#7A4A0A; line-height:1.6;
+    }
+    .notice-banner strong { color:var(--amber); }
+
+    /* SECTIONS */
+    .privacy-sections { display:flex; flex-direction:column; gap:0; }
+
+    .privacy-section {
+      display:grid;
+      grid-template-columns:2.8rem 1fr;
+      gap:0 1.2rem;
+      padding:1.8rem 0;
+      border-bottom:1px solid var(--gray-light);
+    }
+    .privacy-section:last-child { border-bottom:none; }
+
+    .section-num {
+      display:flex; align-items:flex-start; padding-top:0.15rem;
+      font-family:'Playfair Display',serif;
+      font-size:1.4rem; font-weight:700;
+      color:var(--blue-pale);
+      line-height:1;
+    }
+    .section-body h2 {
+      font-family:'DM Sans',sans-serif;
+      font-size:0.72rem; font-weight:700;
+      letter-spacing:0.18em; text-transform:uppercase;
+      color:var(--blue-main); margin-bottom:0.7rem;
+    }
+    .section-body p {
+      font-size:0.9rem; color:var(--gray-dark); line-height:1.8;
+      margin-bottom:0.6rem;
+    }
+    .section-body p:last-child { margin-bottom:0; }
+    .section-body ul {
+      margin:0.5rem 0 0.6rem 0; padding:0; list-style:none;
+    }
+    .section-body ul li {
+      font-size:0.9rem; color:var(--gray-dark); line-height:1.8;
+      padding-left:1.2rem; position:relative; margin-bottom:0.25rem;
+    }
+    .section-body ul li::before {
+      content:''; position:absolute; left:0; top:0.72em;
+      width:5px; height:5px; border-radius:50%;
+      background:var(--blue-mid);
+    }
+    .section-body a {
+      color:var(--blue-main); text-decoration:underline;
+      text-underline-offset:2px;
+    }
+    .section-body a:hover { color:var(--blue-dark); }
+
+    .placeholder-email {
+      display:inline-block;
+      background:var(--blue-pale); color:var(--blue-dark);
+      font-size:0.78rem; font-weight:600;
+      padding:0.15rem 0.5rem; border-radius:4px;
+      font-style:italic;
+    }
+
+    /* FOOTER */
+    footer {
+      background:var(--blue-dark); color:rgba(255,255,255,0.5);
+      text-align:center;
+    }
+    .footer-cta {
+      padding:3rem 2rem 2.5rem;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+    .footer-cta h3 {
+      font-family:'Playfair Display',serif;
+      font-size:1.25rem; color:white;
+      margin-bottom:0.55rem; font-weight:500;
+    }
+    .footer-cta p {
+      font-size:0.82rem; color:rgba(255,255,255,0.6);
+      line-height:1.7; max-width:480px; margin:0 auto 1.4rem;
+    }
+    .footer-cta-btn {
+      display:inline-block;
+      background:var(--coral); color:white;
+      border:none; border-radius:10px;
+      padding:0.65rem 1.6rem; font-size:0.85rem;
+      font-family:'DM Sans',sans-serif; font-weight:600;
+      cursor:pointer; letter-spacing:0.02em;
+      transition:opacity 0.2s;
+    }
+    .footer-cta-btn:hover { opacity:0.88; }
+    .footer-bottom { padding:1.6rem 2rem; }
+    .footer-name { font-family:'DM Sans',sans-serif; font-weight:700; font-size:0.9rem; color:white; letter-spacing:0.1em; display:inline; }
+    .footer-sub2 { font-size:0.58rem; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-left:4px; display:inline; }
+    .footer-links { display:flex; gap:1.8rem; justify-content:center; margin:1rem 0 0.8rem; flex-wrap:wrap; }
+    .footer-links a { font-size:0.76rem; color:rgba(255,255,255,0.5); text-decoration:none; cursor:pointer; transition:color 0.2s; }
+    .footer-links a:hover { color:white; }
+    .footer-links a.footer-active { color:white; font-weight:600; }
+    .footer-copy { font-size:0.68rem; margin-top:0.6rem; color:rgba(255,255,255,0.28); }
+
+    @media (max-width:768px) {
+      header { padding:0.65rem 1.2rem; }
+      .page-wrap { padding:5rem 1.2rem 3rem; }
+      .privacy-section { grid-template-columns:2rem 1fr; gap:0 0.9rem; }
+      .section-num { font-size:1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="index.html">Il progetto</a>
+  <a href="index.html">Per gli insegnanti</a>
+  <a class="mobile-menu-cta" href="index.html">Simulazione →</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <a class="logo-wrap" href="index.html">
+    <img class="logo-img" src="ViaPerViaLogo-400.png" alt="Via Per Via Education">
+    <div class="logo-text">
+      <span class="logo-name">Via Per Via</span>
+      <span class="logo-tagline">Education · Progetto didattico</span>
+    </div>
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html">Il progetto</a>
+    <a href="index.html">Per gli insegnanti</a>
+    <a href="mappa.html">Mappa</a>
+    <a href="index.html" class="nav-cta">Simulazione →</a>
+  </nav>
+  <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- CONTENT -->
+<main class="page-wrap">
+
+  <div class="privacy-hero">
+    <span class="sec-label">Informativa</span>
+    <h1>Privacy Policy</h1>
+    <p>Informativa sul trattamento dei dati personali ai sensi del Regolamento UE 2016/679 (GDPR) e del D.Lgs. 196/2003 come modificato dal D.Lgs. 101/2018.</p>
+    <span class="privacy-date">Versione provvisoria · Ultimo aggiornamento: aprile 2026</span>
+  </div>
+
+  <div class="notice-banner">
+    <strong>Nota:</strong> Questo documento è provvisorio. Il progetto Via Per Via Education è attualmente in fase di sviluppo e la presente informativa sarà aggiornata man mano che il sito evolve e vengono introdotte nuove funzionalità.
+  </div>
+
+  <div class="privacy-sections">
+
+    <div class="privacy-section">
+      <span class="section-num">1</span>
+      <div class="section-body">
+        <h2>Titolare del trattamento</h2>
+        <p>Il progetto "Via Per Via Education" è attualmente in fase di sviluppo. Il titolare del trattamento sarà indicato nella versione definitiva di questo documento.</p>
+        <p>Per qualsiasi richiesta relativa al trattamento dei dati, scrivere a: <span class="placeholder-email">[email da inserire]</span></p>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <span class="section-num">2</span>
+      <div class="section-body">
+        <h2>Tipologia di dati raccolti</h2>
+        <p>Al momento il sito non raccoglie dati personali tramite moduli di registrazione o account. Le uniche informazioni potenzialmente trattate sono:</p>
+        <ul>
+          <li><strong>Dati di navigazione</strong> (indirizzo IP, browser, pagine visitate), raccolti automaticamente dai server di GitHub Pages, il servizio che ospita il sito.</li>
+          <li><strong>Dati della simulazione</strong>, se e nella misura in cui vengano introdotte funzionalità interattive.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <span class="section-num">3</span>
+      <div class="section-body">
+        <h2>Finalità e base giuridica</h2>
+        <p>I dati di navigazione sono trattati per motivi tecnici legati all'erogazione del servizio. Non vengono utilizzati per profilazione o marketing.</p>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <span class="section-num">4</span>
+      <div class="section-body">
+        <h2>Servizi di terze parti</h2>
+        <p>Il sito è ospitato su <strong>GitHub Pages</strong> (GitHub, Inc. / Microsoft). Si rimanda alla <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Privacy Policy di GitHub</a> per i dettagli sul trattamento dei dati da parte di quel servizio.</p>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <span class="section-num">5</span>
+      <div class="section-body">
+        <h2>Cookie</h2>
+        <p>Il sito non utilizza cookie di profilazione. Potrebbero essere presenti cookie tecnici di sessione necessari al funzionamento del sito.</p>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <span class="section-num">6</span>
+      <div class="section-body">
+        <h2>Destinatari dei dati</h2>
+        <p>I dati non vengono ceduti a terzi, salvo quanto necessario all'hosting su GitHub Pages.</p>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <span class="section-num">7</span>
+      <div class="section-body">
+        <h2>Diritti degli utenti</h2>
+        <p>Ai sensi del GDPR (Reg. UE 2016/679), gli utenti possono esercitare i diritti di accesso, rettifica, cancellazione, limitazione e portabilità scrivendo all'indirizzo indicato al punto&nbsp;1.</p>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <span class="section-num">8</span>
+      <div class="section-body">
+        <h2>Modifiche alla presente informativa</h2>
+        <p>Questa informativa è provvisoria e sarà aggiornata man mano che il progetto evolve e vengono introdotte nuove funzionalità.</p>
+      </div>
+    </div>
+
+  </div><!-- privacy-sections -->
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-cta">
+    <h3>Vuoi portare Via Per Via nella tua scuola?</h3>
+    <p>Scrivi per ricevere il kit di avvio — con UDA per tutti gli ordini e gradi, guida per insegnanti e tutte le informazioni per aderire.</p>
+    <button class="footer-cta-btn">✉️ Scrivici</button>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-name">VIA PER VIA</span>
+    <span class="footer-sub2">Education</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="index.html">Per gli insegnanti</a>
+      <a href="index.html">Simulazione</a>
+      <a href="mappa.html">Mappa</a>
+      <a href="index.html">Contatti</a>
+      <a href="privacy.html" class="footer-active">Privacy</a>
+    </div>
+    <p class="footer-copy">© 2026 Via Per Via Education · Progetto didattico per le scuole italiane · www.viapervia.education</p>
+  </div>
+</footer>
+
+<script>
+  /* ── Hamburger ── */
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn  = document.getElementById('hamburgerBtn');
+    const open = menu.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  /* ── Responsive: show/hide nav and hamburger ── */
+  const BREAKPOINT = 768;
+  function updateLayout() {
+    const nav = document.querySelector('header nav');
+    const btn = document.getElementById('hamburgerBtn');
+    const menu = document.getElementById('mobileMenu');
+    if (!nav || !btn) return;
+    if (window.innerWidth <= BREAKPOINT) {
+      nav.style.display = 'none';
+      btn.style.display = 'flex';
+    } else {
+      nav.style.display = 'flex';
+      btn.style.display = 'none';
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  window.addEventListener('resize', updateLayout);
+  window.addEventListener('DOMContentLoaded', updateLayout);
+  updateLayout();
+</script>
+</body>
+</html>

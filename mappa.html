@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Mappa delle scuole · Via Per Via Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    :root {
+      --blue-dark:   #0A2A40;
+      --blue-main:   #0B6E9E;
+      --blue-mid:    #4A9EC8;
+      --blue-light:  #7ABCE0;
+      --blue-pale:   #CCE8F8;
+      --amber:       #D4801A;
+      --amber-light: #FFF5E0;
+      --cream:       #F0F7FF;
+      --gray-dark:   #222222;
+      --gray-mid:    #666666;
+      --gray-light:  #E0DBD0;
+      --white:       #FFFFFF;
+      --coral:       #C75A3A;
+      --header-h:    69px;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html, body { height:100%; overflow:hidden; }
+    body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--gray-dark); }
+
+    /* ── HEADER ── */
+    header {
+      position:fixed; top:0; left:0; right:0; z-index:600;
+      height:var(--header-h);
+      background:rgba(240,247,255,0.96); backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--gray-light);
+      padding:0 2.5rem;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .logo-wrap { display:flex; align-items:center; gap:0.75rem; text-decoration:none; }
+    .logo-img { height:50px; width:auto; display:block; filter:drop-shadow(0 2px 8px rgba(10,42,64,0.22)); }
+    .logo-text { display:flex; flex-direction:column; line-height:1.2; }
+    .logo-text .logo-name { font-size:0.82rem; font-weight:700; letter-spacing:0.08em; color:var(--blue-dark); text-transform:uppercase; }
+    .logo-text .logo-tagline { font-size:0.6rem; color:var(--blue-mid); letter-spacing:0.06em; font-weight:500; }
+    nav { display:flex; gap:1.8rem; align-items:center; }
+    nav a { font-size:0.82rem; font-weight:500; color:var(--gray-mid); text-decoration:none; cursor:pointer; transition:color 0.2s; }
+    nav a:hover { color:var(--blue-main); }
+    nav a.nav-active { color:var(--blue-main); }
+    .nav-cta { background:var(--blue-main) !important; color:white !important; padding:0.45rem 1.1rem !important; border-radius:100px; transition:background 0.2s !important; }
+    .nav-cta:hover { background:var(--blue-dark) !important; }
+
+    /* ── HAMBURGER ── */
+    .hamburger { display:none; flex-direction:column; justify-content:center; gap:5px; cursor:pointer; padding:6px; background:none; border:none; z-index:700; -webkit-tap-highlight-color:transparent; }
+    .hamburger span { display:block; width:24px; height:2px; background:var(--blue-dark); border-radius:2px; transition:all 0.3s ease; }
+    .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display:none; position:fixed; inset:0; z-index:650; background:rgba(240,247,255,0.98); backdrop-filter:blur(16px); flex-direction:column; align-items:center; justify-content:center; gap:0; padding:2rem; }
+    .mobile-menu.open { display:flex; animation:fadeIn 0.25s ease; }
+    .mobile-menu a { font-family:'DM Sans',sans-serif; font-size:1.4rem; font-weight:600; color:var(--blue-dark); text-decoration:none; padding:1rem 0; width:100%; text-align:center; border-bottom:1px solid rgba(11,110,158,0.1); transition:color 0.2s; }
+    .mobile-menu a:last-child { border-bottom:none; }
+    .mobile-menu a:hover { color:var(--blue-main); }
+    .mobile-menu-cta { margin-top:1.5rem !important; background:var(--blue-main) !important; color:white !important; border-radius:10px !important; border-bottom:none !important; padding:1rem 2rem !important; width:auto !important; }
+    .mobile-menu-cta:hover { background:var(--blue-dark) !important; color:white !important; }
+
+    @keyframes fadeIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+    /* ── LAYOUT ── */
+    .map-page {
+      display:flex;
+      height:calc(100vh - var(--header-h));
+      margin-top:var(--header-h);
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width:330px; min-width:330px;
+      background:white;
+      border-right:1px solid var(--gray-light);
+      display:flex; flex-direction:column;
+      overflow:hidden;
+      z-index:10;
+    }
+    .sidebar-head {
+      padding:1.2rem 1.25rem 1rem;
+      border-bottom:1px solid var(--gray-light);
+      flex-shrink:0;
+    }
+    .sidebar-head .sec-label {
+      display:inline-block; font-size:0.62rem; font-weight:700;
+      letter-spacing:0.2em; text-transform:uppercase;
+      color:var(--blue-main); margin-bottom:0.4rem;
+    }
+    .sidebar-head h2 {
+      font-family:'Playfair Display',serif;
+      font-size:1.05rem; font-weight:700; color:var(--blue-dark);
+      margin-bottom:0.75rem;
+    }
+    .stats-row { display:flex; gap:0.6rem; flex-wrap:wrap; }
+    .stat-pill {
+      background:var(--cream); border:1px solid var(--blue-pale);
+      border-radius:100px; padding:0.2rem 0.7rem;
+      font-size:0.7rem; font-weight:600; color:var(--blue-main);
+      white-space:nowrap;
+    }
+
+    /* legend / filtri */
+    .legend { display:flex; gap:0.5rem; flex-wrap:wrap; padding:0.7rem 1.25rem; border-bottom:1px solid var(--gray-light); flex-shrink:0; }
+    .legend-item {
+      display:flex; align-items:center; gap:0.35rem;
+      font-size:0.68rem; color:var(--gray-mid);
+      cursor:pointer; user-select:none;
+      padding:0.25rem 0.6rem; border-radius:100px;
+      border:1.5px solid transparent;
+      transition:all 0.18s;
+    }
+    .legend-item:hover { background:var(--cream); }
+    .legend-item.active { color:var(--gray-dark); border-color:currentColor; }
+    .legend-item.off { opacity:0.35; }
+    .legend-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+    .dot-primaria  { background:var(--blue-main); }
+    .dot-sec1      { background:var(--amber); }
+    .dot-sec2      { background:var(--coral); }
+    .legend-item.active.primaria { border-color:var(--blue-main); color:var(--blue-main); }
+    .legend-item.active.sec1     { border-color:var(--amber);     color:var(--amber); }
+    .legend-item.active.sec2     { border-color:var(--coral);     color:var(--coral); }
+
+    /* province list */
+    .province-list { overflow-y:auto; flex:1; padding:0.5rem 0; }
+
+    .province { border-bottom:1px solid var(--gray-light); }
+    .province:last-child { border-bottom:none; }
+    .province-header {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0.75rem 1.25rem;
+      cursor:pointer; user-select:none;
+      transition:background 0.15s;
+    }
+    .province-header:hover { background:var(--cream); }
+    .province-name { font-size:0.82rem; font-weight:700; color:var(--blue-dark); }
+    .province-meta { display:flex; align-items:center; gap:0.5rem; }
+    .province-count {
+      font-size:0.64rem; font-weight:700;
+      background:var(--blue-pale); color:var(--blue-main);
+      border-radius:100px; padding:0.1rem 0.55rem;
+    }
+    .province-arrow {
+      font-size:0.7rem; color:var(--gray-mid);
+      transition:transform 0.2s;
+      display:inline-block;
+    }
+    .province.open .province-arrow { transform:rotate(180deg); }
+
+    .province-schools { display:none; }
+    .province.open .province-schools { display:block; }
+
+    .school-item {
+      display:flex; align-items:flex-start; gap:0.65rem;
+      padding:0.6rem 1.25rem 0.6rem 2rem;
+      cursor:pointer;
+      transition:background 0.15s;
+      border-top:1px solid rgba(224,219,208,0.5);
+    }
+    .school-item:first-child { border-top:none; }
+    .school-item:hover { background:var(--cream); }
+    .school-dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; margin-top:0.35rem; }
+    .school-info { flex:1; min-width:0; }
+    .school-nome { font-size:0.78rem; font-weight:600; color:var(--gray-dark); line-height:1.3; margin-bottom:0.15rem; }
+    .school-sub  { font-size:0.68rem; color:var(--gray-mid); line-height:1.4; }
+
+    /* ── MAP ── */
+    #map { flex:1; z-index:1; }
+
+    /* ── LEAFLET CUSTOM ── */
+    .leaflet-popup-content-wrapper {
+      border-radius:12px !important;
+      box-shadow:0 8px 32px rgba(10,42,64,0.18) !important;
+      padding:0 !important;
+      overflow:hidden;
+      font-family:'DM Sans',sans-serif;
+    }
+    .leaflet-popup-content { margin:0 !important; width:240px !important; }
+    .leaflet-popup-tip { background:white !important; }
+    .leaflet-popup-close-button { display:none !important; }
+
+    .popup-inner { padding:0; }
+    .popup-band {
+      padding:0.65rem 1rem 0.5rem;
+      font-size:0.62rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:white;
+    }
+    .popup-band.primaria { background:var(--blue-main); }
+    .popup-band.sec1     { background:var(--amber); }
+    .popup-band.sec2     { background:var(--coral); }
+    .popup-body { padding:0.75rem 1rem 0.85rem; }
+    .popup-nome { font-size:0.85rem; font-weight:700; color:var(--blue-dark); margin-bottom:0.5rem; line-height:1.3; }
+    .popup-row  { font-size:0.75rem; color:var(--gray-mid); line-height:1.7; }
+    .popup-row strong { color:var(--gray-dark); font-weight:600; }
+    .popup-via  { margin-top:0.55rem; padding-top:0.55rem; border-top:1px solid var(--gray-light); font-size:0.72rem; color:var(--blue-mid); }
+    .popup-via span { color:var(--blue-dark); font-weight:600; }
+    .popup-via a { color:var(--blue-main); text-decoration:none; font-weight:600; }
+    .popup-via a:hover { text-decoration:underline; }
+    .popup-via a span { color:var(--blue-main); }
+
+    /* custom marker */
+    .pin-marker {
+      width:16px; height:16px; border-radius:50%;
+      border:2.5px solid white;
+      box-shadow:0 2px 8px rgba(0,0,0,0.25);
+      cursor:pointer;
+    }
+    .pin-marker.primaria { background:var(--blue-main); }
+    .pin-marker.sec1     { background:var(--amber); }
+    .pin-marker.sec2     { background:var(--coral); }
+    .pin-marker.active {
+      width:20px; height:20px;
+      box-shadow:0 0 0 4px rgba(255,255,255,0.6), 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    /* mobile sidebar toggle */
+    .sidebar-toggle {
+      display:none;
+      position:fixed; bottom:1.5rem; left:1rem; z-index:500;
+      background:var(--blue-main); color:white;
+      border:none; border-radius:100px;
+      padding:0.6rem 1.2rem;
+      font-family:'DM Sans',sans-serif; font-size:0.8rem; font-weight:600;
+      box-shadow:0 4px 16px rgba(11,110,158,0.35);
+      cursor:pointer;
+    }
+
+    @media (max-width:768px) {
+      header { padding:0 1.2rem; }
+      .map-page { flex-direction:column; }
+      .sidebar {
+        position:fixed; bottom:0; left:0; right:0; top:auto;
+        width:100%; min-width:unset;
+        height:55vh; border-right:none; border-top:1px solid var(--gray-light);
+        transform:translateY(100%);
+        transition:transform 0.3s ease;
+        z-index:500;
+      }
+      .sidebar.open { transform:translateY(0); }
+      #map { height:100%; }
+      .sidebar-toggle { display:block; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="index.html">Il progetto</a>
+  <a href="index.html">Per gli insegnanti</a>
+  <a href="mappa.html">Mappa</a>
+  <a class="mobile-menu-cta" href="index.html">Simulazione →</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <a class="logo-wrap" href="index.html">
+    <img class="logo-img" src="ViaPerViaLogo-400.png" alt="Via Per Via Education">
+    <div class="logo-text">
+      <span class="logo-name">Via Per Via</span>
+      <span class="logo-tagline">Education · Progetto didattico</span>
+    </div>
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html">Il progetto</a>
+    <a href="index.html">Per gli insegnanti</a>
+    <a href="mappa.html" class="nav-active">Mappa</a>
+    <a href="index.html" class="nav-cta">Simulazione →</a>
+  </nav>
+  <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- LAYOUT -->
+<div class="map-page">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <span class="sec-label">Scuole aderenti</span>
+      <h2>Le scuole sulla mappa</h2>
+      <div class="stats-row" id="statsRow"></div>
+    </div>
+    <div class="legend">
+      <div class="legend-item active primaria" onclick="toggleGrado('primaria')"><div class="legend-dot dot-primaria"></div>Primaria</div>
+      <div class="legend-item active sec1"     onclick="toggleGrado('sec1')"><div class="legend-dot dot-sec1"></div>Sec. I grado</div>
+      <div class="legend-item active sec2"     onclick="toggleGrado('sec2')"><div class="legend-dot dot-sec2"></div>Sec. II grado</div>
+    </div>
+    <div class="province-list" id="provinceList"></div>
+  </aside>
+
+  <!-- MAP -->
+  <div id="map"></div>
+
+</div>
+
+<!-- Mobile sidebar toggle -->
+<button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()">📋 Elenco scuole</button>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+/* ────────────────────────────────────────────
+   DATI — sostituire/integrare con dati reali
+──────────────────────────────────────────── */
+const scuole = [
+  // ── TORINO ──
+  {
+    id: 1,
+    nome: 'Scuola Primaria "Edmondo De Amicis"',
+    istituto: 'I.C. "Carducci – De Amicis"',
+    citta: "Torino",
+    provincia: "Torino", sigla: "TO",
+    regione: "Piemonte",
+    lat: 45.0744, lng: 7.6825,
+    classe: "4ª A", grado: "primaria", anno: "2025/2026",
+    via: "Via Pietro Micca"
+  },
+  {
+    id: 2,
+    nome: 'Scuola Sec. I grado "Niccolò Tommaseo"',
+    istituto: 'I.C. "Vanchiglia"',
+    citta: "Torino",
+    provincia: "Torino", sigla: "TO",
+    regione: "Piemonte",
+    lat: 45.0682, lng: 7.6971,
+    classe: "2ª B", grado: "sec1", anno: "2025/2026",
+    via: "Corso San Maurizio"
+  },
+  // ── VENEZIA ──
+  {
+    id: 3,
+    nome: 'Scuola Primaria "Antonio Vivaldi"',
+    istituto: 'I.C. "Cannaregio"',
+    citta: "Venezia",
+    provincia: "Venezia", sigla: "VE",
+    regione: "Veneto",
+    lat: 45.4384, lng: 12.3190,
+    classe: "5ª C", grado: "primaria", anno: "2025/2026",
+    via: "Fondamenta della Misericordia"
+  },
+  {
+    id: 4,
+    nome: 'Scuola Sec. II grado "Marco Polo"',
+    istituto: 'Istituto Superiore "Marco Polo"',
+    citta: "Venezia",
+    provincia: "Venezia", sigla: "VE",
+    regione: "Veneto",
+    lat: 45.4345, lng: 12.3255,
+    classe: "3ª A", grado: "sec2", anno: "2025/2026",
+    via: "Riva degli Schiavoni"
+  },
+  // ── FIRENZE ──
+  {
+    id: 5,
+    nome: 'Scuola Primaria "Leonardo da Vinci"',
+    istituto: 'I.C. "Oltrarno"',
+    citta: "Firenze",
+    provincia: "Firenze", sigla: "FI",
+    regione: "Toscana",
+    lat: 43.7674, lng: 11.2491,
+    classe: "3ª B", grado: "primaria", anno: "2025/2026",
+    via: "Via dei Servi"
+  },
+  {
+    id: 6,
+    nome: 'Scuola Sec. I grado "Dante Alighieri"',
+    istituto: 'I.C. "Centro Storico"',
+    citta: "Firenze",
+    provincia: "Firenze", sigla: "FI",
+    regione: "Toscana",
+    lat: 43.7713, lng: 11.2542,
+    classe: "1ª C", grado: "sec1", anno: "2025/2026",
+    via: "Via Tornabuoni"
+  },
+  // ── ROMA ──
+  {
+    id: 7,
+    nome: 'Scuola Primaria "Giacomo Leopardi"',
+    istituto: 'I.C. "Prati"',
+    citta: "Roma",
+    provincia: "Roma", sigla: "RM",
+    regione: "Lazio",
+    lat: 41.9073, lng: 12.4647,
+    classe: "4ª D", grado: "primaria", anno: "2025/2026",
+    via: "Via della Conciliazione"
+  },
+  {
+    id: 8,
+    nome: 'Liceo Classico "Virgilio"',
+    istituto: 'Liceo Classico Statale "Virgilio"',
+    citta: "Roma",
+    provincia: "Roma", sigla: "RM",
+    regione: "Lazio",
+    lat: 41.8985, lng: 12.4739,
+    classe: "2ª E", grado: "sec2", anno: "2025/2026",
+    via: "Via delle Terme di Caracalla"
+  },
+  // ── NAPOLI ──
+  {
+    id: 9,
+    nome: 'Scuola Primaria "Giambattista Vico"',
+    istituto: 'I.C. "Posillipo"',
+    citta: "Napoli",
+    provincia: "Napoli", sigla: "NA",
+    regione: "Campania",
+    lat: 40.8272, lng: 14.2158,
+    classe: "5ª A", grado: "primaria", anno: "2025/2026",
+    via: "Via Posillipo"
+  },
+  {
+    id: 10,
+    nome: 'Istituto Comprensivo "Enrico Scarpetta"',
+    istituto: 'I.C. "Quartieri Spagnoli"',
+    citta: "Napoli",
+    provincia: "Napoli", sigla: "NA",
+    regione: "Campania",
+    lat: 40.8378, lng: 14.2494,
+    classe: "2ª A", grado: "sec1", anno: "2025/2026",
+    via: "Via dei Tribunali"
+  }
+];
+
+/* ────────────────────────────────────────────
+   COLORI
+──────────────────────────────────────────── */
+const COLOR = { primaria:"#0B6E9E", sec1:"#D4801A", sec2:"#C75A3A" };
+const LABEL = { primaria:"Primaria", sec1:"Sec. I grado", sec2:"Sec. II grado" };
+
+/* ────────────────────────────────────────────
+   MAPPA
+──────────────────────────────────────────── */
+const map = L.map('map', { zoomControl:false }).setView([42.5, 12.5], 6);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  maxZoom: 19
+}).addTo(map);
+
+L.control.zoom({ position:'bottomright' }).addTo(map);
+
+function makeIcon(grado, active) {
+  const size = active ? 20 : 16;
+  return L.divIcon({
+    className:'',
+    html:`<div class="pin-marker ${grado}${active?' active':''}"></div>`,
+    iconSize:[size,size],
+    iconAnchor:[size/2,size/2],
+    popupAnchor:[0,-(size/2+4)]
+  });
+}
+
+const markers = {};
+let activeId = null;
+
+scuole.forEach(s => {
+  const m = L.marker([s.lat, s.lng], { icon:makeIcon(s.grado, false) })
+    .addTo(map)
+    .bindPopup(buildPopup(s), { maxWidth:260, minWidth:240 });
+
+  m.on('click', () => {
+    if (activeId && markers[activeId]) {
+      markers[activeId].setIcon(makeIcon(scuole.find(x=>x.id===activeId).grado, false));
+    }
+    m.setIcon(makeIcon(s.grado, true));
+    activeId = s.id;
+    highlightSidebarItem(s.id);
+  });
+  m.on('popupclose', () => {
+    m.setIcon(makeIcon(s.grado, false));
+    activeId = null;
+    clearSidebarHighlight();
+  });
+
+  markers[s.id] = m;
+});
+
+function buildPopup(s) {
+  const viaHtml = s.pagina
+    ? `📍 Via documentata: <a href="${s.pagina}" target="_blank" rel="noopener"><span>${s.via}</span> →</a>`
+    : `📍 Via documentata: <span>${s.via}</span>`;
+  return `
+    <div class="popup-inner">
+      <div class="popup-band ${s.grado}">${LABEL[s.grado]}</div>
+      <div class="popup-body">
+        <div class="popup-nome">${s.nome}</div>
+        <div class="popup-row"><strong>Istituto:</strong> ${s.istituto}</div>
+        <div class="popup-row"><strong>Città:</strong> ${s.citta} (${s.sigla})</div>
+        <div class="popup-row"><strong>Classe:</strong> ${s.classe} &nbsp;·&nbsp; <strong>A.S.:</strong> ${s.anno}</div>
+        <div class="popup-via">${viaHtml}</div>
+      </div>
+    </div>`;
+}
+
+/* ────────────────────────────────────────────
+   STATISTICHE
+──────────────────────────────────────────── */
+const nScuole   = scuole.length;
+const nCitta    = new Set(scuole.map(s=>s.citta)).size;
+const nRegioni  = new Set(scuole.map(s=>s.regione)).size;
+
+document.getElementById('statsRow').innerHTML =
+  `<span class="stat-pill">${nScuole} scuole</span>
+   <span class="stat-pill">${nCitta} città</span>
+   <span class="stat-pill">${nRegioni} regioni</span>`;
+
+/* ────────────────────────────────────────────
+   SIDEBAR — province collassabili
+──────────────────────────────────────────── */
+// raggruppa per provincia
+const byProv = {};
+scuole.forEach(s => {
+  const key = s.provincia;
+  if (!byProv[key]) byProv[key] = [];
+  byProv[key].push(s);
+});
+
+const list = document.getElementById('provinceList');
+Object.keys(byProv).sort().forEach(prov => {
+  const scuoleProv = byProv[prov];
+  const sigla = scuoleProv[0].sigla;
+
+  const div = document.createElement('div');
+  div.className = 'province';
+  div.id = `prov-${prov.replace(/\s/g,'_')}`;
+
+  div.innerHTML = `
+    <div class="province-header" onclick="toggleProvince(this)">
+      <span class="province-name">${prov} <span style="color:var(--gray-mid);font-weight:400">(${sigla})</span></span>
+      <div class="province-meta">
+        <span class="province-count">${scuoleProv.length}</span>
+        <span class="province-arrow">▾</span>
+      </div>
+    </div>
+    <div class="province-schools">
+      ${scuoleProv.map(s=>`
+        <div class="school-item" id="item-${s.id}" onclick="flyToSchool(${s.id})">
+          <div class="school-dot" style="background:${COLOR[s.grado]}"></div>
+          <div class="school-info">
+            <div class="school-nome">${s.nome}</div>
+            <div class="school-sub">${s.citta} · Classe ${s.classe} · ${LABEL[s.grado]}</div>
+          </div>
+        </div>`).join('')}
+    </div>`;
+
+  list.appendChild(div);
+});
+
+function toggleProvince(header) {
+  const prov = header.closest('.province');
+  prov.classList.toggle('open');
+}
+
+/* ────────────────────────────────────────────
+   INTERAZIONE SIDEBAR ↔ MAPPA
+──────────────────────────────────────────── */
+function flyToSchool(id) {
+  const s = scuole.find(x => x.id === id);
+  if (!s) return;
+  map.flyTo([s.lat, s.lng], 14, { duration:1.2 });
+  setTimeout(() => {
+    markers[id].openPopup();
+    if (activeId && markers[activeId]) {
+      markers[activeId].setIcon(makeIcon(scuole.find(x=>x.id===activeId).grado, false));
+    }
+    markers[id].setIcon(makeIcon(s.grado, true));
+    activeId = id;
+    highlightSidebarItem(id);
+  }, 1000);
+  // chiudi sidebar mobile
+  document.getElementById('sidebar').classList.remove('open');
+}
+
+function highlightSidebarItem(id) {
+  clearSidebarHighlight();
+  const el = document.getElementById(`item-${id}`);
+  if (el) {
+    el.style.background = 'var(--blue-pale)';
+    // apri la provincia se chiusa
+    const prov = el.closest('.province');
+    if (prov && !prov.classList.contains('open')) prov.classList.add('open');
+    // scroll nell'elenco
+    el.scrollIntoView({ block:'nearest', behavior:'smooth' });
+  }
+}
+function clearSidebarHighlight() {
+  document.querySelectorAll('.school-item').forEach(el => el.style.background = '');
+}
+
+/* ────────────────────────────────────────────
+   FILTRI PER GRADO
+──────────────────────────────────────────── */
+const gradeVisible = { primaria:true, sec1:true, sec2:true };
+
+function toggleGrado(grado) {
+  gradeVisible[grado] = !gradeVisible[grado];
+  const on = gradeVisible[grado];
+
+  // aggiorna pill legenda
+  document.querySelector(`.legend-item.${grado}`).classList.toggle('off', !on);
+
+  // mostra/nascondi marker
+  scuole.filter(s => s.grado === grado).forEach(s => {
+    if (on) map.addLayer(markers[s.id]);
+    else    map.removeLayer(markers[s.id]);
+  });
+
+  // mostra/nascondi voci sidebar
+  document.querySelectorAll(`.school-item`).forEach(el => {
+    const s = scuole.find(x => x.id === parseInt(el.id.replace('item-','')));
+    if (s && s.grado === grado) el.style.display = on ? '' : 'none';
+  });
+}
+
+/* ────────────────────────────────────────────
+   HAMBURGER
+──────────────────────────────────────────── */
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const btn  = document.getElementById('hamburgerBtn');
+  const open = menu.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+
+/* ────────────────────────────────────────────
+   SIDEBAR MOBILE TOGGLE
+──────────────────────────────────────────── */
+function toggleSidebar() {
+  const sb  = document.getElementById('sidebar');
+  const btn = document.getElementById('sidebarToggle');
+  const open = sb.classList.toggle('open');
+  btn.textContent = open ? '✕ Chiudi elenco' : '📋 Elenco scuole';
+}
+
+/* ────────────────────────────────────────────
+   RESPONSIVE
+──────────────────────────────────────────── */
+const BREAKPOINT = 768;
+function updateLayout() {
+  const nav = document.querySelector('header nav');
+  const btn = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('mobileMenu');
+  if (!nav || !btn) return;
+  if (window.innerWidth <= BREAKPOINT) {
+    nav.style.display = 'none';
+    btn.style.display = 'flex';
+  } else {
+    nav.style.display = 'flex';
+    btn.style.display = 'none';
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+window.addEventListener('resize', updateLayout);
+window.addEventListener('DOMContentLoaded', updateLayout);
+updateLayout();
+</script>
+
+</body>
+</html>
