@@ -74,7 +74,7 @@
     }
     .toc ol { padding-left: 1.2rem; }
     .toc li { font-size: 0.88rem; color: var(--blue-dark); line-height: 2; }
-    .toc li.optional { color: var(--gray-mid); font-style: italic; }
+    .toc li.optional { color: var(--gray-mid); font-style: italic; list-style: none; counter-increment: list-item 0; }
 
     /* ── SEZIONI ── */
     section { margin-bottom: 3rem; }
@@ -230,10 +230,10 @@
     <li>Cos'è Via Per Via</li>
     <li>Come scegliere la via</li>
     <li>Come fare la ricerca storica</li>
-    <li>Come documentare: foto e testi degli studenti</li>
+    <li>Come documentare: foto e testi</li>
     <li class="optional">Opzionale — Intervista a un esperto locale</li>
     <li class="optional">Opzionale — Intervista a un abitante della via</li>
-    <li>Come usare il template HTML</li>
+    <li>La pagina HTML: template o soluzione libera</li>
     <li>Come trovare le coordinate geografiche (Nominatim)</li>
     <li>Come consegnare il materiale</li>
   </ol>
@@ -442,30 +442,46 @@
     <div class="step-number">5</div>
     <div class="step-title-wrap">
       <div class="step-label">Quarta fase</div>
-      <h2 class="step-title">Come usare il template HTML</h2>
+      <h2 class="step-title">La pagina HTML: template o soluzione libera</h2>
     </div>
   </div>
   <p>
-    Nel kit hai trovato il file <code>_template.html</code>. È la struttura base della
-    pagina che sarà pubblicata sul sito di Via Per Via. Non richiede competenze tecniche:
-    basta aprirlo con un editor di testo (Blocco Note, TextEdit, o qualsiasi editor
-    di testo semplice) e sostituire i testi in MAIUSCOLO con i contenuti reali.
+    Nel kit trovi il file <code>_template.html</code>: è una base già pronta che puoi
+    personalizzare senza conoscere l'HTML. Se la tua classe preferisce costruire la pagina
+    in modo creativo e autonomo — con un layout diverso, colori propri, struttura originale —
+    è benvenuta: non c'è nessun obbligo di usare il template.
+  </p>
+
+  <div class="callout callout-blue" style="margin:1.5rem 0;">
+    <div class="callout-title">L'unico requisito tecnico per la pagina libera</div>
+    <p>
+      Qualunque pagina HTML invii, deve includere una sola riga prima della chiusura
+      <code>&lt;/body&gt;</code> — quella che aggiunge automaticamente la barra di
+      navigazione del sito:
+    </p>
+    <pre style="margin:0.6rem 0;padding:0.7rem 1rem;background:var(--cream);border-radius:6px;font-size:0.75rem;overflow-x:auto;line-height:1.6;color:var(--blue-dark);">&lt;script src="../../../vpv-navbar.js" data-root="../../../"&gt;&lt;/script&gt;</pre>
+    <p>
+      Niente altro. Il resto — struttura, grafica, contenuti — è completamente libero.<br>
+      <strong>Se hai dubbi o difficoltà, scrivici: inseriamo noi la riga al posto tuo.</strong>
+    </p>
+  </div>
+
+  <p style="font-size:0.92rem;color:var(--gray-mid);margin-bottom:1.5rem;">
+    Se preferisci usare il template (la strada più semplice), segui questi passaggi:
   </p>
 
   <ol class="steps-list">
     <li>Crea una cartella con il nome della tua scuola e della via
     (es. <code>bologna-manzoni/via-indipendenza/</code>).</li>
     <li>Copia il file <code>_template.html</code> nella cartella e rinominalo <code>index.html</code>.</li>
-    <li>Apri <code>index.html</code> con un editor di testo e sostituisci tutti
-    i testi scritti in MAIUSCOLO.</li>
+    <li>Apri <code>index.html</code> con un editor di testo (Blocco Note, TextEdit o simili)
+    e sostituisci tutti i testi scritti in MAIUSCOLO.</li>
     <li>Per aggiungere foto, audio e video: caricali con lo strumento
     <a href="carica-materiali.html"><strong>Carica materiali</strong></a>,
     copia l'URL che ottieni e sostituisci i blocchi
     <code>&lt;div class="gallery-placeholder"&gt;</code> con
     <code>&lt;img src="URL_COPIATO" alt="descrizione"&gt;</code>
     (vedi esempio qui sotto).</li>
-    <li>Non modificare la sezione dell'header (dal commento
-    <em>NON MODIFICARE</em> in poi): contiene la navigazione del sito.</li>
     <li>Invia la cartella completa secondo le istruzioni al punto 7.</li>
   </ol>
 
