@@ -711,7 +711,7 @@
   <section class="s-cta">
     <div class="container">
       <h2 class="sec-title">Porta Via Per Via nella tua scuola</h2>
-      <p>Scopri come funziona il progetto nel dettaglio, oppure guarda subito come appare il lavoro di uno studente.</p>
+      <p>Scopri come funziona il progetto nel dettaglio, oppure guarda subito come appare il lavoro di una classe.</p>
       <div class="cta-row">
         <button class="btn-white" onclick="showView('insegnanti')">👩‍🏫 Sono un insegnante e voglio saperne di più</button>
         <button class="btn-outline-white" onclick="showView('simulazione')">🔍 Mostrami una simulazione del progetto</button>
@@ -723,7 +723,7 @@
     <div class="footer-cta">
       <h3>Vuoi portare Via Per Via nella tua scuola?</h3>
       <p>Scrivi per ricevere il kit di avvio — con UDA per tutti gli ordini e gradi, <a href="starter-kit/guida-insegnanti.html">guida per insegnanti</a> e tutte le informazioni per aderire.</p>
-      <button class="footer-cta-btn">✉️ Scrivici</button>
+      <a href="mailto:viapervia.education@gmail.com" class="footer-cta-btn"><span class="env-c">✉️</span><span class="env-o">📮</span> Scrivici</a>
     </div>
     <div class="footer-bottom">
       <span class="footer-name">VIA PER VIA</span>
@@ -825,7 +825,7 @@
         <div class="contact-box">
           <h3>Vuoi portare Via Per Via nella tua scuola?</h3>
           <p>Scrivi per ricevere il kit di avvio — con UDA per tutti gli ordini e gradi, <a href="starter-kit/guida-insegnanti.html">guida per insegnanti</a> e tutte le informazioni per aderire.</p>
-          <button class="btn-contact">✉️ Scrivici</button>
+          <a href="mailto:viapervia.education@gmail.com" class="btn-contact"><span class="env-c">✉️</span><span class="env-o">📮</span> Scrivici</a>
         </div>
       </div>
     </div>
@@ -834,7 +834,7 @@
     <div class="footer-cta">
       <h3>Vuoi portare Via Per Via nella tua scuola?</h3>
       <p>Scrivi per ricevere il kit di avvio — con UDA per tutti gli ordini e gradi, <a href="starter-kit/guida-insegnanti.html">guida per insegnanti</a> e tutte le informazioni per aderire.</p>
-      <button class="footer-cta-btn">✉️ Scrivici</button>
+      <a href="mailto:viapervia.education@gmail.com" class="footer-cta-btn"><span class="env-c">✉️</span><span class="env-o">📮</span> Scrivici</a>
     </div>
     <div class="footer-bottom">
       <span class="footer-name">VIA PER VIA</span>
@@ -946,11 +946,23 @@
     </div><!-- browser-body -->
   </div><!-- browser-wrap -->
 
+  <!-- ── Visita una pagina reale ── -->
+  <div style="background:var(--cream);padding:3.5rem 2rem;text-align:center;border-top:1px solid var(--gray-light);">
+    <div class="container" style="max-width:540px;margin:0 auto;">
+      <span class="sec-label">Lavoro autentico</span>
+      <h3 style="font-family:'Playfair Display',serif;font-size:clamp(1.3rem,3vw,1.9rem);font-weight:700;color:var(--blue-dark);line-height:1.25;margin-bottom:0.8rem;">Vuoi vedere una pagina vera,<br>realizzata da una scuola?</h3>
+      <p style="color:var(--gray-mid);line-height:1.8;margin-bottom:1.75rem;font-size:0.95rem;">Non una simulazione: il risultato autentico del lavoro di una classe che ha partecipato al progetto.</p>
+      <button class="btn-primary" onclick="goToRandomSchoolPage()" style="font-size:0.85rem;">
+        Visita una pagina di una scuola →
+      </button>
+    </div>
+  </div>
+
   <footer>
     <div class="footer-cta">
       <h3>Vuoi portare Via Per Via nella tua scuola?</h3>
       <p>Scrivi per ricevere il kit di avvio — con UDA per tutti gli ordini e gradi, <a href="starter-kit/guida-insegnanti.html">guida per insegnanti</a> e tutte le informazioni per aderire.</p>
-      <button class="footer-cta-btn">✉️ Scrivici</button>
+      <a href="mailto:viapervia.education@gmail.com" class="footer-cta-btn"><span class="env-c">✉️</span><span class="env-o">📮</span> Scrivici</a>
     </div>
     <div class="footer-bottom">
       <span class="footer-name">VIA PER VIA</span>
@@ -1022,6 +1034,29 @@
   window.addEventListener('DOMContentLoaded', updateLayout);
   // also run immediately
   updateLayout();
+
+  /* ── Navigazione via hash (es. index.html#simulazione da pagine esterne) ── */
+  (function(){
+    const h = location.hash.replace('#','');
+    if (h && document.getElementById('view-' + h)) showView(h);
+  })();
+
+  /* ── Pagina casuale di una scuola partecipante ── */
+  function goToRandomSchoolPage() {
+    const pages = (window.VPV_SCUOLE || []).filter(s => s.pagina);
+    if (!pages.length) return;
+    const pick = pages[Math.floor(Math.random() * pages.length)];
+    window.location.href = pick.pagina;
+  }
 </script>
+<style>
+  /* Envelope swap on "Scrivici" hover */
+  .env-o { display:none; }
+  .footer-cta-btn:hover .env-o, .btn-contact:hover .env-o { display:inline; }
+  .footer-cta-btn:hover .env-c, .btn-contact:hover .env-c { display:none; }
+  a.footer-cta-btn, a.btn-contact { text-decoration:none; }
+</style>
+<script src="vpv-data.js"></script>
+<script src="vpv-search.js" data-root=""></script>
 </body>
 </html>

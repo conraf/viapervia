@@ -228,6 +228,10 @@
       transition:opacity 0.2s;
     }
     .footer-cta-btn:hover { opacity:0.88; }
+    .env-o { display:none; }
+    .footer-cta-btn:hover .env-o { display:inline; }
+    .footer-cta-btn:hover .env-c { display:none; }
+    a.footer-cta-btn { text-decoration:none; }
     .footer-bottom { padding:1.6rem 2rem; }
     .footer-name { font-family:'DM Sans',sans-serif; font-weight:700; font-size:0.9rem; color:white; letter-spacing:0.1em; display:inline; }
     .footer-sub2 { font-size:0.58rem; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-left:4px; display:inline; }
@@ -370,7 +374,7 @@
   <div class="footer-cta">
     <h3>Vuoi portare Via Per Via nella tua scuola?</h3>
     <p>Scrivi per ricevere il kit di avvio — con UDA per tutti gli ordini e gradi, <a href="starter-kit/guida-insegnanti.html">guida per insegnanti</a> e tutte le informazioni per aderire.</p>
-    <button class="footer-cta-btn">✉️ Scrivici</button>
+    <a href="mailto:viapervia.education@gmail.com" class="footer-cta-btn"><span class="env-c">✉️</span><span class="env-o">📮</span> Scrivici</a>
   </div>
   <div class="footer-bottom">
     <span class="footer-name">VIA PER VIA</span>
