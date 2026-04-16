@@ -470,19 +470,28 @@
     <li>Copia il file <code>_template.html</code> nella cartella e rinominalo <code>index.html</code>.</li>
     <li>Apri <code>index.html</code> con un editor di testo e sostituisci tutti
     i testi scritti in MAIUSCOLO.</li>
-    <li>Per aggiungere le foto: copia i file immagine nella stessa cartella
-    e sostituisci i blocchi <code>&lt;div class="gallery-placeholder"&gt;</code>
-    con <code>&lt;img src="nomefoto.jpg" alt="descrizione"&gt;</code>.</li>
+    <li>Per aggiungere foto, audio e video: caricali con lo strumento
+    <a href="carica-materiali.html"><strong>Carica materiali</strong></a>,
+    copia l'URL che ottieni e sostituisci i blocchi
+    <code>&lt;div class="gallery-placeholder"&gt;</code> con
+    <code>&lt;img src="URL_COPIATO" alt="descrizione"&gt;</code>
+    (vedi esempio qui sotto).</li>
     <li>Non modificare la sezione dell'header (dal commento
     <em>NON MODIFICARE</em> in poi): contiene la navigazione del sito.</li>
     <li>Invia la cartella completa secondo le istruzioni al punto 7.</li>
   </ol>
 
   <div class="callout callout-blue">
-    <div class="callout-title">Formato delle immagini</div>
-    <p>Preferisci file <strong>.jpg</strong> per le fotografie. Dimensione massima consigliata:
-    2 MB per immagine. Se hai foto scattate con smartphone, puoi ridimensionarle
-    gratuitamente su <code>squoosh.app</code>.</p>
+    <div class="callout-title">Esempio: come inserire una foto caricata</div>
+    <p>Dopo aver usato lo strumento <em>Carica materiali</em>, ricevi un URL come questo:</p>
+    <pre style="margin:0.6rem 0;padding:0.7rem 1rem;background:var(--cream);border-radius:6px;font-size:0.75rem;overflow-x:auto;line-height:1.6;color:var(--blue-dark);">https://res.cloudinary.com/dscnyoyaa/image/upload/w_1200,q_auto,f_auto/
+  v1234567890/viapervia/nome-scuola/nome-via/foto.jpg</pre>
+    <p>Nel file <code>index.html</code>, al posto del placeholder grigio, scrivi:</p>
+    <pre style="margin:0.6rem 0;padding:0.7rem 1rem;background:var(--cream);border-radius:6px;font-size:0.75rem;overflow-x:auto;line-height:1.6;color:var(--blue-dark);">&lt;div class="gallery-item"&gt;
+  &lt;img src="https://res.cloudinary.com/..." alt="Targa di Via Pietro Micca"&gt;
+&lt;/div&gt;</pre>
+    <p>Le immagini vengono ridimensionate automaticamente a 1200&nbsp;px di larghezza e
+    ottimizzate per il web: non è necessario modificarle prima del caricamento.</p>
   </div>
 </section>
 
