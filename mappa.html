@@ -391,7 +391,7 @@ scuole.forEach(s => {
 
 function buildPopup(s) {
   const viaHtml = s.pagina
-    ? `📍 Via documentata: <a href="${s.pagina}" target="_blank" rel="noopener"><span>${s.via}</span> →</a>`
+    ? `📍 Via documentata: <a href="${s.pagina}"><span>${s.via}</span> →</a>`
     : `📍 Via documentata: <span>${s.via}</span>`;
   return `
     <div class="popup-inner">
