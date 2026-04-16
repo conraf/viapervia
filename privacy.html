@@ -7,100 +7,8 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Privacy Policy · Via Per Via Education</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vpv.css">
   <style>
-    :root {
-      --blue-dark:   #0A2A40;
-      --blue-main:   #0B6E9E;
-      --blue-mid:    #4A9EC8;
-      --blue-light:  #7ABCE0;
-      --blue-pale:   #CCE8F8;
-      --amber:       #D4801A;
-      --amber-light: #FFF5E0;
-      --cream:       #F0F7FF;
-      --gray-dark:   #222222;
-      --gray-mid:    #666666;
-      --gray-light:  #E0DBD0;
-      --white:       #FFFFFF;
-      --coral:       #C75A3A;
-    }
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body {
-      font-family:'DM Sans',sans-serif;
-      background:var(--cream); color:var(--gray-dark);
-      overflow-x:hidden; line-height:1.6;
-    }
-
-    /* HEADER */
-    header {
-      position:fixed; top:0; left:0; right:0; z-index:260;
-      background:rgba(240,247,255,0.94); backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--gray-light);
-      padding:0.65rem 2.5rem;
-      display:flex; align-items:center; justify-content:space-between;
-    }
-    .logo-wrap {
-      display:flex; align-items:center; gap:0.75rem;
-      text-decoration:none;
-    }
-    .logo-img { height:50px; width:auto; display:block; filter:drop-shadow(0 2px 8px rgba(10,42,64,0.22)); }
-    .logo-text { display:flex; flex-direction:column; line-height:1.2; }
-    .logo-text .logo-name { font-size:0.82rem; font-weight:700; letter-spacing:0.08em; color:var(--blue-dark); text-transform:uppercase; }
-    .logo-text .logo-tagline { font-size:0.6rem; color:var(--blue-mid); letter-spacing:0.06em; font-weight:500; }
-    nav { display:flex; gap:1.8rem; align-items:center; }
-    nav a {
-      font-size:0.82rem; font-weight:500; color:var(--gray-mid);
-      text-decoration:none; cursor:pointer; transition:color 0.2s;
-    }
-    nav a:hover { color:var(--blue-main); }
-    .nav-cta {
-      background:var(--blue-main) !important; color:white !important;
-      padding:0.45rem 1.1rem !important; border-radius:100px;
-      transition:background 0.2s !important;
-    }
-    .nav-cta:hover { background:var(--blue-dark) !important; }
-
-    /* HAMBURGER + MOBILE MENU */
-    .hamburger {
-      display:none; flex-direction:column; justify-content:center;
-      gap:5px; cursor:pointer; padding:6px; background:none; border:none;
-      z-index:300; -webkit-tap-highlight-color:transparent;
-    }
-    .hamburger span {
-      display:block; width:24px; height:2px;
-      background:var(--blue-dark); border-radius:2px;
-      transition:all 0.3s ease;
-    }
-    .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
-    .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-
-    .mobile-menu {
-      display:none; position:fixed; inset:0; z-index:250;
-      background:rgba(240,247,255,0.98); backdrop-filter:blur(16px);
-      flex-direction:column; align-items:center; justify-content:center;
-      gap:0; padding:2rem;
-    }
-    .mobile-menu.open { display:flex; animation:fadeIn 0.25s ease; }
-    .mobile-menu a {
-      font-family:'DM Sans',sans-serif; font-size:1.4rem; font-weight:600;
-      color:var(--blue-dark); text-decoration:none;
-      padding:1rem 0; width:100%; text-align:center;
-      border-bottom:1px solid rgba(11,110,158,0.1);
-      transition:color 0.2s;
-    }
-    .mobile-menu a:last-child { border-bottom:none; }
-    .mobile-menu a:hover { color:var(--blue-main); }
-    .mobile-menu-cta {
-      margin-top:1.5rem !important; background:var(--blue-main) !important;
-      color:white !important; border-radius:10px !important;
-      border-bottom:none !important; padding:1rem 2rem !important;
-      width:auto !important;
-    }
-    .mobile-menu-cta:hover { background:var(--blue-dark) !important; color:white !important; }
-
-    @keyframes fadeIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
-
     /* PAGE */
     .page-wrap {
       max-width:780px; margin:0 auto;
@@ -199,51 +107,7 @@
       font-style:italic;
     }
 
-    /* FOOTER */
-    footer {
-      background:var(--blue-dark); color:rgba(255,255,255,0.5);
-      text-align:center;
-    }
-    .footer-cta {
-      padding:3rem 2rem 2.5rem;
-      border-bottom:1px solid rgba(255,255,255,0.1);
-    }
-    .footer-cta h3 {
-      font-family:'Playfair Display',serif;
-      font-size:1.25rem; color:white;
-      margin-bottom:0.55rem; font-weight:500;
-    }
-    .footer-cta p {
-      font-size:0.82rem; color:rgba(255,255,255,0.6);
-      line-height:1.7; max-width:480px; margin:0 auto 1.4rem;
-    }
-    a[href="starter-kit/guida-insegnanti.html"] { color:rgba(255,255,255,0.5); text-decoration:none; transition:color 0.2s; }
-    a[href="starter-kit/guida-insegnanti.html"]:hover { color:white; }
-    .footer-cta-btn {
-      display:inline-block;
-      background:var(--coral); color:white;
-      border:none; border-radius:10px;
-      padding:0.65rem 1.6rem; font-size:0.85rem;
-      font-family:'DM Sans',sans-serif; font-weight:600;
-      cursor:pointer; letter-spacing:0.02em;
-      transition:opacity 0.2s;
-    }
-    .footer-cta-btn:hover { opacity:0.88; }
-    .env-o { display:none; }
-    .footer-cta-btn:hover .env-o { display:inline; }
-    .footer-cta-btn:hover .env-c { display:none; }
-    a.footer-cta-btn { text-decoration:none; }
-    .footer-bottom { padding:1.6rem 2rem; }
-    .footer-name { font-family:'DM Sans',sans-serif; font-weight:700; font-size:0.9rem; color:white; letter-spacing:0.1em; display:inline; }
-    .footer-sub2 { font-size:0.58rem; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-left:4px; display:inline; }
-    .footer-links { display:flex; gap:1.8rem; justify-content:center; margin:1rem 0 0.8rem; flex-wrap:wrap; }
-    .footer-links a { font-size:0.76rem; color:rgba(255,255,255,0.5); text-decoration:none; cursor:pointer; transition:color 0.2s; }
-    .footer-links a:hover { color:white; }
-    .footer-links a.footer-active { color:white; font-weight:600; }
-    .footer-copy { font-size:0.68rem; margin-top:0.6rem; color:rgba(255,255,255,0.28); }
-
     @media (max-width:768px) {
-      header { padding:0.65rem 1.2rem; }
       .page-wrap { padding:5rem 1.2rem 3rem; }
       .privacy-section { grid-template-columns:2rem 1fr; gap:0 0.9rem; }
       .section-num { font-size:1.1rem; }
@@ -377,7 +241,7 @@
 </main>
 
 <!-- FOOTER -->
-<footer>
+<footer class="site-footer">
   <div class="footer-cta">
     <h3>Vuoi portare Via Per Via nella tua scuola?</h3>
     <p>Scrivi per ricevere il kit di avvio — con UDA per tutti gli ordini e gradi, <a href="starter-kit/guida-insegnanti.html">guida per insegnanti</a> e tutte le informazioni per aderire.</p>
@@ -391,7 +255,7 @@
       <a href="index.html">Per gli insegnanti</a>
       <a href="index.html">Simulazione</a>
       <a href="mappa.html">Mappa</a>
-      <a href="index.html">Contatti</a>
+      <a href="mailto:viapervia.education@gmail.com">Contatti</a>
       <a href="privacy.html" class="footer-active">Privacy</a>
     </div>
     <p class="footer-copy">© 2026 Via Per Via Education · Progetto didattico per le scuole italiane · www.viapervia.education</p>

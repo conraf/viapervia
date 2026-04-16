@@ -7,63 +7,11 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Mappa delle scuole · Via Per Via Education</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vpv.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <style>
-    :root {
-      --blue-dark:   #0A2A40;
-      --blue-main:   #0B6E9E;
-      --blue-mid:    #4A9EC8;
-      --blue-light:  #7ABCE0;
-      --blue-pale:   #CCE8F8;
-      --amber:       #D4801A;
-      --amber-light: #FFF5E0;
-      --cream:       #F0F7FF;
-      --gray-dark:   #222222;
-      --gray-mid:    #666666;
-      --gray-light:  #E0DBD0;
-      --white:       #FFFFFF;
-      --coral:       #C75A3A;
-      --header-h:    71px;
-    }
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    /* override: mappa occupa tutto lo schermo */
     html, body { height:100%; overflow:hidden; }
-    body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--gray-dark); }
-
-    /* ── HEADER ── */
-    header {
-      position:fixed; top:0; left:0; right:0; z-index:600;
-      background:rgba(240,247,255,0.94); backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--gray-light);
-      padding:0.65rem 2.5rem;
-      display:flex; align-items:center; justify-content:space-between;
-    }
-    .logo-wrap { display:flex; align-items:center; gap:0.75rem; text-decoration:none; }
-    .logo-img { height:50px; width:auto; display:block; filter:drop-shadow(0 2px 8px rgba(10,42,64,0.22)); }
-    .logo-text { display:flex; flex-direction:column; line-height:1.2; }
-    .logo-text .logo-name { font-size:0.82rem; font-weight:700; letter-spacing:0.08em; color:var(--blue-dark); text-transform:uppercase; }
-    .logo-text .logo-tagline { font-size:0.6rem; color:var(--blue-mid); letter-spacing:0.06em; font-weight:500; }
-    nav { display:flex; gap:1.8rem; align-items:center; }
-    nav a { font-size:0.82rem; font-weight:500; color:var(--gray-mid); text-decoration:none; cursor:pointer; transition:color 0.2s; }
-    nav a:hover { color:var(--blue-main); }
-    nav a.nav-active { color:var(--blue-main); }
-    .nav-cta { background:var(--blue-main) !important; color:white !important; padding:0.45rem 1.1rem !important; border-radius:100px; transition:background 0.2s !important; }
-    .nav-cta:hover { background:var(--blue-dark) !important; }
-
-    /* ── HAMBURGER ── */
-    .hamburger { display:none; flex-direction:column; justify-content:center; gap:5px; cursor:pointer; padding:6px; background:none; border:none; z-index:700; -webkit-tap-highlight-color:transparent; }
-    .hamburger span { display:block; width:24px; height:2px; background:var(--blue-dark); border-radius:2px; transition:all 0.3s ease; }
-    .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
-    .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-    .mobile-menu { display:none; position:fixed; inset:0; z-index:650; background:rgba(240,247,255,0.98); backdrop-filter:blur(16px); flex-direction:column; align-items:center; justify-content:center; gap:0; padding:2rem; }
-    .mobile-menu.open { display:flex; animation:fadeIn 0.25s ease; }
-    .mobile-menu a { font-family:'DM Sans',sans-serif; font-size:1.4rem; font-weight:600; color:var(--blue-dark); text-decoration:none; padding:1rem 0; width:100%; text-align:center; border-bottom:1px solid rgba(11,110,158,0.1); transition:color 0.2s; }
-    .mobile-menu a:last-child { border-bottom:none; }
-    .mobile-menu a:hover { color:var(--blue-main); }
-    .mobile-menu-cta { margin-top:1.5rem !important; background:var(--blue-main) !important; color:white !important; border-radius:10px !important; border-bottom:none !important; padding:1rem 2rem !important; width:auto !important; }
-    .mobile-menu-cta:hover { background:var(--blue-dark) !important; color:white !important; }
-
-    @keyframes fadeIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
 
     /* ── LAYOUT ── */
     .map-page {
@@ -253,7 +201,6 @@
     }
 
     @media (max-width:768px) {
-      header { padding:0 1.2rem; }
       .map-page { flex-direction:column; }
       .sidebar {
         position:fixed; bottom:0; left:0; right:0; top:auto;
