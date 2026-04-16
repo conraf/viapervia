@@ -543,7 +543,8 @@ function uploadOne(file, folder, onProgress) {
     xhr.upload.onprogress = e => { if (e.lengthComputable) onProgress(Math.round(e.loaded / e.total * 100)); };
     xhr.onload = () => {
       if (xhr.status === 200) {
-        resolve(JSON.parse(xhr.responseText).secure_url);
+        const data = JSON.parse(xhr.responseText);
+        resolve(optimizeUrl(data.secure_url, file.type));
       } else {
         let msg = 'Upload fallito';
         try { msg = JSON.parse(xhr.responseText).error.message; } catch(e){}
@@ -555,14 +556,37 @@ function uploadOne(file, folder, onProgress) {
   });
 }
 
+/* ── OTTIMIZZAZIONE URL IMMAGINI ── */
+function optimizeUrl(url, fileType) {
+  if (fileType.startsWith('image/')) {
+    return url.replace('/upload/', '/upload/w_1200,q_auto,f_auto/');
+  }
+  return url;
+}
+
 /* ── COPIA URL ── */
 function copyUrl(idx, btn) {
-  const url = document.getElementById(`url-${idx}`).textContent;
-  navigator.clipboard.writeText(url).then(() => {
+  const url = document.getElementById(`url-${idx}`).textContent.trim();
+  const doFeedback = () => {
     btn.textContent = 'Copiato ✓';
     btn.classList.add('copied');
     setTimeout(() => { btn.textContent = 'Copia URL'; btn.classList.remove('copied'); }, 2000);
-  });
+  };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(url).then(doFeedback).catch(() => fallbackCopy(url, doFeedback));
+  } else {
+    fallbackCopy(url, doFeedback);
+  }
+}
+function fallbackCopy(text, callback) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  try { document.execCommand('copy'); callback(); } catch(e) { alert('Copia manuale: ' + text); }
+  document.body.removeChild(ta);
 }
 </script>
 
