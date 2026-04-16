@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <title>Carica materiali · Via Per Via Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue-dark:   #0A2A40;
+      --blue-main:   #0B6E9E;
+      --blue-mid:    #4A9EC8;
+      --blue-light:  #7ABCE0;
+      --blue-pale:   #CCE8F8;
+      --amber:       #D4801A;
+      --amber-light: #FFF5E0;
+      --cream:       #F0F7FF;
+      --gray-dark:   #222222;
+      --gray-mid:    #666666;
+      --gray-light:  #E0DBD0;
+      --white:       #FFFFFF;
+      --coral:       #C75A3A;
+      --green:       #2E7D32;
+      --green-light: #E8F5E9;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family:'DM Sans',sans-serif;
+      background:var(--cream); color:var(--gray-dark);
+      overflow-x:hidden; line-height:1.6;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position:fixed; top:0; left:0; right:0; z-index:260;
+      background:rgba(240,247,255,0.94); backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--gray-light);
+      padding:0.65rem 2.5rem;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .logo-wrap { display:flex; align-items:center; gap:0.75rem; text-decoration:none; }
+    .logo-img { height:50px; width:auto; display:block; filter:drop-shadow(0 2px 8px rgba(10,42,64,0.22)); }
+    .logo-text { display:flex; flex-direction:column; line-height:1.2; }
+    .logo-name { font-size:0.82rem; font-weight:700; letter-spacing:0.08em; color:var(--blue-dark); text-transform:uppercase; }
+    .logo-tagline { font-size:0.6rem; color:var(--blue-mid); letter-spacing:0.06em; font-weight:500; }
+    nav { display:flex; gap:1.8rem; align-items:center; }
+    nav a { font-size:0.82rem; font-weight:500; color:var(--gray-mid); text-decoration:none; transition:color 0.2s; }
+    nav a:hover { color:var(--blue-main); }
+    .nav-cta {
+      background:var(--blue-main) !important; color:white !important;
+      padding:0.45rem 1.1rem !important; border-radius:100px;
+      transition:background 0.2s !important;
+    }
+    .nav-cta:hover { background:var(--blue-dark) !important; }
+    .hamburger {
+      display:none; flex-direction:column; justify-content:center;
+      gap:5px; cursor:pointer; padding:6px; background:none; border:none;
+      z-index:300; -webkit-tap-highlight-color:transparent;
+    }
+    .hamburger span { display:block; width:24px; height:2px; background:var(--blue-dark); border-radius:2px; transition:all 0.3s ease; }
+    .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display:none; position:fixed; inset:0; z-index:250;
+      background:rgba(240,247,255,0.98); backdrop-filter:blur(16px);
+      flex-direction:column; align-items:center; justify-content:center;
+      gap:0; padding:2rem;
+    }
+    .mobile-menu.open { display:flex; animation:fadeIn 0.25s ease; }
+    .mobile-menu a {
+      font-family:'DM Sans',sans-serif; font-size:1.4rem; font-weight:600;
+      color:var(--blue-dark); text-decoration:none;
+      padding:1rem 0; width:100%; text-align:center;
+      border-bottom:1px solid rgba(11,110,158,0.1); transition:color 0.2s;
+    }
+    .mobile-menu a:last-child { border-bottom:none; }
+    .mobile-menu a:hover { color:var(--blue-main); }
+    .mobile-menu-cta {
+      margin-top:1.5rem !important; background:var(--blue-main) !important;
+      color:white !important; border-radius:10px !important;
+      border-bottom:none !important; padding:1rem 2rem !important; width:auto !important;
+    }
+    .mobile-menu-cta:hover { background:var(--blue-dark) !important; color:white !important; }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+    /* ── LAYOUT ── */
+    .page-wrap {
+      max-width:680px; margin:0 auto;
+      padding:7rem 2rem 5rem;
+    }
+
+    /* ── HERO ── */
+    .upload-hero { margin-bottom:2.5rem; }
+    .sec-label {
+      display:inline-block; font-size:0.68rem; font-weight:700;
+      letter-spacing:0.22em; text-transform:uppercase;
+      color:var(--blue-main); margin-bottom:0.8rem;
+    }
+    .upload-hero h1 {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.6rem,4vw,2.2rem); font-weight:700;
+      color:var(--blue-dark); line-height:1.25; margin-bottom:0.75rem;
+    }
+    .upload-hero p { font-size:0.9rem; color:var(--gray-mid); line-height:1.8; }
+
+    /* ── CARD ── */
+    .card {
+      background:white; border-radius:16px;
+      border:1px solid var(--gray-light);
+      padding:1.75rem 2rem; margin-bottom:1.25rem;
+    }
+    .card-title {
+      font-size:0.68rem; font-weight:700; letter-spacing:0.18em;
+      text-transform:uppercase; color:var(--blue-main);
+      margin-bottom:1.1rem;
+    }
+
+    /* ── FORM FIELDS ── */
+    .field { margin-bottom:1rem; }
+    .field:last-child { margin-bottom:0; }
+    .field label {
+      display:block; font-size:0.78rem; font-weight:600;
+      color:var(--blue-dark); margin-bottom:0.35rem;
+    }
+    .field input[type="text"] {
+      width:100%; padding:0.6rem 0.9rem;
+      border:1.5px solid var(--gray-light); border-radius:8px;
+      font-family:'DM Sans',sans-serif; font-size:0.88rem;
+      color:var(--gray-dark); background:var(--cream);
+      transition:border-color 0.2s, box-shadow 0.2s;
+      outline:none;
+    }
+    .field input[type="text"]:focus {
+      border-color:var(--blue-main);
+      box-shadow:0 0 0 3px rgba(11,110,158,0.1);
+    }
+    .field-hint {
+      font-size:0.72rem; color:var(--gray-mid);
+      margin-top:0.3rem; line-height:1.5;
+    }
+
+    /* ── DROP ZONE ── */
+    .drop-zone {
+      border:2px dashed var(--blue-light); border-radius:12px;
+      background:var(--cream); padding:2.5rem 1.5rem;
+      text-align:center; cursor:pointer;
+      transition:border-color 0.2s, background 0.2s;
+      position:relative;
+    }
+    .drop-zone:hover, .drop-zone.drag-over {
+      border-color:var(--blue-main);
+      background:rgba(11,110,158,0.04);
+    }
+    .drop-zone input[type="file"] {
+      position:absolute; inset:0; opacity:0; cursor:pointer; width:100%; height:100%;
+    }
+    .drop-icon { font-size:2.2rem; margin-bottom:0.6rem; display:block; }
+    .drop-label {
+      font-size:0.88rem; font-weight:600; color:var(--blue-dark);
+      margin-bottom:0.3rem;
+    }
+    .drop-sub { font-size:0.76rem; color:var(--gray-mid); }
+
+    /* ── FILE LIST ── */
+    .file-list { margin-top:1rem; display:flex; flex-direction:column; gap:0.5rem; }
+    .file-item {
+      display:flex; align-items:center; gap:0.75rem;
+      background:var(--cream); border-radius:8px;
+      padding:0.6rem 0.9rem; font-size:0.82rem;
+    }
+    .file-icon { font-size:1.2rem; flex-shrink:0; }
+    .file-name { flex:1; color:var(--gray-dark); font-weight:500; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .file-size { color:var(--gray-mid); font-size:0.74rem; flex-shrink:0; }
+    .file-remove {
+      background:none; border:none; cursor:pointer;
+      color:var(--gray-mid); font-size:1rem; padding:0 0.2rem;
+      line-height:1; transition:color 0.2s;
+    }
+    .file-remove:hover { color:var(--coral); }
+
+    /* ── UPLOAD BUTTON ── */
+    .btn-upload {
+      width:100%; padding:0.85rem 1.5rem;
+      background:var(--blue-main); color:white;
+      border:none; border-radius:10px;
+      font-family:'DM Sans',sans-serif; font-size:0.92rem; font-weight:600;
+      cursor:pointer; letter-spacing:0.02em;
+      transition:background 0.2s, opacity 0.2s;
+    }
+    .btn-upload:hover:not(:disabled) { background:var(--blue-dark); }
+    .btn-upload:disabled { opacity:0.5; cursor:not-allowed; }
+
+    /* ── PROGRESS ── */
+    .progress-bar-wrap {
+      height:6px; background:var(--blue-pale);
+      border-radius:100px; margin-top:0.6rem; overflow:hidden;
+    }
+    .progress-bar {
+      height:100%; background:var(--blue-main);
+      border-radius:100px; width:0%;
+      transition:width 0.3s ease;
+    }
+
+    /* ── RESULTS ── */
+    .results { display:flex; flex-direction:column; gap:1rem; }
+    .result-item {
+      background:white; border-radius:12px;
+      border:1px solid var(--gray-light); padding:1.25rem 1.5rem;
+    }
+    .result-item.success { border-left:4px solid var(--green); }
+    .result-item.error { border-left:4px solid var(--coral); }
+    .result-header {
+      display:flex; align-items:center; gap:0.6rem;
+      margin-bottom:0.75rem;
+    }
+    .result-icon { font-size:1.3rem; }
+    .result-filename { font-weight:600; font-size:0.88rem; color:var(--blue-dark); flex:1; }
+    .result-status { font-size:0.75rem; font-weight:600; }
+    .result-status.ok { color:var(--green); }
+    .result-status.err { color:var(--coral); }
+    .result-url-wrap {
+      display:flex; gap:0.5rem; align-items:stretch;
+    }
+    .result-url {
+      flex:1; padding:0.5rem 0.75rem;
+      background:var(--cream); border:1px solid var(--blue-pale);
+      border-radius:6px; font-size:0.74rem; color:var(--gray-mid);
+      font-family:monospace; word-break:break-all; line-height:1.5;
+    }
+    .btn-copy {
+      padding:0.5rem 1rem; background:var(--blue-pale);
+      border:none; border-radius:6px; cursor:pointer;
+      font-family:'DM Sans',sans-serif; font-size:0.78rem;
+      font-weight:600; color:var(--blue-dark);
+      transition:background 0.2s; white-space:nowrap; flex-shrink:0;
+    }
+    .btn-copy:hover { background:var(--blue-light); color:white; }
+    .btn-copy.copied { background:var(--green); color:white; }
+
+    /* ── NOTICE ── */
+    .notice {
+      background:var(--amber-light); border-left:4px solid var(--amber);
+      border-radius:0 8px 8px 0; padding:0.9rem 1.1rem;
+      font-size:0.82rem; color:#7A4A0A; line-height:1.6;
+      margin-bottom:1.25rem;
+    }
+    .notice strong { color:var(--amber); }
+
+    /* ── FOOTER ── */
+    footer {
+      background:var(--blue-dark); color:rgba(255,255,255,0.5);
+      text-align:center; padding:2rem;
+      font-size:0.76rem; margin-top:4rem;
+    }
+    footer a { color:rgba(255,255,255,0.5); text-decoration:none; transition:color 0.2s; }
+    footer a:hover { color:white; }
+
+    @media(max-width:768px) {
+      header { padding:0.65rem 1.2rem; }
+      .page-wrap { padding:5.5rem 1.2rem 3rem; }
+      .card { padding:1.4rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <a href="../index.html">Il progetto</a>
+  <a href="guida-insegnanti.html">Per gli insegnanti</a>
+  <a href="../mappa.html">Mappa</a>
+  <a class="mobile-menu-cta" href="../index.html#simulazione">Simulazione →</a>
+</div>
+
+<header>
+  <a class="logo-wrap" href="../index.html">
+    <img class="logo-img" src="../ViaPerViaLogo-400.png" alt="Via Per Via Education">
+    <div class="logo-text">
+      <span class="logo-name">Via Per Via</span>
+      <span class="logo-tagline">progetto educativo</span>
+    </div>
+  </a>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html">Il progetto</a>
+    <a href="guida-insegnanti.html">Per gli insegnanti</a>
+    <a href="../mappa.html">Mappa</a>
+    <a href="../index.html#simulazione" class="nav-cta">Simulazione →</a>
+  </nav>
+  <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main class="page-wrap">
+
+  <div class="upload-hero">
+    <span class="sec-label">Strumenti per gli insegnanti</span>
+    <h1>Carica i materiali<br>della tua classe</h1>
+    <p>Foto, audio e video vengono caricati su un server dedicato e ti viene fornito l'URL da incollare nella pagina della via. Nessuna installazione richiesta.</p>
+  </div>
+
+  <div class="notice">
+    <strong>Come funziona:</strong> compila i campi qui sotto, seleziona i file e clicca "Carica". Al termine copia gli URL e incollali nel file <code>index.html</code> della tua via, sostituendo i placeholder della galleria.
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="card">
+    <div class="card-title">1 · Dati della scuola</div>
+    <div class="field">
+      <label for="inputScuola">Nome della scuola</label>
+      <input type="text" id="inputScuola" placeholder="es. IC Carducci – De Amicis, Torino">
+      <p class="field-hint">Verrà usato per organizzare i file nella cartella corretta.</p>
+    </div>
+    <div class="field">
+      <label for="inputVia">Via o piazza documentata</label>
+      <input type="text" id="inputVia" placeholder="es. Via Pietro Micca">
+      <p class="field-hint">Inserisci il nome esatto come appare nella pagina della via.</p>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="card">
+    <div class="card-title">2 · Seleziona i file</div>
+    <div class="drop-zone" id="dropZone">
+      <input type="file" id="fileInput" multiple accept="image/*,audio/*,video/*">
+      <span class="drop-icon">📂</span>
+      <p class="drop-label">Trascina i file qui oppure clicca per selezionarli</p>
+      <p class="drop-sub">Immagini, audio e video · Più file contemporaneamente</p>
+    </div>
+    <div class="file-list" id="fileList"></div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="card">
+    <div class="card-title">3 · Carica</div>
+    <button class="btn-upload" id="btnUpload" onclick="startUpload()">
+      Carica i file →
+    </button>
+  </div>
+
+  <!-- RISULTATI -->
+  <div id="resultsSection" style="display:none;">
+    <div style="margin-bottom:1rem;">
+      <span class="sec-label">URL dei file caricati</span>
+    </div>
+    <div class="results" id="resultsList"></div>
+  </div>
+
+</main>
+
+<footer>
+  <p>
+    <a href="../index.html">Via Per Via Education</a> ·
+    <a href="guida-insegnanti.html">Guida per gli insegnanti</a> ·
+    <a href="../mappa.html">Mappa delle scuole</a>
+  </p>
+  <p style="margin-top:0.5rem;font-size:0.68rem;opacity:0.5;">
+    I file vengono caricati su Cloudinary — servizio sicuro di hosting multimediale.
+  </p>
+</footer>
+
+<script>
+const CLOUD_NAME    = 'dscnyoyaa';
+const UPLOAD_PRESET = 'viapervia-upload';
+
+let selectedFiles = [];
+
+/* ── HAMBURGER ── */
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const btn  = document.getElementById('hamburgerBtn');
+  const open = menu.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+const BREAKPOINT = 768;
+function updateLayout() {
+  const nav  = document.querySelector('header nav');
+  const btn  = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('mobileMenu');
+  if (!nav || !btn) return;
+  if (window.innerWidth <= BREAKPOINT) {
+    nav.style.display = 'none';
+    btn.style.display = 'flex';
+  } else {
+    nav.style.display = 'flex';
+    btn.style.display = 'none';
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+window.addEventListener('resize', updateLayout);
+window.addEventListener('DOMContentLoaded', updateLayout);
+updateLayout();
+
+/* ── SLUG ── */
+function slugify(s) {
+  return s.trim().toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+/* ── FILE ICON ── */
+function fileIcon(type) {
+  if (type.startsWith('image/')) return '🖼️';
+  if (type.startsWith('audio/')) return '🎵';
+  if (type.startsWith('video/')) return '🎬';
+  return '📄';
+}
+
+/* ── FILE SIZE ── */
+function formatSize(bytes) {
+  if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(0) + ' KB';
+  return (bytes / 1024 / 1024).toFixed(1) + ' MB';
+}
+
+/* ── DROP ZONE ── */
+const dropZone  = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', ()=> dropZone.classList.remove('drag-over'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropZone.classList.remove('drag-over');
+  addFiles(Array.from(e.dataTransfer.files));
+});
+fileInput.addEventListener('change', () => {
+  addFiles(Array.from(fileInput.files));
+  fileInput.value = '';
+});
+
+function addFiles(files) {
+  files.forEach(f => {
+    if (!selectedFiles.find(x => x.name === f.name && x.size === f.size)) {
+      selectedFiles.push(f);
+    }
+  });
+  renderFileList();
+}
+
+function removeFile(idx) {
+  selectedFiles.splice(idx, 1);
+  renderFileList();
+}
+
+function renderFileList() {
+  const list = document.getElementById('fileList');
+  if (!selectedFiles.length) { list.innerHTML = ''; return; }
+  list.innerHTML = selectedFiles.map((f, i) => `
+    <div class="file-item">
+      <span class="file-icon">${fileIcon(f.type)}</span>
+      <span class="file-name">${f.name}</span>
+      <span class="file-size">${formatSize(f.size)}</span>
+      <button class="file-remove" onclick="removeFile(${i})" title="Rimuovi">✕</button>
+    </div>
+  `).join('');
+}
+
+/* ── UPLOAD ── */
+async function startUpload() {
+  const scuola = document.getElementById('inputScuola').value.trim();
+  const via    = document.getElementById('inputVia').value.trim();
+
+  if (!scuola || !via) {
+    alert('Inserisci il nome della scuola e della via prima di caricare.');
+    return;
+  }
+  if (!selectedFiles.length) {
+    alert('Seleziona almeno un file da caricare.');
+    return;
+  }
+
+  const folder = `viapervia/${slugify(scuola)}/${slugify(via)}`;
+  const btn    = document.getElementById('btnUpload');
+  btn.disabled = true;
+  btn.textContent = 'Caricamento in corso…';
+
+  const section = document.getElementById('resultsSection');
+  const list    = document.getElementById('resultsList');
+  section.style.display = 'block';
+  list.innerHTML = '';
+
+  for (let i = 0; i < selectedFiles.length; i++) {
+    const file = selectedFiles[i];
+    list.innerHTML += `
+      <div class="result-item" id="result-${i}">
+        <div class="result-header">
+          <span class="result-icon">${fileIcon(file.type)}</span>
+          <span class="result-filename">${file.name}</span>
+          <span class="result-status" id="status-${i}">In caricamento…</span>
+        </div>
+        <div class="progress-bar-wrap"><div class="progress-bar" id="bar-${i}"></div></div>
+      </div>`;
+    section.scrollIntoView({ behavior:'smooth', block:'nearest' });
+
+    try {
+      const url = await uploadOne(file, folder, pct => {
+        document.getElementById(`bar-${i}`).style.width = pct + '%';
+      });
+      const item   = document.getElementById(`result-${i}`);
+      const status = document.getElementById(`status-${i}`);
+      item.classList.add('success');
+      status.className = 'result-status ok';
+      status.textContent = 'Caricato ✓';
+      item.querySelector('.progress-bar-wrap').remove();
+      item.innerHTML += `
+        <div class="result-url-wrap">
+          <div class="result-url" id="url-${i}">${url}</div>
+          <button class="btn-copy" onclick="copyUrl(${i}, this)">Copia URL</button>
+        </div>`;
+    } catch (err) {
+      const item   = document.getElementById(`result-${i}`);
+      const status = document.getElementById(`status-${i}`);
+      item.classList.add('error');
+      status.className = 'result-status err';
+      status.textContent = 'Errore ✗';
+      item.querySelector('.progress-bar-wrap').remove();
+      item.innerHTML += `<p style="font-size:0.8rem;color:var(--coral);margin-top:0.4rem">${err.message}</p>`;
+    }
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Carica altri file →';
+  selectedFiles = [];
+  renderFileList();
+}
+
+function uploadOne(file, folder, onProgress) {
+  return new Promise((resolve, reject) => {
+    const fd = new FormData();
+    fd.append('file', file);
+    fd.append('upload_preset', UPLOAD_PRESET);
+    fd.append('folder', folder);
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/auto/upload`);
+    xhr.upload.onprogress = e => { if (e.lengthComputable) onProgress(Math.round(e.loaded / e.total * 100)); };
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        resolve(JSON.parse(xhr.responseText).secure_url);
+      } else {
+        let msg = 'Upload fallito';
+        try { msg = JSON.parse(xhr.responseText).error.message; } catch(e){}
+        reject(new Error(msg));
+      }
+    };
+    xhr.onerror = () => reject(new Error('Errore di rete. Verifica la connessione.'));
+    xhr.send(fd);
+  });
+}
+
+/* ── COPIA URL ── */
+function copyUrl(idx, btn) {
+  const url = document.getElementById(`url-${idx}`).textContent;
+  navigator.clipboard.writeText(url).then(() => {
+    btn.textContent = 'Copiato ✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copia URL'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>
+
+<script src="../vpv-data.js"></script>
+<script src="../vpv-search.js" data-root="../"></script>
+
+</body>
+</html>
