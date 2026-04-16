@@ -204,7 +204,7 @@
       margin: 1rem 0;
     }
 
-    /* footer */
+    /* doc-footer */
     .doc-footer {
       margin-top: 4rem;
       padding-top: 1.5rem;
@@ -213,6 +213,50 @@
       display: flex; justify-content: space-between; align-items: center;
     }
     .doc-footer strong { color: var(--blue-dark); }
+
+    /* site footer */
+    .site-footer {
+      background: var(--blue-dark); color: rgba(255,255,255,0.5);
+      text-align: center;
+      width: 100vw; position: relative; left: 50%; margin-left: -50vw;
+      margin-top: 3rem;
+    }
+    .site-footer .footer-cta {
+      padding: 3rem 2rem 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .site-footer .footer-cta h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; color: white;
+      margin-bottom: 0.55rem; font-weight: 500;
+    }
+    .site-footer .footer-cta p {
+      font-size: 0.82rem; color: rgba(255,255,255,0.6);
+      line-height: 1.7; max-width: 480px; margin: 0 auto 1.4rem;
+    }
+    .site-footer .footer-cta p a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+    .site-footer .footer-cta p a:hover { color: white; }
+    .site-footer .footer-cta-btn {
+      display: inline-block;
+      background: var(--coral); color: white;
+      border: none; border-radius: 10px;
+      padding: 0.65rem 1.6rem; font-size: 0.85rem;
+      font-family: 'DM Sans', sans-serif; font-weight: 600;
+      cursor: pointer; letter-spacing: 0.02em;
+      text-decoration: none; transition: opacity 0.2s;
+    }
+    .site-footer .footer-cta-btn:hover { opacity: 0.88; }
+    .env-o { display: none; }
+    .site-footer .footer-cta-btn:hover .env-o { display: inline; }
+    .site-footer .footer-cta-btn:hover .env-c { display: none; }
+    .site-footer .footer-bottom { padding: 1.6rem 2rem; }
+    .site-footer .footer-name { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.9rem; color: white; letter-spacing: 0.1em; display: inline; }
+    .site-footer .footer-sub2 { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-left: 4px; display: inline; }
+    .site-footer .footer-links { display: flex; gap: 1.8rem; justify-content: center; margin: 1rem 0 0.8rem; flex-wrap: wrap; }
+    .site-footer .footer-links a { font-size: 0.76rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+    .site-footer .footer-links a:hover { color: white; }
+    .site-footer .footer-links a.footer-active { color: white; font-weight: 600; }
+    .site-footer .footer-copy { font-size: 0.68rem; margin-top: 0.6rem; color: rgba(255,255,255,0.28); }
 
   </style>
 </head>
@@ -569,6 +613,27 @@
   <a href="carica-materiali.html" style="background:var(--blue-main);color:white;text-decoration:none;padding:0.35rem 1rem;border-radius:100px;font-size:0.78rem;font-weight:600;letter-spacing:0.02em;transition:background 0.2s;" onmouseover="this.style.background='var(--blue-dark)'" onmouseout="this.style.background='var(--blue-main)'">Carica materiali →</a>
   <span>Starter Kit · A.S. 2025/2026</span>
 </div>
+
+<footer class="site-footer">
+  <div class="footer-cta">
+    <h3>Vuoi portare Via Per Via nella tua scuola?</h3>
+    <p>Scrivi per ricevere il kit di avvio — con UDA per tutti gli ordini e gradi, <a href="guida-insegnanti.html">guida per insegnanti</a> e tutte le informazioni per aderire.</p>
+    <a href="mailto:viapervia.education@gmail.com" class="footer-cta-btn"><span class="env-c">✉️</span><span class="env-o">📮</span> Scrivici</a>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-name">VIA PER VIA</span>
+    <span class="footer-sub2">Education</span>
+    <div class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="../index.html">Per gli insegnanti</a>
+      <a href="../index.html#simulazione">Simulazione</a>
+      <a href="../mappa.html">Mappa</a>
+      <a href="../index.html">Contatti</a>
+      <a href="../privacy.html">Privacy</a>
+    </div>
+    <p class="footer-copy">© 2026 Via Per Via Education · Progetto didattico per le scuole italiane · www.viapervia.education</p>
+  </div>
+</footer>
 
 </body>
 </html>
