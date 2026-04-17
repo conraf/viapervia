@@ -1,0 +1,19 @@
+# robots.txt — Via Per Via Education
+# https://www.viapervia.education
+#
+# ╔══════════════════════════════════════════════════════════╗
+# ║  FASE BETA — sito non ancora pubblico                   ║
+# ║  Per rendere il sito indicizzabile al go-live:          ║
+# ║  1. Rimuovere il blocco "Disallow: /" qui sotto         ║
+# ║  2. Decommentare le righe "Allow: /" e "Sitemap:"       ║
+# ║  3. Cercare e rimuovere tutti i commenti TODO-NOINDEX   ║
+# ║     e le relative righe <meta name="robots" ...>        ║
+# ╚══════════════════════════════════════════════════════════╝
+
+User-agent: *
+Disallow: /
+
+# ── GO-LIVE: sostituire il blocco sopra con questo ──
+# User-agent: *
+# Allow: /
+# Sitemap: https://www.viapervia.education/sitemap.xml

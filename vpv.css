@@ -34,7 +34,7 @@ body {
 
 /* ── HEADER ── */
 header {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 600;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 700;
   background: rgba(240,247,255,0.94); backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--gray-light);
   padding: 0.65rem 2.5rem;
@@ -146,7 +146,7 @@ nav a.nav-active { color: var(--blue-main); }
 .site-footer .footer-links a { font-size: 0.76rem; color: rgba(255,255,255,0.5); text-decoration: none; cursor: pointer; transition: color 0.2s; }
 .site-footer .footer-links a:hover { color: white; }
 .site-footer .footer-links a.footer-active { color: white; font-weight: 600; }
-.site-footer .footer-copy { font-size: 0.68rem; margin-top: 0.6rem; color: rgba(255,255,255,0.28); }
+.site-footer .footer-copy { font-size: 0.68rem; margin-top: 0.6rem; color: rgba(255,255,255,0.55); }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {

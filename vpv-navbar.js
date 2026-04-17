@@ -7,8 +7,13 @@
  * Utilizzo (prima della chiusura </body>):
  *   <script src="../../../vpv-navbar.js" data-root="../../../"></script>
  *
- * data-root: percorso relativo alla radice del sito (es. "../../../").
- * Per pagine alla radice usare data-root="" oppure omettere l'attributo.
+ * data-root: percorso relativo alla radice del sito rispetto alla pagina.
+ *   Esempi:
+ *     /sito/index.html                            → data-root=""
+ *     /sito/mappa.html                            → data-root=""
+ *     /sito/starter-kit/guida-insegnanti.html     → data-root="../"
+ *     /sito/scuole/torino-deamicis/via-micca/     → data-root="../../../"
+ *   Per pagine alla radice usare data-root="" oppure omettere l'attributo.
  */
 (function () {
 
@@ -32,12 +37,64 @@
     document.head.appendChild(fontsLink);
   }
 
-  /* ── 3. Costruisci HTML navbar ── */
+  /* ── 3. Inietta popup UDA ── */
+  var udaHtml =
+    '<div id="uda-popup" role="dialog" aria-modal="true" aria-label="Scarica le UDA" style="' +
+      'display:none;position:fixed;inset:0;z-index:900;' +
+      'background:rgba(10,42,64,0.72);align-items:center;justify-content:center;padding:1.5rem;">' +
+    '<div style="background:#fff;border-radius:16px;max-width:420px;width:100%;padding:2rem 2rem 1.5rem;position:relative;">' +
+      '<button onclick="closeUdaPopup()" aria-label="Chiudi" style="' +
+        'position:absolute;top:1rem;right:1rem;background:none;border:none;' +
+        'font-size:1.4rem;cursor:pointer;color:#666;line-height:1;">&#x2715;</button>' +
+      '<p style="font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;' +
+        'color:#0B6E9E;margin-bottom:0.5rem;">Kit didattico</p>' +
+      '<h2 style="font-family:\'Playfair Display\',serif;font-size:1.3rem;color:#0A2A40;' +
+        'margin-bottom:0.4rem;font-weight:700;">Unità di Apprendimento</h2>' +
+      '<p style="font-size:0.82rem;color:#666;line-height:1.6;margin-bottom:1.4rem;">' +
+        'Tre UDA pronte all\'uso, una per ogni ordine e grado scolastico.</p>' +
+      '<div style="display:flex;flex-direction:column;gap:0.6rem;">' +
+        '<a href="' + ROOT + 'UDA/UDA_ViaPerVia_Primaria.pdf" target="_blank" rel="noopener noreferrer" style="' +
+          'display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;' +
+          'background:#F0F7FF;border:1px solid #CCE8F8;border-radius:10px;' +
+          'text-decoration:none;transition:background 0.2s;">' +
+          '<span style="font-size:1.4rem;">📄</span>' +
+          '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Scuola Primaria</div>' +
+          '<div style="font-size:0.74rem;color:#666;">Classi 4ª–5ª · 12–16 ore</div></div></a>' +
+        '<a href="' + ROOT + 'UDA/UDA_ViaPerVia_SecondariaPrimoGrado.pdf" target="_blank" rel="noopener noreferrer" style="' +
+          'display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;' +
+          'background:#F0F7FF;border:1px solid #CCE8F8;border-radius:10px;' +
+          'text-decoration:none;transition:background 0.2s;">' +
+          '<span style="font-size:1.4rem;">📄</span>' +
+          '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Secondaria di I grado</div>' +
+          '<div style="font-size:0.74rem;color:#666;">Classi 1ª–3ª · 15–20 ore</div></div></a>' +
+        '<a href="' + ROOT + 'UDA/UDA_ViaPerVia_SecondariaSecondoGrado.pdf" target="_blank" rel="noopener noreferrer" style="' +
+          'display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;' +
+          'background:#F0F7FF;border:1px solid #CCE8F8;border-radius:10px;' +
+          'text-decoration:none;transition:background 0.2s;">' +
+          '<span style="font-size:1.4rem;">📄</span>' +
+          '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Secondaria di II grado</div>' +
+          '<div style="font-size:0.74rem;color:#666;">Biennio/triennio · 20–25 ore</div></div></a>' +
+      '</div>' +
+    '</div></div>';
+
+  window.openUdaPopup = function () {
+    var p = document.getElementById('uda-popup');
+    if (p) { p.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+  };
+  window.closeUdaPopup = function () {
+    var p = document.getElementById('uda-popup');
+    if (p) { p.style.display = 'none'; document.body.style.overflow = ''; }
+  };
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') window.closeUdaPopup();
+  });
+
+  /* ── 4. Costruisci HTML navbar ── */
   var html = [
     '<div class="mobile-menu" id="mobileMenu">',
     '  <a href="' + ROOT + 'index.html">Home</a>',
-    '  <a href="' + ROOT + 'index.html">Il progetto</a>',
-    '  <a href="' + ROOT + 'index.html">Per gli insegnanti</a>',
+    '  <a href="' + ROOT + 'index.html#progetto">Il progetto</a>',
+    '  <a href="' + ROOT + 'index.html#insegnanti">Per gli insegnanti</a>',
     '  <a href="' + ROOT + 'mappa.html">Mappa</a>',
     '  <a class="mobile-menu-cta" href="' + ROOT + 'index.html#simulazione">Simulazione \u2192</a>',
     '</div>',
@@ -49,28 +106,28 @@
     '      <span class="logo-tagline">progetto educativo</span>',
     '    </div>',
     '  </a>',
-    '  <nav>',
+    '  <nav aria-label="Navigazione principale">',
     '    <a href="' + ROOT + 'index.html">Home</a>',
-    '    <a href="' + ROOT + 'index.html">Il progetto</a>',
-    '    <a href="' + ROOT + 'index.html">Per gli insegnanti</a>',
+    '    <a href="' + ROOT + 'index.html#progetto">Il progetto</a>',
+    '    <a href="' + ROOT + 'index.html#insegnanti">Per gli insegnanti</a>',
     '    <a href="' + ROOT + 'mappa.html">Mappa</a>',
     '    <a href="' + ROOT + 'index.html#simulazione" class="nav-cta">Simulazione \u2192</a>',
     '  </nav>',
-    '  <button class="hamburger" id="hamburgerBtn" aria-label="Menu">',
+    '  <button class="hamburger" id="hamburgerBtn" aria-label="Apri menu">',
     '    <span></span><span></span><span></span>',
     '  </button>',
     '</header>'
   ].join('\n');
 
-  /* ── 4. Inserisci in cima al body ── */
+  /* ── 5. Inserisci in cima al body ── */
   function injectNavbar() {
     var frag = document.createDocumentFragment();
     var tmp  = document.createElement('div');
-    tmp.innerHTML = html;
+    tmp.innerHTML = udaHtml + html;
     while (tmp.firstChild) frag.appendChild(tmp.firstChild);
     document.body.insertBefore(frag, document.body.firstChild);
 
-    /* ── 5. Hamburger menu ── */
+    /* ── 6. Hamburger menu ── */
     document.getElementById('hamburgerBtn').addEventListener('click', function () {
       var menu = document.getElementById('mobileMenu');
       var btn  = document.getElementById('hamburgerBtn');
@@ -79,7 +136,7 @@
       document.body.style.overflow = open ? 'hidden' : '';
     });
 
-    /* ── 6. Layout responsive ── */
+    /* ── 7. Layout responsive ── */
     function updateLayout() {
       var nav  = document.querySelector('header nav');
       var btn  = document.getElementById('hamburgerBtn');
@@ -99,13 +156,23 @@
     window.addEventListener('resize', updateLayout);
     updateLayout();
 
-    /* ── 7. Carica vpv-data.js → vpv-search.js ── */
-    loadScript(ROOT + 'vpv-data.js', function () {
-      var s = document.createElement('script');
-      s.src = ROOT + 'vpv-search.js';
-      s.setAttribute('data-root', ROOT);
-      document.body.appendChild(s);
-    });
+    /* ── 8. Carica vpv-data.js → vpv-search.js ──
+       Se vpv-data.js è già stato caricato dalla pagina (es. mappa.html),
+       salta il caricamento e vai direttamente a vpv-search.js. */
+    function loadVpvSearch() {
+      if (!document.querySelector('script[src*="vpv-search"]')) {
+        var s = document.createElement('script');
+        s.src = ROOT + 'vpv-search.js';
+        s.setAttribute('data-root', ROOT);
+        document.body.appendChild(s);
+      }
+    }
+
+    if (typeof window.VPV_SCUOLE === 'undefined') {
+      loadScript(ROOT + 'vpv-data.js', loadVpvSearch);
+    } else {
+      loadVpvSearch();
+    }
   }
 
   function loadScript(src, callback) {

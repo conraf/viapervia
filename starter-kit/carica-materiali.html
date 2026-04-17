@@ -4,7 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <!-- TODO-NOINDEX: rimuovere la riga seguente quando si vuole rendere il sito ricercabile -->
+  <meta name="robots" content="noindex, nofollow">
   <title>Carica materiali · Via Per Via Education</title>
+  <meta name="description" content="Strumento per gli insegnanti: carica foto, audio e video dei materiali della tua classe nel progetto Via Per Via Education.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Carica materiali · Via Per Via Education">
+  <meta property="og:description" content="Carica foto, audio e video dei materiali della tua classe nel progetto Via Per Via Education.">
+  <meta property="og:image" content="https://www.viapervia.education/ViaPerViaLogoBig.png">
+  <meta property="og:url" content="https://www.viapervia.education/starter-kit/carica-materiali.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../vpv.css">
   <style>
@@ -15,7 +28,7 @@
 
     /* ── LAYOUT ── */
     .page-wrap {
-      max-width:680px; margin:0 auto;
+      max-width:900px; margin:0 auto;
       padding:7rem 2rem 5rem;
     }
 
@@ -172,52 +185,113 @@
     .notice strong { color:var(--amber); }
 
 
+
+    /* ── ERRORI INLINE ── */
+    .field-error {
+      font-size:0.72rem; color:var(--coral);
+      margin-top:0.3rem; line-height:1.5; display:none;
+    }
+    .field-error.visible { display:block; }
+    .field input.invalid { border-color:var(--coral); box-shadow:0 0 0 3px rgba(199,90,58,0.12); }
+
+    /* ── INFO TIPI FILE ── */
+    .file-types-info {
+      background:var(--cream); border:1px solid var(--blue-pale);
+      border-radius:8px; padding:0.75rem 1rem;
+      font-size:0.76rem; color:var(--gray-mid); line-height:1.6;
+      margin-top:0.75rem;
+    }
+    .file-types-info strong { color:var(--blue-dark); }
+
+    /* ── BOTTONE INVIA HTML ── */
+    .btn-send-html {
+      width: 100%; padding: 0.85rem 1.5rem;
+      background: var(--amber); color: white;
+      border: none; border-radius: 10px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.92rem; font-weight: 600;
+      cursor: pointer; letter-spacing: 0.02em;
+      transition: background 0.2s;
+      margin-top: 1.4rem;
+    }
+    .btn-send-html:hover { background: #b86a10; }
+    .btn-send-html .env-o { display: none; }
+    .btn-send-html:hover .env-o { display: inline; }
+    .btn-send-html:hover .env-c { display: none; }
+
+    /* ── ROUTE CARDS ── */
+    .route-cards {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin-bottom: 2rem;
+    }
+    .route-card {
+      border-radius: 14px; padding: 1.5rem 1.4rem;
+      border: 1.5px solid transparent;
+    }
+    .route-upload {
+      background: var(--blue-pale);
+      border-color: var(--blue-mid);
+    }
+    .route-email {
+      background: var(--amber-light);
+      border-color: var(--amber);
+    }
+    .route-icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .route-tag {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; margin-bottom: 0.4rem;
+    }
+    .route-upload .route-tag { color: var(--blue-main); }
+    .route-email  .route-tag { color: var(--amber); }
+    .route-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--blue-dark); margin-bottom: 0.6rem;
+    }
+    .route-card p {
+      font-size: 0.82rem; color: var(--gray-mid);
+      line-height: 1.65; margin-bottom: 0.5rem;
+    }
+    .route-card p:last-child { margin-bottom: 0; }
+    .route-card a { color: var(--blue-main); }
+    .route-formats { font-size: 0.76rem !important; color: var(--gray-mid); }
+    .card > p { font-size: 0.82rem; color: var(--gray-mid); line-height: 1.65; margin-bottom: 0.5rem; }
+    .card > p:last-of-type { margin-bottom: 0; }
+
     @media(max-width:768px) {
       .page-wrap { padding:5.5rem 1.2rem 3rem; }
       .card { padding:1.4rem 1.2rem; }
+      .route-cards { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="../index.html">Home</a>
-  <a href="../index.html">Il progetto</a>
-  <a href="guida-insegnanti.html">Per gli insegnanti</a>
-  <a href="../mappa.html">Mappa</a>
-  <a class="mobile-menu-cta" href="../index.html#simulazione">Simulazione →</a>
-</div>
 
-<header>
-  <a class="logo-wrap" href="../index.html">
-    <img class="logo-img" src="../ViaPerViaLogo-400.png" alt="Via Per Via Education">
-    <div class="logo-text">
-      <span class="logo-name">Via Per Via</span>
-      <span class="logo-tagline">progetto educativo</span>
-    </div>
-  </a>
-  <nav>
-    <a href="../index.html">Home</a>
-    <a href="../index.html">Il progetto</a>
-    <a href="guida-insegnanti.html">Per gli insegnanti</a>
-    <a href="../mappa.html">Mappa</a>
-    <a href="../index.html#simulazione" class="nav-cta">Simulazione →</a>
-  </nav>
-  <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</header>
 
 <main class="page-wrap">
 
   <div class="upload-hero">
     <span class="sec-label">Strumenti per gli insegnanti</span>
-    <h1>Carica i materiali<br>della tua classe</h1>
-    <p>Foto, audio e video vengono caricati su un server dedicato e ti viene fornito l'URL da incollare nella pagina della via. Nessuna installazione richiesta.</p>
+    <h1>Invia i materiali della tua classe</h1>
+    <p>Hai due modi per consegnarci i materiali prodotti dalla classe — scegli quello più adatto a quello che vuoi inviare.</p>
   </div>
 
-  <div class="notice">
-    <strong>Come funziona:</strong> compila i campi qui sotto, seleziona i file e clicca "Carica". Al termine copia gli URL e incollali nel file <code>index.html</code> della tua via, sostituendo i placeholder della galleria.
+  <div class="route-cards">
+    <div class="route-card route-upload">
+      <div class="route-icon">☁️</div>
+      <div class="route-tag">Caricamento diretto di</div>
+      <h2>Foto, audio e video</h2>
+      <p>Usa il modulo qui sotto per caricare i file multimediali della classe: ricevi subito gli URL pronti da inserire nel file HTML della tua via. Le immagini vengono ridimensionate e ottimizzate in automatico.</p>
+      <p>Una volta inseriti gli URL nel file HTML, inviaci il file completato via mail al passo 5 — ci pensiamo noi a pubblicarlo.</p>
+      <p class="route-formats"><strong>Formati:</strong> JPG, PNG, GIF, WebP, MP3, WAV, MP4, WebM…</p>
+    </div>
+    <div class="route-card route-email">
+      <div class="route-icon">📦</div>
+      <div class="route-tag">In alternativa</div>
+      <h2>Tutto in un archivio ZIP</h2>
+      <p>Se preferisci raccogliere HTML e media in un unico archivio compresso, scrivici direttamente a <a href="mailto:viapervia.education@gmail.com">viapervia.education@gmail.com</a> allegando il file .zip — pubblichiamo noi il contributo.</p>
+      <p>Usa questa opzione anche per inviarci file in altri formati non supportati dal caricamento diretto.</p>
+    </div>
   </div>
 
   <!-- STEP 1 -->
@@ -227,11 +301,13 @@
       <label for="inputScuola">Nome della scuola</label>
       <input type="text" id="inputScuola" placeholder="es. IC Carducci – De Amicis, Torino">
       <p class="field-hint">Verrà usato per organizzare i file nella cartella corretta.</p>
+      <span class="field-error" id="errScuola">Inserisci il nome della scuola.</span>
     </div>
     <div class="field">
       <label for="inputVia">Via o piazza documentata</label>
       <input type="text" id="inputVia" placeholder="es. Via Pietro Micca">
       <p class="field-hint">Inserisci il nome esatto come appare nella pagina della via.</p>
+      <span class="field-error" id="errVia">Inserisci il nome della via.</span>
     </div>
   </div>
 
@@ -244,6 +320,12 @@
       <p class="drop-label">Trascina i file qui oppure clicca per selezionarli</p>
       <p class="drop-sub">Immagini, audio e video · Più file contemporaneamente</p>
     </div>
+    <div class="file-types-info">
+      <strong>Formati accettati:</strong> immagini (JPG, PNG, GIF, WebP…), audio (MP3, WAV, OGG…), video (MP4, WebM…).<br>
+      <strong>Dimensione massima:</strong> 50 MB per le immagini · 500 MB per audio e video.<br>
+      Per ZIP e HTML usa invece l'invio via e-mail (vedi sopra).
+    </div>
+    <div id="uploadError" class="field-error" style="margin-top:0.5rem;"></div>
     <div class="file-list" id="fileList"></div>
   </div>
 
@@ -263,12 +345,28 @@
     <div class="results" id="resultsList"></div>
   </div>
 
+  <!-- STEP 4 -->
+  <div class="card">
+    <div class="card-title">4 · Inserisci gli URL nel file HTML</div>
+    <p>Copia gli URL ottenuti al passo 3 e incollali nel file <code>index.html</code> della tua via, sostituendo i segnaposto della galleria (<code>gallery-placeholder</code>) o i valori degli attributi <code>src</code> delle immagini e dei tag audio/video.</p>
+    <p>Se hai dubbi su dove inserire gli URL, consulta la <a href="guida-insegnanti.html" style="color:var(--blue-main);">guida per insegnanti</a>.</p>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="card">
+    <div class="card-title">5 · Invia il file HTML completato</div>
+    <p>Allega il file <code>index.html</code> aggiornato alla mail e invialo: pubblichiamo noi il contributo sul sito. Il pulsante qui sotto apre una mail precompilata con oggetto e destinatario già impostati.</p>
+    <button class="btn-send-html" id="btnSendMail" onclick="openSendMail()">
+      <span class="env-c">✉️</span><span class="env-o">📮</span> Invia il file HTML via mail
+    </button>
+  </div>
+
 </main>
 
 <footer class="site-footer">
   <div class="footer-cta">
     <h3>Vuoi portare Via Per Via nella tua scuola?</h3>
-    <p>Scrivi per ricevere il kit di avvio — con UDA per tutti gli ordini e gradi, <a href="guida-insegnanti.html">guida per insegnanti</a> e tutte le informazioni per aderire.</p>
+    <p>Scrivi per ricevere il kit di avvio — con <a href="#" onclick="openUdaPopup();return false;">UDA per tutti gli ordini e gradi</a>, <a href="guida-insegnanti.html">guida per insegnanti</a> e tutte le informazioni per aderire.</p>
     <a href="mailto:viapervia.education@gmail.com" class="footer-cta-btn"><span class="env-c">✉️</span><span class="env-o">📮</span> Scrivici</a>
   </div>
   <div class="footer-bottom">
@@ -292,34 +390,6 @@ const UPLOAD_PRESET = 'viapervia-upload';
 
 let selectedFiles = [];
 
-/* ── HAMBURGER ── */
-function toggleMenu() {
-  const menu = document.getElementById('mobileMenu');
-  const btn  = document.getElementById('hamburgerBtn');
-  const open = menu.classList.toggle('open');
-  btn.classList.toggle('open', open);
-  document.body.style.overflow = open ? 'hidden' : '';
-}
-const BREAKPOINT = 768;
-function updateLayout() {
-  const nav  = document.querySelector('header nav');
-  const btn  = document.getElementById('hamburgerBtn');
-  const menu = document.getElementById('mobileMenu');
-  if (!nav || !btn) return;
-  if (window.innerWidth <= BREAKPOINT) {
-    nav.style.display = 'none';
-    btn.style.display = 'flex';
-  } else {
-    nav.style.display = 'flex';
-    btn.style.display = 'none';
-    menu.classList.remove('open');
-    btn.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-}
-window.addEventListener('resize', updateLayout);
-window.addEventListener('DOMContentLoaded', updateLayout);
-updateLayout();
 
 /* ── SLUG ── */
 function slugify(s) {
@@ -358,12 +428,48 @@ fileInput.addEventListener('change', () => {
   fileInput.value = '';
 });
 
+function showFieldError(id, visible) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle('visible', visible);
+}
+function showUploadError(msg) {
+  const el = document.getElementById('uploadError');
+  if (!el) return;
+  el.textContent = msg;
+  el.classList.toggle('visible', !!msg);
+}
+
+const MAX_IMG_BYTES   =  50 * 1024 * 1024;   //  50 MB
+const MAX_MEDIA_BYTES = 500 * 1024 * 1024;   // 500 MB
+
+function isAcceptedType(file) {
+  return file.type.startsWith('image/') ||
+         file.type.startsWith('audio/') ||
+         file.type.startsWith('video/');
+}
+
 function addFiles(files) {
+  const errors = [];
   files.forEach(f => {
+    if (!isAcceptedType(f)) {
+      errors.push(`"${f.name}": tipo non accettato. Per ZIP e HTML usa l'invio via e-mail.`);
+      return;
+    }
+    const limit      = f.type.startsWith('image/') ? MAX_IMG_BYTES   : MAX_MEDIA_BYTES;
+    const limitLabel = f.type.startsWith('image/') ? '50 MB'         : '500 MB';
+    if (f.size > limit) {
+      errors.push(\`"\${f.name}": file troppo grande (limite \${limitLabel}).\`);
+      return;
+    }
     if (!selectedFiles.find(x => x.name === f.name && x.size === f.size)) {
       selectedFiles.push(f);
     }
   });
+  if (errors.length) {
+    showUploadError(errors.join(' '));
+  } else {
+    showUploadError('');
+  }
   renderFileList();
 }
 
@@ -390,14 +496,30 @@ async function startUpload() {
   const scuola = document.getElementById('inputScuola').value.trim();
   const via    = document.getElementById('inputVia').value.trim();
 
-  if (!scuola || !via) {
-    alert('Inserisci il nome della scuola e della via prima di caricare.');
-    return;
+  let hasError = false;
+  if (!scuola) {
+    showFieldError('errScuola', true);
+    document.getElementById('inputScuola').classList.add('invalid');
+    hasError = true;
+  } else {
+    showFieldError('errScuola', false);
+    document.getElementById('inputScuola').classList.remove('invalid');
+  }
+  if (!via) {
+    showFieldError('errVia', true);
+    document.getElementById('inputVia').classList.add('invalid');
+    hasError = true;
+  } else {
+    showFieldError('errVia', false);
+    document.getElementById('inputVia').classList.remove('invalid');
   }
   if (!selectedFiles.length) {
-    alert('Seleziona almeno un file da caricare.');
-    return;
+    showUploadError('Seleziona almeno un file da caricare.');
+    hasError = true;
+  } else {
+    showUploadError('');
   }
+  if (hasError) return;
 
   const folder = `viapervia/${slugify(scuola)}/${slugify(via)}`;
   const btn    = document.getElementById('btnUpload');
@@ -508,13 +630,26 @@ function fallbackCopy(text, callback) {
   document.body.appendChild(ta);
   ta.focus();
   ta.select();
-  try { document.execCommand('copy'); callback(); } catch(e) { alert('Copia manuale: ' + text); }
+  try { document.execCommand('copy'); callback(); } catch(e) { console.warn('Copia manuale:', text); }
   document.body.removeChild(ta);
 }
 </script>
 
-<script src="../vpv-data.js"></script>
-<script src="../vpv-search.js" data-root="../"></script>
 
+<script>
+function openSendMail() {
+  const scuola = document.getElementById('inputScuola').value.trim();
+  const via    = document.getElementById('inputVia').value.trim();
+  const subj   = scuola && via
+    ? `Contributo Via Per Via – ${scuola} – ${via}`
+    : 'Contributo Via Per Via – file HTML';
+  const body   = scuola && via
+    ? `Buongiorno,\n\nallego il file index.html della pagina dedicata a "${via}", realizzata da ${scuola}.\n\nGrazie!`
+    : `Buongiorno,\n\nallego il file index.html completato per il progetto Via Per Via.\n\nGrazie!`;
+  window.location.href =
+    `mailto:viapervia.education@gmail.com?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
+}
+</script>
+<script src="../vpv-navbar.js" data-root="../"></script>
 </body>
 </html>
