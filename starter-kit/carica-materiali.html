@@ -458,7 +458,7 @@ function addFiles(files) {
     const limit      = f.type.startsWith('image/') ? MAX_IMG_BYTES   : MAX_MEDIA_BYTES;
     const limitLabel = f.type.startsWith('image/') ? '50 MB'         : '500 MB';
     if (f.size > limit) {
-      errors.push(\`"\${f.name}": file troppo grande (limite \${limitLabel}).\`);
+      errors.push(`"${f.name}": file troppo grande (limite ${limitLabel}).`);
       return;
     }
     if (!selectedFiles.find(x => x.name === f.name && x.size === f.size)) {
