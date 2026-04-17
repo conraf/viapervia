@@ -85,8 +85,51 @@
     var p = document.getElementById('uda-popup');
     if (p) { p.style.display = 'none'; document.body.style.overflow = ''; }
   };
+
+  /* ── 4. Inietta popup Kit insegnanti ── */
+  var kitHtml =
+    '<div id="kit-popup" role="dialog" aria-modal="true" aria-label="Kit per gli insegnanti" style="' +
+      'display:none;position:fixed;inset:0;z-index:900;' +
+      'background:rgba(10,42,64,0.72);align-items:center;justify-content:center;padding:1.5rem;">' +
+    '<div style="background:#fff;border-radius:16px;max-width:420px;width:100%;padding:2rem 2rem 1.5rem;position:relative;">' +
+      '<button onclick="closeKitPopup()" aria-label="Chiudi" style="' +
+        'position:absolute;top:1rem;right:1rem;background:none;border:none;' +
+        'font-size:1.4rem;cursor:pointer;color:#666;line-height:1;">&#x2715;</button>' +
+      '<p style="font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;' +
+        'color:#0B6E9E;margin-bottom:0.5rem;">Kit didattico</p>' +
+      '<h2 style="font-family:\'Playfair Display\',serif;font-size:1.3rem;color:#0A2A40;' +
+        'margin-bottom:0.4rem;font-weight:700;">Per gli insegnanti</h2>' +
+      '<p style="font-size:0.82rem;color:#666;line-height:1.6;margin-bottom:1.4rem;">' +
+        'La guida completa e il template HTML per costruire la pagina della vostra via.</p>' +
+      '<div style="display:flex;flex-direction:column;gap:0.6rem;">' +
+        '<a href="' + ROOT + 'starter-kit/guida-insegnanti.html" style="' +
+          'display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;' +
+          'background:#F0F7FF;border:1px solid #CCE8F8;border-radius:10px;' +
+          'text-decoration:none;transition:background 0.2s;">' +
+          '<span style="font-size:1.4rem;">📖</span>' +
+          '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Guida per gli insegnanti</div>' +
+          '<div style="font-size:0.74rem;color:#666;">Come portare Via Per Via in classe, passo per passo</div></div></a>' +
+        '<a href="' + ROOT + 'starter-kit/_template.html" download="_template.html" style="' +
+          'display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;' +
+          'background:#F0F7FF;border:1px solid #CCE8F8;border-radius:10px;' +
+          'text-decoration:none;transition:background 0.2s;">' +
+          '<span style="font-size:1.4rem;">📄</span>' +
+          '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Template HTML</div>' +
+          '<div style="font-size:0.74rem;color:#666;">File base opzionale per la pagina della via · scarica</div></div></a>' +
+      '</div>' +
+    '</div></div>';
+
+  window.openKitPopup = function () {
+    var p = document.getElementById('kit-popup');
+    if (p) { p.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+  };
+  window.closeKitPopup = function () {
+    var p = document.getElementById('kit-popup');
+    if (p) { p.style.display = 'none'; document.body.style.overflow = ''; }
+  };
+
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') window.closeUdaPopup();
+    if (e.key === 'Escape') { window.closeUdaPopup(); window.closeKitPopup(); }
   });
 
   /* ── 4. Costruisci HTML navbar ── */
@@ -123,7 +166,7 @@
   function injectNavbar() {
     var frag = document.createDocumentFragment();
     var tmp  = document.createElement('div');
-    tmp.innerHTML = udaHtml + html;
+    tmp.innerHTML = udaHtml + kitHtml + html;
     while (tmp.firstChild) frag.appendChild(tmp.firstChild);
     document.body.insertBefore(frag, document.body.firstChild);
 
