@@ -43,6 +43,12 @@
 
   <!-- Pagine delle scuole partecipanti -->
   <url>
+    <loc>https://www.viapervia.education/scuole/spello-spagna/via-delle-rondini/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.viapervia.education/scuole/torino-deamicis/via-pietro-micca/</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>

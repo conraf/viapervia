@@ -9,6 +9,20 @@
  */
 window.VPV_SCUOLE = [
 
+  // ── SPELLO ──
+  {
+    id: 12,
+    nome: 'Scuola Primaria "Giovanni Spagna"',
+    istituto: 'I.C. "Giovanni Spagna"',
+    citta: "Spello",
+    provincia: "Perugia", sigla: "PG",
+    regione: "Umbria",
+    lat: 42.9917, lng: 12.6697,
+    classe: "5ª A", grado: "primaria", anno: "2025/2026",
+    via: "Via delle Rondini",
+    pagina: "scuole/spello-spagna/via-delle-rondini/"
+  },
+
   // ── TORINO ──
   {
     id: 1,

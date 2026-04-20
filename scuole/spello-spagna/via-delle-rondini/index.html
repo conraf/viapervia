@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../../favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+  <title>Via delle Rondini · Via Per Via Education</title>
+  <meta name="description" content="Via delle Rondini a Spello, documentata dalla classe 5ª A della Scuola Primaria 'Giovanni Spagna'. Storia, fotografie, intervista e voci degli studenti.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Via delle Rondini · Spello · Via Per Via Education">
+  <meta property="og:description" content="Via delle Rondini a Spello documentata dalla classe 5ª A: storia, rondini, un giardinetto e un'intervista a Olga, 98 anni.">
+  <meta property="og:image" content="https://www.viapervia.education/ViaPerViaLogoBig.png">
+  <meta property="og:url" content="https://www.viapervia.education/scuole/spello-spagna/via-delle-rondini/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../vpv.css">
+  <style>
+    /* ── lightbox ── */
+    .rp-polaroid img { cursor: zoom-in; }
+    #lightbox {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,0.88); align-items: center; justify-content: center;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img { max-width: 92vw; max-height: 88vh; object-fit: contain; border-radius: 4px; }
+    #lightbox-close {
+      position: absolute; top: 1.2rem; right: 1.5rem;
+      color: #fff; font-size: 2rem; line-height: 1;
+      cursor: pointer; background: none; border: none; opacity: 0.75;
+    }
+    #lightbox-close:hover { opacity: 1; }
+
+    /* ── base ── */
+    .rondini-page { font-family: 'DM Sans', sans-serif; color: #2D2416; }
+    .rondini-page *, .rondini-page *::before, .rondini-page *::after { box-sizing: border-box; }
+    .rp-wrap { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── HERO ── */
+    .rp-hero { background: #FFD166; padding: 2.5rem 1.5rem 3.5rem; }
+    .rp-crumb { font-size: 0.85rem; margin-bottom: 1.4rem; }
+    .rp-crumb a { color: #2D2416; font-weight: 600; text-decoration: none; border-bottom: 2px solid rgba(0,0,0,0.25); }
+    .rp-crumb span { opacity: 0.6; }
+    .rp-badge {
+      display: inline-block;
+      background: #E07820; color: white;
+      font-family: 'Caveat', cursive; font-size: 1.15rem; font-weight: 700;
+      padding: 0.2rem 1.1rem; border-radius: 30px;
+      transform: rotate(-2deg); margin-bottom: 1rem;
+    }
+    .rp-hero h1 {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(3.5rem, 10vw, 6rem);
+      font-weight: 700; line-height: 1; color: #2D2416;
+      margin: 0 0 1.1rem;
+    }
+    .rp-hero > .rp-wrap > p {
+      font-size: 1.05rem; line-height: 1.65;
+      max-width: 580px; margin-bottom: 1.5rem; opacity: 0.82;
+    }
+    .rp-pills { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .rp-pill {
+      background: rgba(0,0,0,0.12); border-radius: 20px;
+      padding: 0.2rem 0.85rem; font-size: 0.8rem; font-weight: 600;
+    }
+
+    /* ── SEZIONI generiche ── */
+    .rp-sec { padding: 3rem 1.5rem; }
+    .rp-sec h2 {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(1.9rem, 4vw, 2.7rem); font-weight: 700;
+      line-height: 1.15; margin: 0.4rem 0 1.2rem;
+    }
+    .rp-sec p { font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; max-width: 660px; }
+
+    .rp-label {
+      display: inline-block;
+      font-family: 'Caveat', cursive; font-size: 1rem; font-weight: 700;
+      padding: 0.15rem 0.9rem; border-radius: 6px; color: white; margin-bottom: 0.3rem;
+    }
+
+    /* ── colori per sezione ── */
+    .rp-sec--storia    { background: #D6EEFF; }
+    .rp-label--storia  { background: #2980B9; }
+
+    .rp-sec--vita      { background: #D4F7D4; }
+    .rp-label--vita    { background: #27AE60; }
+
+    .rp-sec--galleria  { background: #FFFBF0; }
+    .rp-label--galleria{ background: #E07820; }
+
+    .rp-sec--intervista{ background: #FFFDE7; }
+    .rp-label--intervista{ background: #C0392B; }
+
+    .rp-sec--voci      { background: #FFE8F0; }
+    .rp-label--voci    { background: #C0392B; }
+
+    .rp-sec--scheda    { background: #F0ECF8; }
+    .rp-label--scheda  { background: #7D3C98; }
+
+    .rp-sec--fonti     { background: #F0F8E0; }
+    .rp-label--fonti   { background: #27AE60; }
+
+    /* ── citazione (storia) ── */
+    .rp-quote {
+      background: white; border-radius: 14px;
+      padding: 1.5rem 1.8rem 1.2rem; margin: 1.5rem 0 0; position: relative;
+    }
+    .rp-quote::before {
+      content: '\201C';
+      font-family: 'Caveat', cursive; font-size: 5rem; color: #2980B9;
+      line-height: 1; position: absolute; top: -0.8rem; left: 1rem; opacity: 0.3;
+    }
+    .rp-quote p {
+      font-family: 'Caveat', cursive !important; font-size: 1.3rem !important;
+      font-style: italic; padding-top: 1.5rem;
+      margin-bottom: 0.4rem !important; max-width: none !important;
+    }
+    .rp-quote cite { font-size: 0.82rem; font-weight: 700; color: #2980B9; font-style: normal; }
+
+    /* ── galleria polaroid ── */
+    .rp-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 1.8rem; margin-top: 1.5rem;
+    }
+    .rp-polaroid {
+      background: white; padding: 10px 10px 42px;
+      box-shadow: 4px 5px 16px rgba(0,0,0,0.18);
+      transition: transform 0.2s, box-shadow 0.2s; position: relative;
+    }
+    .rp-polaroid:nth-child(1) { transform: rotate(-2.5deg); }
+    .rp-polaroid:nth-child(2) { transform: rotate(2deg); }
+    .rp-polaroid:nth-child(3) { transform: rotate(-1.2deg); }
+    .rp-polaroid:nth-child(4) { transform: rotate(2.8deg); }
+    .rp-polaroid:nth-child(5) { transform: rotate(-1.8deg); }
+    .rp-polaroid:nth-child(6) { transform: rotate(1.5deg); }
+    .rp-polaroid:hover { transform: rotate(0) scale(1.04); box-shadow: 6px 8px 24px rgba(0,0,0,0.22); z-index: 5; }
+    .rp-polaroid img { width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover; }
+    .rp-polaroid-ph {
+      width: 100%; aspect-ratio: 4/3; background: #EEE;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      font-family: 'Caveat', cursive; font-size: 1rem; color: #888; line-height: 1.5; padding: 0.5rem;
+    }
+    .rp-photo-cap {
+      font-family: 'Caveat', cursive; font-size: 1rem; text-align: center;
+      color: #666; position: absolute; bottom: 8px; left: 0; right: 0; padding: 0 0.5rem;
+    }
+
+    /* ── intervista (quaderno a righe) ── */
+    .rp-notebook {
+      background: white; border-radius: 10px; border-left: 5px solid #E74C3C;
+      padding: 1.8rem 2rem; margin-top: 1.5rem;
+      background-image: repeating-linear-gradient(transparent, transparent 27px, #D6EAF8 28px);
+      box-shadow: 2px 3px 12px rgba(0,0,0,0.07);
+    }
+    .rp-int-q {
+      font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: #E74C3C; margin-top: 1.6rem; margin-bottom: 0.3rem;
+    }
+    .rp-int-q:first-child { margin-top: 0; }
+    .rp-int-a {
+      font-family: 'Caveat', cursive; font-size: 1.3rem;
+      line-height: 1.65; color: #2D2416; font-style: italic; margin: 0;
+    }
+
+    /* ── voci dalla classe (cartoncini) ── */
+    .rp-voices {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem; margin-top: 1.5rem;
+    }
+    .rp-voice { border-radius: 16px; padding: 1.5rem 1.5rem 1.2rem; }
+    .rp-voice:nth-child(1) { background: #FFEAA7; }
+    .rp-voice:nth-child(2) { background: #A8E6CF; }
+    .rp-voice:nth-child(3) { background: #FFB3BA; }
+    .rp-voice p {
+      font-family: 'Caveat', cursive !important; font-size: 1.2rem !important;
+      line-height: 1.55 !important; margin-bottom: 0.8rem !important; max-width: none !important;
+    }
+    .rp-voice cite { font-size: 0.8rem; font-weight: 700; color: #555; font-style: normal; }
+
+    /* ── scheda (post-it) ── */
+    .rp-stickies {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1.3rem; margin-top: 1.5rem;
+    }
+    .rp-sticky {
+      min-height: 120px; padding: 1.2rem 1rem;
+      border-radius: 3px; box-shadow: 3px 4px 12px rgba(0,0,0,0.13);
+    }
+    .rp-sticky:nth-child(1) { background: #FFEAA7; transform: rotate(-1.5deg); }
+    .rp-sticky:nth-child(2) { background: #B5EAD7; transform: rotate(1.2deg); }
+    .rp-sticky:nth-child(3) { background: #FFDAC1; transform: rotate(-0.6deg); }
+    .rp-sticky:nth-child(4) { background: #C7CEEA; transform: rotate(1.8deg); }
+    .rp-sticky:nth-child(5) { background: #FFB3BA; transform: rotate(-1deg); }
+    .rp-sticky:nth-child(6) { background: #D4EDDA; transform: rotate(0.8deg); }
+    .rp-sticky-lbl {
+      font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      opacity: 0.6; margin-bottom: 0.5rem;
+    }
+    .rp-sticky-val {
+      font-family: 'Caveat', cursive; font-size: 1.2rem;
+      font-weight: 600; line-height: 1.3; color: #2D2416;
+    }
+
+    /* ── footer ── */
+    .rp-footer {
+      background: #2D2416; color: rgba(255,255,255,0.65);
+      padding: 2rem 1.5rem; text-align: center;
+      font-size: 0.88rem; line-height: 2;
+    }
+    .rp-footer a { color: rgba(255,255,255,0.8); }
+    .rp-footer strong { color: rgba(255,255,255,0.88); }
+
+    @media (max-width: 580px) {
+      .rp-gallery  { grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+      .rp-stickies { grid-template-columns: repeat(2, 1fr); }
+      .rp-voices   { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<main class="rondini-page">
+
+  <!-- HERO -->
+  <section class="rp-hero">
+    <div class="rp-wrap">
+      <nav class="rp-crumb">
+        <a href="../../../mappa.html">← Mappa delle scuole</a>
+        <span> / Scuola Primaria "Giovanni Spagna" — Spello</span>
+      </nav>
+      <div class="rp-badge">🐦 Via documentata</div>
+      <h1>Via delle Rondini</h1>
+      <p>
+        Una piccola via del centro storico di Spello, in Umbria, dove ogni aprile tornano le rondini
+        a nidificare sotto le gronde delle case medievali. E dove vive Olga, 98 anni.
+      </p>
+      <div class="rp-pills">
+        <span class="rp-pill">📍 Spello (PG)</span>
+        <span class="rp-pill">🏫 I.C. "Giovanni Spagna"</span>
+        <span class="rp-pill">👩‍🎓 5ª A · Primaria</span>
+        <span class="rp-pill">📅 A.S. 2025/2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORIA -->
+  <section class="rp-sec rp-sec--storia">
+    <div class="rp-wrap">
+      <span class="rp-label rp-label--storia">Ricerca storica</span>
+      <h2>...per via delle rondini che tornano ogni anno</h2>
+      <p>
+        Spello è un paese medievale in Umbria, costruito sulla pietra rosa che si chiama "subasio"
+        perché viene dal Monte Subasio. Le vie del centro storico sono strettissime e i tetti
+        si avvicinano tanto che quasi si toccano. E sotto i tetti, ogni primavera, arrivano le rondini.
+      </p>
+      <p>
+        Via delle Rondini è una piccola via di circa 120 metri che sale dal centro verso il quartiere
+        più antico del paese. Si chiama così da tantissimi anni: i vecchi documenti del Comune di Spello
+        la chiamano già "Via delle Rondini" nel registro del 1923. Ma gli abitanti ci dicono che il nome
+        è ancora più vecchio: lo usavano anche i loro nonni.
+      </p>
+      <p>
+        Le rondini arrivano ogni anno verso la fine di aprile. Nidificano sotto le gronde di pietra
+        e fanno un rumore che si sente per tutta la via. La signora Olga, che abita al numero 4
+        e ha 98 anni, ci ha detto che le aspetta ogni anno come si aspetta una festa.
+      </p>
+      <div class="rp-quote">
+        <p>
+          "Noi pensavamo che il nome fosse solo poetico. Invece è proprio vero: ci sono davvero
+          le rondini, e tornano ogni anno. È come se la via avesse una memoria."
+        </p>
+        <cite>— Martina, 5ª A</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- VITA OGGI -->
+  <section class="rp-sec rp-sec--vita">
+    <div class="rp-wrap">
+      <span class="rp-label rp-label--vita">La via oggi</span>
+      <h2>Il giardinetto, i gatti e le persone</h2>
+      <p>
+        In fondo a Via delle Rondini c'è un piccolo giardinetto con due panchine, un albero di fico
+        e un'altalena un po' arrugginita. È lì che andiamo a giocare dopo scuola, noi e i bambini
+        degli altri anni. Non sapevamo che quel giardinetto esisteva già ai tempi della signora Olga,
+        anche se allora non c'erano né l'altalena né le panchine.
+      </p>
+      <p>
+        Nella via abitano poche famiglie. C'è un signore che fa il falegname nel cortile,
+        una signora che vende miele di Spello, e ovviamente la signora Olga. Ci sono anche
+        tre gatti che sembrano di nessuno ma che tutti nutrono.
+      </p>
+    </div>
+  </section>
+
+  <!-- GALLERIA -->
+  <section class="rp-sec rp-sec--galleria">
+    <div class="rp-wrap">
+      <span class="rp-label rp-label--galleria">Documentazione fotografica</span>
+      <h2>Quello che abbiamo fotografato</h2>
+      <p>
+        Foto scattate durante l'uscita del 18 marzo 2026. Abbiamo fotografato la targa, le gronde
+        dove nidificano le rondini, il giardinetto e i vicoli di pietra rosa.
+      </p>
+      <div class="rp-gallery">
+        <div class="rp-polaroid">
+          <img src="https://picsum.photos/seed/rondini-targa/800/600" alt="Targa stradale Via delle Rondini, Spello" loading="lazy">
+          <span class="rp-photo-cap">La targa!</span>
+        </div>
+        <div class="rp-polaroid">
+          <img src="https://picsum.photos/seed/rondini-giardino/800/600" alt="Il giardinetto in fondo alla via con l'altalena" loading="lazy">
+          <span class="rp-photo-cap">Il nostro giardinetto</span>
+        </div>
+        <div class="rp-polaroid">
+          <img src="https://picsum.photos/seed/rondini-gronda/800/600" alt="Le gronde di pietra dove nidificano le rondini" loading="lazy">
+          <span class="rp-photo-cap">Le gronde delle rondini</span>
+        </div>
+        <div class="rp-polaroid">
+          <img src="https://picsum.photos/seed/rondini-vicolo/800/600" alt="Il vicolo di pietra rosa che porta alla via" loading="lazy">
+          <span class="rp-photo-cap">Il vicolo di pietra rosa</span>
+        </div>
+        <div class="rp-polaroid">
+          <div class="rp-polaroid-ph">La nostra classe<br>davanti al n° 4</div>
+          <span class="rp-photo-cap">La nostra classe!</span>
+        </div>
+        <div class="rp-polaroid">
+          <div class="rp-polaroid-ph">Il falegname<br>nel cortile</div>
+          <span class="rp-photo-cap">Il falegname</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERVISTA -->
+  <section class="rp-sec rp-sec--intervista">
+    <div class="rp-wrap">
+      <span class="rp-label rp-label--intervista">Intervista</span>
+      <h2>Olga Marchetti, 98 anni — «Finché le rondini tornano, il paese è vivo»</h2>
+      <p>
+        Olga Marchetti è nata a Spello nel 1927 e ha sempre vissuto al numero 4 di Via delle Rondini.
+        È la persona più anziana del paese. Ci ha aperto la porta di casa e ci ha raccontato
+        della via com'era prima. Noi le abbiamo fatto le domande a turno.
+      </p>
+      <div class="rp-notebook">
+        <div class="rp-int-q">Studentessa: Da quanti anni abita in questa via?</div>
+        <p class="rp-int-a">«Sono nata in questa casa. Mia madre mi diceva che anche lei era nata qui. Sono novantotto anni che guardo questi muri di pietra. Ormai li conosco tutti, uno per uno.»</p>
+
+        <div class="rp-int-q">Studente: Si chiamava già Via delle Rondini quando lei era piccola?</div>
+        <p class="rp-int-a">«Sì, si chiamava già così. Da sempre. Le rondini arrivavano ogni aprile e tutti le aspettavamo. Mia nonna diceva: finché le rondini tornano, il paese è vivo. Io la penso ancora così.»</p>
+
+        <div class="rp-int-q">Studentessa: Com'era il giardinetto in fondo alla via?</div>
+        <p class="rp-int-a">«Ah, il giardinetto! Quando ero piccola non c'erano né l'altalena né le panchine. C'era solo un muro basso e qualche sasso. Ma noi ci giocavamo lo stesso, tutta la giornata. Voi almeno avete l'altalena.»</p>
+
+        <div class="rp-int-q">Studente: Cosa cambierebbe in questa via?</div>
+        <p class="rp-int-a">«Niente. Non cambierei niente. Forse aggiusterei quell'altalena arrugginita, però.»</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOCI DALLA CLASSE -->
+  <section class="rp-sec rp-sec--voci">
+    <div class="rp-wrap">
+      <span class="rp-label rp-label--voci">Voci dalla classe</span>
+      <h2>Cosa ci ha lasciato questa ricerca</h2>
+      <div class="rp-voices">
+        <div class="rp-voice">
+          <p>
+            "Quando la signora Olga ci ha detto che ha novantotto anni ci siamo guardati tutti.
+            È più vecchia della televisione. È quasi più vecchia dei nostri nonni.
+            È come parlare con la storia vera."
+          </p>
+          <cite>— Martina, 5ª A</cite>
+        </div>
+        <div class="rp-voice">
+          <p>
+            "Le rondini non le avevo mai guardate davvero, le vedevo volare e basta.
+            Adesso ogni volta che ne vedo una penso a Via delle Rondini e alla signora Olga
+            che le aspetta sul balcone."
+          </p>
+          <cite>— Tommaso, 5ª A</cite>
+        </div>
+        <div class="rp-voice">
+          <p>
+            "Il giardinetto in fondo alla via è quello dove andiamo a giocare dopo scuola.
+            Non sapevamo che aveva una storia così lunga. Adesso quando ci andiamo
+            ci sembra diverso, più importante."
+          </p>
+          <cite>— Emma, 5ª A</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDA TECNICA -->
+  <section class="rp-sec rp-sec--scheda">
+    <div class="rp-wrap">
+      <span class="rp-label rp-label--scheda">Scheda tecnica</span>
+      <h2>Informazioni sulla via</h2>
+      <div class="rp-stickies">
+        <div class="rp-sticky">
+          <div class="rp-sticky-lbl">Quartiere</div>
+          <div class="rp-sticky-val">Centro storico</div>
+        </div>
+        <div class="rp-sticky">
+          <div class="rp-sticky-lbl">Intitolazione</div>
+          <div class="rp-sticky-val">Le rondini (nome tradizionale)</div>
+        </div>
+        <div class="rp-sticky">
+          <div class="rp-sticky-lbl">Prima attestazione</div>
+          <div class="rp-sticky-val">1923 (registro comunale)</div>
+        </div>
+        <div class="rp-sticky">
+          <div class="rp-sticky-lbl">Lunghezza</div>
+          <div class="rp-sticky-val">~ 120 m</div>
+        </div>
+        <div class="rp-sticky">
+          <div class="rp-sticky-lbl">Materiale</div>
+          <div class="rp-sticky-val">Pietra rosa del Subasio</div>
+        </div>
+        <div class="rp-sticky">
+          <div class="rp-sticky-lbl">Abitante più anziana</div>
+          <div class="rp-sticky-val">Olga Marchetti (98 anni)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FONTI -->
+  <section class="rp-sec rp-sec--fonti">
+    <div class="rp-wrap">
+      <span class="rp-label rp-label--fonti">Riferimenti</span>
+      <h2>Come abbiamo fatto la ricerca</h2>
+      <p>
+        Prima abbiamo cercato su internet e in biblioteca qualcosa sulla storia del nome. Poi
+        siamo andati in via con la maestra il 18 marzo 2026 e abbiamo fotografato tutto.
+        La cosa più bella è stata l'intervista alla signora Olga: ci ha aperto la porta di casa
+        e ci ha parlato per quasi un'ora.
+      </p>
+      <p>
+        Le fonti che abbiamo usato: registro del Comune di Spello (1923), <em>Spello — guida al
+        centro storico</em> (biblioteca comunale), intervista a Olga Marchetti registrata il 18/03/2026.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- lightbox -->
+<div id="lightbox" role="dialog" aria-modal="true">
+  <button id="lightbox-close" aria-label="Chiudi">&#x2715;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- footer -->
+<footer class="rp-footer">
+  <p>
+    Contributo di <strong>Scuola Primaria "Giovanni Spagna", Spello</strong> ·
+    <a href="../../../index.html">Via Per Via Education</a> ·
+    <a href="../../../mappa.html">Torna alla mappa</a> ·
+    <a href="../../../starter-kit/guida-insegnanti.html">Guida per gli insegnanti</a>
+  </p>
+</footer>
+
+<script>
+(function () {
+  const lb    = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  const close = () => { lb.classList.remove('open'); lbImg.src = ''; };
+
+  document.querySelectorAll('.rp-polaroid img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lb.classList.add('open');
+    });
+  });
+
+  document.getElementById('lightbox-close').addEventListener('click', close);
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+})();
+</script>
+
+<script src="../../../vpv-navbar.js" data-root="../../../"></script>
+</body>
+</html>
