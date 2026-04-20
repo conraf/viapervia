@@ -180,6 +180,28 @@
       top: 0.2rem;
     }
 
+    /* alternative no-tech */
+    .alt-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    .alt-card {
+      background: var(--cream);
+      border: 1px solid var(--blue-pale);
+      border-radius: 10px;
+      padding: 1.1rem 1.2rem;
+    }
+    .alt-card-label {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--blue-main); margin-bottom: 0.5rem;
+    }
+    .alt-card p { font-size: 0.88rem; margin: 0; }
+    @media (max-width: 600px) {
+      .alt-grid { grid-template-columns: 1fr; }
+    }
+
     /* divisore */
     hr {
       border: none;
@@ -503,6 +525,21 @@
 &lt;/div&gt;</pre>
     <p>Le immagini vengono ridimensionate automaticamente a 1200&nbsp;px di larghezza e
     ottimizzate per il web: non è necessario modificarle prima del caricamento.</p>
+  </div>
+
+  <div style="margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid var(--gray-light);">
+    <p style="font-size:0.82rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--blue-mid); margin-bottom:0.2rem;">Non usi l'HTML? Due alternative</p>
+    <p style="font-size:0.88rem; margin-bottom:0;">Se preferisci evitare il codice, puoi scegliere uno di questi due percorsi:</p>
+    <div class="alt-grid">
+      <div class="alt-card">
+        <div class="alt-card-label">Opzione A · Google Sites</div>
+        <p>Puoi raccogliere i contenuti con <a href="https://sites.google.com" target="_blank" rel="noopener"><strong>Google Sites</strong></a>: gratuito, nessuna installazione, funziona come un documento di testo arricchito. Ti forniamo un template già strutturato e stiamo preparando una videoguida passo per passo. Ci invii l'<strong>URL della tua pagina Sites</strong>, che usiamo come bozza per costruire noi la pagina definitiva nel formato del sito — mappa interattiva inclusa.</p>
+      </div>
+      <div class="alt-card">
+        <div class="alt-card-label">Opzione B · PDF o Canva</div>
+        <p>Raccogli testi, foto e didascalie in un documento <strong>PDF</strong> o in una presentazione <strong>Canva</strong> e inviaci tutto via mail. Ci occupiamo noi di costruire la pagina. Zero tecnologia, zero preoccupazioni.</p>
+      </div>
+    </div>
   </div>
 </section>
 
