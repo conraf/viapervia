@@ -37,39 +37,74 @@
 
 - Competenza in materia di consapevolezza ed espressione culturali
 
-### Traguardi di sviluppo delle competenze (Indicazioni Nazionali 2012)
+### Traguardi di sviluppo delle competenze (Indicazioni Nazionali 2025 — D.M. 221/2025)
 
 **Italiano**
 
-- Ricava informazioni da testi letti e le sintetizza con parole proprie.
+- Affronta la scrittura come processo: ideazione, pianificazione, stesura e revisione
+  del testo, anche attraverso la revisione tra pari.
 
-- Produce testi descrittivi e informativi su argomenti conosciuti.
+- Produce testi informativi e descrittivi corretti e chiari su argomenti conosciuti,
+  adeguati a un destinatario reale.
 
-- Utilizza semplici strumenti digitali per la comunicazione.
+- Ricava informazioni da fonti diverse e le rielabora con parole proprie, citando
+  le fonti utilizzate.
+
+- Espone oralmente il proprio lavoro in modo chiaro e ordinato davanti a un pubblico.
 
 **Storia**
 
-- Conosce aspetti del patrimonio storico e culturale del territorio locale.
+- Conosce e valorizza aspetti del patrimonio storico e culturale del territorio locale,
+  collocandoli progressivamente nel quadro della storia più ampia.
 
-- Usa fonti di diverso tipo per ricostruire un fatto o un personaggio.
+- Usa fonti di diverso tipo (scritte, iconografiche, orali) per ricostruire un fatto
+  o un personaggio.
+
+- Riconosce nella toponomastica una forma di memoria pubblica della comunità.
 
 **Geografia**
 
-- Si orienta sulle mappe del territorio circostante.
+- Legge e interpreta il proprio spazio vissuto collocando fatti e relazioni a scale
+  diverse, dal quartiere alla dimensione nazionale (transcalarità).
 
-- Colloca luoghi su una mappa digitale.
+- Osserva e descrive il paesaggio urbano come spazio di co-evoluzione tra le persone
+  e l'ambiente, cogliendone anche la dimensione estetica ed emozionale.
 
-**Educazione Civica (L. 92/2019)**
+- Comprende come la comunità abita e trasforma il proprio territorio nel tempo
+  (territorializzazione), a partire dall'osservazione diretta di una via.
 
-- Riconosce il significato civico dei luoghi della propria città.
+- Si orienta sulle mappe e colloca luoghi su una mappa digitale.
 
-- Partecipa attivamente a un progetto collettivo che coinvolge la comunità.
+**Arte e Immagine**
 
-**Tecnologia / TIC**
+- Collega le immagini e le opere osservate nel territorio al proprio vissuto personale.
+
+- Realizza elaborati grafici originali e li raccoglie in un Diario visivo, integrando
+  emozioni, tecnica e contesto storico.
+
+- Osserva dal vero elementi del patrimonio locale (edifici, targhe, decorazioni)
+  durante l'uscita sul campo.
+
+**Educazione Civica (L. 92/2019 — Linee guida D.M. 183/2024)**
+
+- Riconosce il significato civico dei luoghi della propria città e il valore della
+  memoria collettiva.
+
+- Partecipa attivamente a un progetto che restituisce un contributo concreto
+  alla comunità locale.
+
+- Conosce, in forma essenziale, il senso del diritto d'autore e delle licenze aperte.
+
+**Tecnologia**
 
 - Utilizza strumenti digitali per raccogliere, organizzare e presentare informazioni.
 
-- Collabora alla costruzione di una semplice pagina web (con guida del docente).
+- Collabora, con la guida del docente, alla costruzione di una semplice pagina web
+  accessibile (immagini con testo alternativo, titoli chiari).
+
+> **Nota per il periodo transitorio.** Per le classi intermedie attive nell'a.s. 2025/26
+> restano valide le Indicazioni 2012; i traguardi sopra elencati sono compatibili con
+> entrambi i quadri.
 
 
 ## SEZIONE 3 — Obiettivi di apprendimento
@@ -120,6 +155,8 @@ Al termine del percorso l'alunno è in grado di:
 
 - Ogni alunno (o gruppo) sceglie la propria via e la registra in un foglio di progetto.
 
+- La classe delibera fin d'ora la forma di restituzione alla comunità (v. Fase finale), così da orientare la raccolta dei materiali.
+
 **Prodotto di fase:** Foglio di progetto compilato con la scelta della via e le prime ipotesi sulla sua storia.
 
 
@@ -153,7 +190,7 @@ Al termine del percorso l'alunno è in grado di:
 **Prodotto di fase:** Testo definitivo di 10–20 righe, scritto con parole proprie.
 
 
-### Fase 4 — Contributi grafici e mappa
+### Fase 4 — Diario visivo e mappa
 
 **Durata:** 2–3 ore | **Discipline:** Arte, TIC, Geografia
 
@@ -161,7 +198,14 @@ Al termine del percorso l'alunno è in grado di:
 
 - Con la guida del docente, localizzano la via su Google Maps o OpenStreetMap e copiano il codice embed per la mappa interattiva.
 
-**Prodotto di fase:** 1–2 elaborati grafici + link o codice della mappa.
+- Gli elaborati grafici realizzati durante e dopo l'uscita sul campo (disegni, schizzi,
+  collage, fotografie) confluiscono nel **Diario visivo di via**: ogni elaborato è
+  accompagnato da una didascalia in tre righe scritte dall'alunno —
+  **cosa ho provato** (emozione), **come l'ho realizzato** (tecnica),
+  **cosa racconta della via e della sua storia** (contesto). Una selezione del Diario
+  visivo entra nella pagina web pubblicata.
+
+**Prodotto di fase:** 1–2 elaborati grafici raccolti nel Diario visivo + link o codice della mappa.
 
 
 ### Fase 5 — Costruzione della pagina web
@@ -176,18 +220,22 @@ Al termine del percorso l'alunno è in grado di:
 
   - Testo "...per via"
 
+  - Voci dalla classe
+
   - Mappa interattiva
 
-  - Contributi grafici
+  - Contributi grafici (Diario visivo)
 
   - Informazioni sull'autore e sulla classe
+
+- Tutte le immagini hanno un testo alternativo (attributo `alt`) che le descrive brevemente.
 
 - Il docente supervisiona e supporta nella fase tecnica.
 
 **Prodotto di fase:** Pagina web completa, pronta per la pubblicazione.
 
 
-### Fase 6 — Presentazione e condivisione
+### Fase 6 — Presentazione alla classe
 
 **Durata:** 2 ore | **Discipline:** Italiano, Ed. Civica
 
@@ -198,6 +246,26 @@ Al termine del percorso l'alunno è in grado di:
 - Il docente raccoglie i link delle pagine per inviarle a viapervia.education.
 
 - Autovalutazione individuale (scheda allegata).
+
+
+### Fase 7 — Restituzione alla comunità
+
+**Durata:** 2 ore (+ eventuale evento fuori orario) | **Discipline:** Italiano, Ed. Civica
+
+- La classe sceglie insieme **una** forma di restituzione (deliberata a inizio percorso,
+  in Fase 1, così da poterla preparare):
+  - **Lettera al Sindaco e all'Ufficio Toponomastica** del Comune, che presenta il lavoro
+    svolto e il link alla pagina, con eventuale proposta (es. una targhetta QR nella via);
+  - **Mostra di via**: esposizione dei Diari visivi e lettura dei testi, aperta alle
+    famiglie e — se possibile — ai residenti e ai commercianti intervistati;
+  - **Invio alla Pro Loco / biblioteca comunale** con richiesta di inserire il link
+    tra le risorse sul territorio.
+- Gli alunni scrivono collettivamente il testo della restituzione (la lettera, l'invito,
+  la mail di presentazione): è un secondo testo reale, con destinatario reale.
+
+**Prodotto di fase:** lettera protocollata / evento realizzato / conferma di pubblicazione
+da parte dell'ente, documentati con una foto o una riga nella pagina web
+("Questo lavoro è stato presentato a…").
 
 
 ## SEZIONE 6 — Metodologie e strumenti
@@ -217,16 +285,58 @@ Al termine del percorso l'alunno è in grado di:
 - Scheda di progetto e schema di ricerca (da predisporre o adattare)
 
 
+## SEZIONE 6-bis — Personalizzazione e inclusione (BES e disabilità)
+
+> Riferimenti: L. 104/1992; D.Lgs. 66/2017 e D.Lgs. 96/2019; D.I. 182/2020 (PEI);
+> L. 170/2010 e D.M. 5669/2011 (DSA); D.M. 27/12/2012 e C.M. 8/2013 (BES).
+
+Via Per Via è strutturalmente inclusivo perché la scelta è libera, la profondità
+adattabile e ogni contributo è valido: questo paragrafo traduce il principio in
+strumenti operativi, da raccordare con PEI e PDP degli alunni coinvolti.
+
+- **Formati alternativi del testo "...per via"** (equivalenti a tutti gli effetti, da
+  indicare nel PEI/PDP come modalità di verifica personalizzata):
+  - **audio**: il testo registrato con la propria voce (anche a partire da una scaletta),
+    pubblicato come traccia nella pagina;
+  - **mappa visuale**: mappa concettuale o storyboard illustrato che organizza le
+    informazioni per immagini e parole-chiave;
+  - **contributo fotografico come prodotto principale**: un racconto per immagini della
+    via (8–12 foto con didascalie brevi), in cui il testo scritto si riduce alle didascalie;
+  - **testo facilitato**: struttura a domande-guida (Chi? Quando? Perché questa via?),
+    frasi brevi, supporto di un compagno tutor o del docente.
+- **Ruoli differenziati nel gruppo**: fotografo di via, cartografo (mappa e coordinate),
+  intervistatore, illustratore del Diario visivo, ricercatore di fonti, curatore della
+  pagina. Ogni ruolo produce una parte visibile e firmata del risultato: nessuno "aiuta
+  soltanto", tutti firmano.
+- **Strumenti compensativi** ammessi in ogni fase: sintesi vocale e dettatura, mappe e
+  scalette, correttore ortografico, tempi aggiuntivi; **misure dispensative** coerenti
+  con il PDP (es. dispensa dalla lettura ad alta voce in presentazione, sostituita da
+  supporto visivo).
+- **Valutazione**: le rubriche si applicano al formato scelto (la rubrica del testo vale
+  per l'audio e per le didascalie del racconto fotografico, con gli stessi indicatori:
+  accuratezza, rielaborazione, chiarezza, fonti). L'obiettivo resta identico per tutti:
+  raccontare con parole — o immagini — proprie.
+
+**Primaria:** privilegiare il lavoro in coppia con tutor tra pari; il racconto
+fotografico e la mappa visuale sono opzioni aperte a tutta la classe, non "riservate",
+per evitare effetti di etichettamento.
+
+
 ## SEZIONE 7 — Valutazione
 
 ### Cosa si valuta
 
 | Dimensione | Strumento | Peso indicativo |
 | - | - | - |
-| Qualità del testo prodotto | Rubrica analitica | 40% |
+| Qualità del testo prodotto | Rubrica analitica | 35% |
 | Processo di ricerca (fonti, metodo) | Osservazione + schema consegnato | 25% |
-| Pagina web (completezza e cura) | Griglia prodotto | 20% |
+| Pagina web (completezza e cura) | Griglia prodotto | 15% |
 | Partecipazione e collaborazione | Osservazione sistematica | 15% |
+| Restituzione alla comunità (partecipazione, cura del testo di presentazione) | Osservazione + prodotto | 10% |
+
+Nel livello Avanzato dell'indicatore di completezza della pagina web rientrano anche il
+testo alternativo su tutte le immagini e la presenza delle «voci dalla classe»; nel livello
+Base la loro assenza o genericità.
 
 
 ### Rubrica sintetica — Testo "...per via"
@@ -237,6 +347,13 @@ Al termine del percorso l'alunno è in grado di:
 | Rielaborazione personale | Il testo è completamente originale e personale | Prevalentemente rielaborato | Parzialmente rielaborato | Copia prevalente dalle fonti |
 | Chiarezza espositiva | Testo chiaro, ordinato, scorrevole | Abbastanza chiaro | Comprensibile con qualche difficoltà | Poco chiaro o disorganizzato |
 | Fonti citate | 3+ fonti diverse citate correttamente | 2 fonti | 1 fonte | Nessuna fonte |
+
+
+### Rubrica — Diario visivo
+
+| Indicatore | Avanzato | Intermedio | Base | In via di acquisizione |
+| - | - | - | - | - |
+| Diario visivo | Elaborati originali con didascalie complete che integrano emozione, tecnica e contesto | Didascalie presenti ma parziali | Elaborati senza didascalie | Elaborati assenti o non originali |
 
 
 ### Autovalutazione alunno (scheda da consegnare a fine percorso)

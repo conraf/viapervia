@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <title>Chi siamo · Via Per Via Education</title>
+  <meta name="description" content="Chi siamo: il progetto Via Per Via Education, il fondatore, il comitato scientifico e i patrocini.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chi siamo · Via Per Via Education">
+  <meta property="og:description" content="Il progetto Via Per Via Education, il fondatore, il comitato scientifico e i patrocini.">
+  <meta property="og:image" content="https://www.viapervia.education/ViaPerViaLogoBig.png">
+  <meta property="og:url" content="https://www.viapervia.education/chi-siamo.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vpv.css">
+  <style>
+    /* PAGE */
+    .page-wrap {
+      max-width:780px; margin:0 auto;
+      padding:6rem 2rem 4rem;
+    }
+
+    /* HERO */
+    .privacy-hero {
+      margin-bottom:2rem;
+      padding-bottom:2rem;
+      border-bottom:2px solid var(--blue-pale);
+    }
+    .sec-label {
+      display:inline-block; font-size:0.68rem; font-weight:700;
+      letter-spacing:0.22em; text-transform:uppercase;
+      color:var(--blue-main); margin-bottom:0.8rem;
+    }
+    .privacy-hero h1 {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700;
+      color:var(--blue-dark); line-height:1.2; margin-bottom:0.9rem;
+    }
+    .privacy-hero p {
+      font-size:0.9rem; color:var(--gray-mid); line-height:1.8;
+    }
+
+    /* NOTICE BANNER */
+    .notice-banner {
+      background:var(--amber-light);
+      border-left:4px solid var(--amber);
+      border-radius:0 8px 8px 0;
+      padding:1rem 1.25rem;
+      margin-bottom:2.5rem;
+      font-size:0.84rem; color:#7A4A0A; line-height:1.6;
+    }
+    .notice-banner strong { color:var(--amber); }
+
+    /* SECTIONS */
+    .privacy-sections { display:flex; flex-direction:column; gap:0; }
+
+    .privacy-section {
+      display:grid;
+      grid-template-columns:2.8rem 1fr;
+      gap:0 1.2rem;
+      padding:1.8rem 0;
+      border-bottom:1px solid var(--gray-light);
+    }
+    .privacy-section:last-child { border-bottom:none; }
+
+    .section-num {
+      display:flex; align-items:flex-start; padding-top:0.15rem;
+      font-family:'Playfair Display',serif;
+      font-size:1.4rem; font-weight:700;
+      color:var(--blue-pale);
+      line-height:1;
+    }
+    .section-body h2 {
+      font-family:'DM Sans',sans-serif;
+      font-size:0.72rem; font-weight:700;
+      letter-spacing:0.18em; text-transform:uppercase;
+      color:var(--blue-main); margin-bottom:0.7rem;
+    }
+    .section-body p {
+      font-size:0.9rem; color:var(--gray-dark); line-height:1.8;
+      margin-bottom:0.6rem;
+    }
+    .section-body p:last-child { margin-bottom:0; }
+    .section-body ul {
+      margin:0.5rem 0 0.6rem 0; padding:0; list-style:none;
+    }
+    .section-body ul li {
+      font-size:0.9rem; color:var(--gray-dark); line-height:1.8;
+      padding-left:1.2rem; position:relative; margin-bottom:0.5rem;
+    }
+    .section-body ul li::before {
+      content:''; position:absolute; left:0; top:0.72em;
+      width:5px; height:5px; border-radius:50%;
+      background:var(--blue-mid);
+    }
+    .section-body a {
+      color:var(--blue-main); text-decoration:underline;
+      text-underline-offset:2px;
+    }
+    .section-body a:hover { color:var(--blue-dark); }
+
+    .placeholder-text {
+      display:inline-block;
+      background:var(--blue-pale); color:var(--blue-dark);
+      font-size:0.85rem; font-style:italic;
+      padding:0.05rem 0.35rem; border-radius:4px;
+    }
+
+    @media (max-width:768px) {
+      .page-wrap { padding:5rem 1.2rem 3rem; }
+      .privacy-section { grid-template-columns:2rem 1fr; gap:0 0.9rem; }
+      .section-num { font-size:1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- CONTENT -->
+<main class="page-wrap">
+
+  <div class="privacy-hero">
+    <span class="sec-label">Il progetto</span>
+    <h1>Chi siamo</h1>
+    <p>Via Per Via Education è un progetto didattico indipendente e senza fini di lucro, nato a
+    Ferrara nel 2025, che invita le scuole italiane di ogni ordine e grado a raccontare il
+    proprio territorio una strada alla volta. I contributi delle classi confluiscono in un
+    database pubblico e in una mappa nazionale, rilasciati con licenza Creative Commons
+    BY-NC-SA 4.0: un patrimonio collettivo costruito dagli studenti, a disposizione di tutti.</p>
+  </div>
+
+  <div class="notice-banner">
+    <strong>Nota:</strong> il comitato scientifico è in via di costituzione; i patrocini
+    elencati sono in fase di richiesta e non ancora concessi. Questa pagina sarà aggiornata non
+    appena le collaborazioni saranno formalizzate.
+  </div>
+
+  <div class="privacy-sections">
+
+    <div class="privacy-section">
+      <span class="section-num">1</span>
+      <div class="section-body">
+        <h2>Il fondatore e coordinatore</h2>
+        <p><strong>Franco Tamoni</strong> — Laureato con lode in Filosofia, con un master nel
+        terzo settore ed esperienza nell'editoria multimediale e nel restauro cinematografico,
+        da oltre dieci anni si occupa di insegnamento e formazione. Animatore digitale, lavora
+        da sempre sulla tecnologia al servizio delle persone. Vive e lavora a Ferrara.</p>
+        <p>Contatto: <a href="mailto:viapervia.education@gmail.com">viapervia.education@gmail.com</a></p>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <span class="section-num">2</span>
+      <div class="section-body">
+        <h2>Il comitato scientifico</h2>
+        <p>Il comitato scientifico garantisce la qualità metodologica del progetto: valida i
+        materiali didattici (UDA, guide, schede), supervisiona la policy editoriale e supporta
+        la redazione nei casi complessi (toponomastica controversa, verifiche storiche). Si
+        riunisce due volte l'anno e opera a titolo gratuito.</p>
+        <ul>
+          <li><span class="placeholder-text">[Nome Cognome]</span> — docente di Storia
+          contemporanea, <span class="placeholder-text">[Università]</span>, esperto/a di
+          storia locale e public history <em>(presidenza)</em></li>
+          <li><span class="placeholder-text">[Nome Cognome]</span> — esperto/a di
+          toponomastica e odonomastica, <span class="placeholder-text">[ente/associazione]</span></li>
+          <li><span class="placeholder-text">[Nome Cognome]</span> — dirigente scolastico/a,
+          <span class="placeholder-text">[istituto]</span>, per il raccordo con la
+          progettazione curricolare e le Indicazioni Nazionali</li>
+          <li><span class="placeholder-text">[Nome Cognome]</span> — docente e
+          formatore/formatrice, esperto/a di didattica digitale e educazione civica digitale</li>
+          <li><span class="placeholder-text">[Nome Cognome]</span> — rappresentante di
+          <span class="placeholder-text">[archivio storico / rete bibliotecaria]</span>, per la
+          metodologia della ricerca sulle fonti</li>
+        </ul>
+        <p><em>Il comitato può essere integrato da referenti territoriali nelle regioni con più
+        scuole aderenti.</em></p>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <span class="section-num">3</span>
+      <div class="section-body">
+        <h2>Patrocini e collaborazioni</h2>
+        <p>Il progetto si avvale del patrocinio di: <em>(inserire loghi e delibere di
+        concessione)</em></p>
+        <ul>
+          <li><strong>ANCI — Associazione Nazionale Comuni Italiani</strong> <em>(ovvero ANCI
+          <span class="placeholder-text">[Regione]</span>)</em>: il patrocinio riconosce il
+          valore del progetto nel rapporto tra scuole e amministrazioni comunali, dalla
+          consultazione degli archivi alla restituzione in consiglio comunale.</li>
+          <li><strong>Università di <span class="placeholder-text">[città]</span> —
+          Dipartimento di <span class="placeholder-text">[Studi Umanistici]</span></strong>:
+          supervisione scientifica sulla metodologia della ricerca storica e toponomastica.</li>
+          <li><strong><span class="placeholder-text">[Regione]</span> — Settore Patrimonio
+          culturale</strong> <em>(o Istituto per i beni culturali, dove esistente)</em>: il
+          progetto contribuisce alla conoscenza e valorizzazione del patrimonio culturale
+          diffuso.</li>
+          <li><strong>Ufficio Scolastico Regionale per <span class="placeholder-text">[Regione]</span></strong>:
+          riconoscimento del valore didattico del progetto nel quadro delle Indicazioni
+          Nazionali.</li>
+        </ul>
+        <p>Collaborano inoltre con il progetto: biblioteche e archivi comunali delle città
+        partecipanti, Pro Loco, <span class="placeholder-text">[associazioni culturali]</span>.
+        Le scuole e gli enti interessati a una collaborazione possono scriverci.</p>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <span class="section-num">4</span>
+      <div class="section-body">
+        <h2>Trasparenza</h2>
+        <p>Via Per Via Education non ha fini di lucro, non raccoglie pubblicità e non richiede
+        alcun contributo economico alle scuole. I materiali del kit sono gratuiti e rilasciati
+        in licenza aperta. <em>(Se in futuro il progetto si costituirà in associazione: indicare
+        qui forma giuridica, statuto e bilancio.)</em></p>
+      </div>
+    </div>
+
+  </div><!-- privacy-sections -->
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-cta">
+    <h3>Vuoi portare Via Per Via nella tua scuola?</h3>
+    <p>Scrivi per ricevere il kit di avvio — con <a href="#" onclick="openUdaPopup();return false;">UDA per tutti gli ordini e gradi</a>, <a href="#" onclick="openKitPopup();return false;">guida per insegnanti e template opzionale</a> e tutte le informazioni per aderire.</p>
+    <a href="mailto:viapervia.education@gmail.com" class="footer-cta-btn"><span class="env-c">✉️</span><span class="env-o">📮</span> Scrivici</a>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-name">VIA PER VIA</span>
+    <span class="footer-sub2">Education</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="index.html">Per gli insegnanti</a>
+      <a href="index.html">Simulazione</a>
+      <a href="mappa.html">Mappa</a>
+      <a href="chi-siamo.html" class="footer-active">Chi siamo</a>
+      <a href="policy-editoriale.html">Policy editoriale</a>
+      <a href="mailto:viapervia.education@gmail.com">Contatti</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <p class="footer-copy">© 2026 Via Per Via Education · Contenuti rilasciati sotto licenza CC BY-NC-SA 4.0 · www.viapervia.education</p>
+  </div>
+</footer>
+
+<script src="vpv-navbar.js" data-root=""></script>
+</body>
+</html>

@@ -80,6 +80,11 @@
 
 - Conosce il funzionamento delle istituzioni locali (Comune, Pro Loco, archivi storici).
 
+> **Nota:** sono in corso di adozione le nuove Indicazioni Nazionali per il secondo
+> ciclo. Questa UDA ne recepisce già l'impianto metodologico (compiti di realtà,
+> pensiero critico, rapporto scuola-territorio, uso critico dell'IA e delle fonti
+> digitali) e sarà aggiornata nei riferimenti alla loro entrata in vigore.
+
 
 ## SEZIONE 3 — Obiettivi di apprendimento
 
@@ -129,11 +134,13 @@ Al termine del percorso lo studente è in grado di:
 
 - Analisi critica di esempi già pubblicati sul sito: cosa funziona? Cosa si potrebbe migliorare?
 
-- Discussione problematizzante: la toponomastica come scelta politica e culturale. Esempi di strade rinominate, di figure discusse, di intitolazioni contestate.
+- Discussione problematizzante: la toponomastica come scelta politica e culturale. Esempi di strade rinominate, di figure discusse, di intitolazioni contestate (v. scheda Toponomastica difficile, Tracce 1 e 2, su starter-kit/toponomastica-difficile.html).
 
 - Introduzione al metodo della ricerca storica: differenza tra fonte primaria e secondaria, concetto di storiografia.
 
 - Formazione dei gruppi e scelta delle vie. Contratto di gruppo (ruoli, tempi, responsabilità).
+
+- La classe delibera fin d'ora la forma di restituzione alla comunità (v. Fase finale), così da orientare la raccolta dei materiali.
 
 **Prodotto di fase:** Contratto di gruppo + documento di avvio ricerca (via scelta, domanda di ricerca, prime ipotesi, fonti previste).
 
@@ -206,17 +213,23 @@ Al termine del percorso lo studente è in grado di:
 **Lunghezza indicativa:** 400–800 parole (adattare al livello e al tipo di istituto).
 
 
-### Fase 6 — Contributi grafici, mappa e multimedia
+### Fase 6 — Diario visivo, mappa e multimedia
 
 **Durata:** 2–3 ore | **Discipline:** Arte, Informatica, Storia
 
-- Produzione degli elaborati grafici originali o selezione di immagini con licenza libera (Wikimedia Commons, Unsplash).
+- Produzione degli elaborati grafici originali o selezione di immagini con licenza aperta verificabile: **Wikimedia Commons** (indicando la licenza specifica dell'immagine), **Openverse** (motore di ricerca per contenuti CC), **Flickr Commons** ed **Europeana** per il materiale fotografico storico. Attenzione: piattaforme come Unsplash o Pixabay usano licenze proprietarie che, pur permettendo molti usi, **non sono licenze aperte** e non sono compatibili con la ridistribuzione in CC BY-NC-SA: verificare sempre i termini è parte dell'esercizio di cittadinanza digitale.
 
 - Localizzazione della via su mappa digitale e generazione dell'iframe.
 
 - Integrazione dell'eventuale intervista video/audio.
 
 - Curatela visiva dei materiali: proporzioni, qualità, pertinenza.
+
+- Gli elaborati confluiscono nel **Diario visivo di via** e includono anche l'analisi di
+  almeno un elemento di patrimonio presente nella via o nei dintorni (monumento, lapide,
+  edificio storico, decorazione), collegato — dove pertinente — a un riferimento più
+  ampio della storia dell'arte: dal patrimonio locale a quello globale (es. una facciata
+  liberty di quartiere → il Liberty europeo; un'edicola votiva → l'iconografia mariana).
 
 
 ### Fase 7 — Realizzazione della pagina web
@@ -229,9 +242,11 @@ Al termine del percorso lo studente è in grado di:
 
   - **Opzione B:** HTML/CSS base (per classi con percorso informatico)
 
-- La pagina deve rispettare la struttura di progetto e includere tutti gli elementi previsti.
+- La pagina deve rispettare la struttura di progetto e includere tutti gli elementi previsti, comprese le «voci dalla classe».
 
 - Attenzione a: privacy (volti di minori, nomi reali), licenze delle immagini, attribuzione dei contenuti.
+
+- Tutte le immagini hanno un testo alternativo (attributo `alt`) che le descrive brevemente.
 
 **Prodotto di fase:** Pagina web pubblicata con URL da inviare a viapervia.education.
 
@@ -249,6 +264,26 @@ Al termine del percorso lo studente è in grado di:
 - Invio delle pagine a viapervia.education.
 
 - Autovalutazione individuale e riflessione metacognitiva di gruppo.
+
+### Fase 9 — Restituzione pubblica e raccordo istituzionale
+
+**Durata:** 3–4 ore (parte fuori orario) | **Discipline:** Italiano, Ed. Civica, (Informatica)
+
+- La restituzione al territorio si articola in un menu di scelte tra cui la classe
+  sceglie almeno una (obbligatoria):
+  - **Presentazione in commissione cultura o consiglio comunale** (anche in forma di
+    deposito degli atti: dossier + link);
+  - **Comunicato stampa** redatto dagli studenti e inviato a testate locali;
+  - **Evento pubblico** (a scuola, in biblioteca, alla Pro Loco) con presentazione
+    delle pagine e proiezione delle interviste;
+  - **Proposta formale al Comune** (es. progetto di targhe QR, segnalazione di vie
+    prive di note storiche sul sito comunale).
+- **Collegamento PCTO:** per il triennio, la fase può essere riconosciuta come attività
+  PCTO in ambito culturale/comunicativo (relazioni con enti, comunicazione pubblica),
+  con convenzione tra scuola ed ente ospitante.
+
+**Prodotto di fase:** dossier di restituzione (chi è stato contattato, cosa è stato
+presentato, esiti) + il materiale prodotto (comunicato, slides, proposta).
 
 
 ## SEZIONE 6 — Metodologie e strumenti
@@ -276,6 +311,43 @@ Al termine del percorso lo studente è in grado di:
 - Contratto di gruppo
 
 
+## SEZIONE 6-bis — Personalizzazione e inclusione (BES e disabilità)
+
+> Riferimenti: L. 104/1992; D.Lgs. 66/2017 e D.Lgs. 96/2019; D.I. 182/2020 (PEI);
+> L. 170/2010 e D.M. 5669/2011 (DSA); D.M. 27/12/2012 e C.M. 8/2013 (BES).
+
+Via Per Via è strutturalmente inclusivo perché la scelta è libera, la profondità
+adattabile e ogni contributo è valido: questo paragrafo traduce il principio in
+strumenti operativi, da raccordare con PEI e PDP degli alunni coinvolti.
+
+- **Formati alternativi del testo "...per via"** (equivalenti a tutti gli effetti, da
+  indicare nel PEI/PDP come modalità di verifica personalizzata):
+  - **audio**: il testo registrato con la propria voce (anche a partire da una scaletta),
+    pubblicato come traccia nella pagina;
+  - **mappa visuale**: mappa concettuale o storyboard illustrato che organizza le
+    informazioni per immagini e parole-chiave;
+  - **contributo fotografico come prodotto principale**: un racconto per immagini della
+    via (8–12 foto con didascalie brevi), in cui il testo scritto si riduce alle didascalie;
+  - **testo facilitato**: struttura a domande-guida (Chi? Quando? Perché questa via?),
+    frasi brevi, supporto di un compagno tutor o del docente.
+- **Ruoli differenziati nel gruppo**: fotografo di via, cartografo (mappa e coordinate),
+  intervistatore, illustratore del Diario visivo, ricercatore di fonti, curatore della
+  pagina. Ogni ruolo produce una parte visibile e firmata del risultato: nessuno "aiuta
+  soltanto", tutti firmano.
+- **Strumenti compensativi** ammessi in ogni fase: sintesi vocale e dettatura, mappe e
+  scalette, correttore ortografico, tempi aggiuntivi; **misure dispensative** coerenti
+  con il PDP (es. dispensa dalla lettura ad alta voce in presentazione, sostituita da
+  supporto visivo).
+- **Valutazione**: le rubriche si applicano al formato scelto (la rubrica del testo vale
+  per l'audio e per le didascalie del racconto fotografico, con gli stessi indicatori:
+  accuratezza, rielaborazione, chiarezza, fonti). L'obiettivo resta identico per tutti:
+  raccontare con parole — o immagini — proprie.
+
+**Secondaria di II grado:** gli adattamenti si raccordano con il PDP/PEI e, per il
+triennio, con l'eventuale progetto PCTO; la riflessione metacognitiva finale può
+essere svolta in colloquio invece che per iscritto.
+
+
 ## SEZIONE 7 — Valutazione
 
 ### Cosa si valuta
@@ -285,8 +357,13 @@ Al termine del percorso lo studente è in grado di:
 | Qualità del testo (rielaborazione, fonti, registro, struttura) | Rubrica analitica | 30% |
 | Qualità della ricerca (metodo, fonti, analisi critica) | Griglia di processo + schema finale | 20% |
 | Pagina web (struttura, cura visiva, funzionalità) | Griglia prodotto | 20% |
-| Presentazione orale (chiarezza, efficacia, gestione domande) | Griglia presentazione | 15% |
-| Lavoro di gruppo e autonomia | Osservazione + autovalutazione + peer evaluation | 15% |
+| Presentazione orale (chiarezza, efficacia, gestione domande) | Griglia presentazione | 10% |
+| Lavoro di gruppo e autonomia | Osservazione + autovalutazione + peer evaluation | 10% |
+| Restituzione pubblica | Osservazione + prodotto | 10% |
+
+Nel livello Avanzato dell'indicatore di completezza della pagina web rientrano anche il
+testo alternativo su tutte le immagini e la presenza delle «voci dalla classe»; nel livello
+Base la loro assenza o genericità.
 
 
 ### Rubrica analitica — Testo "...per via"
@@ -298,6 +375,13 @@ Al termine del percorso lo studente è in grado di:
 | Struttura argomentativa | Struttura chiara, progressione logica, connettivi appropriati | Struttura presente, con qualche incoerenza | Struttura di base, sequenza non sempre coerente | Testo frammentato, senza struttura riconoscibile |
 | Citazione e apparato documentario | 5+ fonti eterogenee citate correttamente; link di approfondimento pertinenti | 3–4 fonti citate correttamente | 2 fonti citate | 0–1 fonti o citazioni assenti |
 | Registro e qualità linguistica | Registro formale e divulgativo costante; lessico preciso e vario | Prevalentemente formale; qualche caduta di registro | Registro misto; lessico generico | Registro inadeguato o colloquiale; lessico impreciso |
+
+
+### Rubrica — Diario visivo
+
+| Indicatore | Avanzato | Intermedio | Base | In via di acquisizione |
+| - | - | - | - | - |
+| Diario visivo | Elaborati originali con didascalie complete che integrano emozione, tecnica e contesto | Didascalie presenti ma parziali | Elaborati senza didascalie | Elaborati assenti o non originali |
 
 
 ### Rubrica — Presentazione orale
@@ -337,21 +421,6 @@ Al termine del percorso lo studente è in grado di:
 - Griglia di valutazione della pagina web
 
 - Griglia per la presentazione orale
-
-
-## NOTE PER IL RACCORDO CON LE ISTITUZIONI LOCALI
-
-Il progetto si presta a connessioni significative con:
-
-- **Biblioteca o archivio comunale** — per fonti primarie e accesso a materiali storici locali
-
-- **Pro Loco / associazioni culturali** — per testimonianze e collaborazione nella diffusione
-
-- **Comune** — eventuale presentazione del lavoro in consiglio comunale o commissione cultura
-
-- **Giornali locali / testate online** — per dare visibilità pubblica al progetto
-
-Questi contatti, se attivati, arricchiscono il percorso e rafforzano la dimensione civica del progetto.
 
 
 *Progetto Via per Via — viapervia.education | Licenza CC BY-NC-SA*

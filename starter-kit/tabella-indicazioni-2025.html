@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <title>Via Per Via e le Nuove Indicazioni Nazionali 2025 · Via Per Via Education</title>
+  <meta name="description" content="Tabella di corrispondenza completa fra il progetto Via Per Via e le Nuove Indicazioni Nazionali 2025 (D.M. 221/2025): geografia, storia, italiano, arte, educazione civica.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Via Per Via e le Nuove Indicazioni Nazionali 2025">
+  <meta property="og:description" content="Tabella di corrispondenza completa fra il progetto Via Per Via e le Nuove Indicazioni Nazionali 2025 (D.M. 221/2025).">
+  <meta property="og:image" content="https://www.viapervia.education/ViaPerViaLogoBig.png">
+  <meta property="og:url" content="https://www.viapervia.education/starter-kit/tabella-indicazioni-2025.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../vpv.css">
+  <style>
+    body {
+      background: white;
+      line-height: 1.7;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 2.5rem 0;
+    }
+    .cover {
+      background: var(--blue-dark);
+      color: white;
+      padding: calc(var(--header-h) + 1.5rem) 2.5rem 2.5rem;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      margin-left: -50vw;
+      margin-bottom: 3rem;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(11,110,158,0.5) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cover-inner { position: relative; max-width: 1080px; margin: 0 auto; }
+    .cover-label {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: rgba(255,255,255,0.6);
+      margin-bottom: 1rem;
+    }
+    .cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem; font-weight: 700; line-height: 1.25;
+      margin-bottom: 0.75rem;
+    }
+    .cover-subtitle {
+      font-size: 1rem; color: rgba(255,255,255,0.72);
+      line-height: 1.7; margin-bottom: 2rem;
+    }
+    .cover-meta {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .cover-pill {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px; padding: 0.2rem 0.75rem;
+      font-size: 0.7rem; color: rgba(255,255,255,0.8);
+    }
+    section { margin-bottom: 3rem; }
+    .step-title-wrap { flex: 1; }
+    .step-label {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--blue-mid); margin-bottom: 0.4rem;
+    }
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem; font-weight: 700; color: var(--blue-dark); line-height: 1.25;
+      margin-bottom: 1.1rem;
+    }
+    p { color: var(--gray-mid); margin-bottom: 0.9rem; line-height: 1.8; }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--gray-dark); font-weight: 600; }
+
+    .callout {
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      font-size: 0.88rem;
+    }
+    .callout-blue {
+      background: var(--cream);
+      border-left: 4px solid var(--blue-main);
+    }
+    .callout-title {
+      font-weight: 700; font-size: 0.72rem; letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: 0.4rem; color: var(--blue-main);
+    }
+    .callout p { margin-bottom: 0.5rem; font-size: 0.88rem; }
+    .callout p:last-child { margin-bottom: 0; }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--gray-light);
+      margin: 2.5rem 0;
+    }
+
+    /* ── TABELLA ── */
+    .corr-table-wrap { overflow-x: auto; margin: 1.5rem 0; }
+    table.corr-table {
+      width: 100%; border-collapse: collapse; font-size: 0.85rem;
+    }
+    table.corr-table th {
+      background: var(--blue-dark); color: white;
+      text-align: left; padding: 0.75rem 1rem;
+      font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+      font-weight: 700;
+    }
+    table.corr-table th:first-child { border-radius: 8px 0 0 0; }
+    table.corr-table th:last-child { border-radius: 0 8px 0 0; }
+    table.corr-table td {
+      padding: 0.85rem 1rem; border-bottom: 1px solid var(--gray-light);
+      color: var(--gray-dark); vertical-align: top; line-height: 1.6;
+    }
+    table.corr-table tr:nth-child(even) td { background: var(--cream); }
+
+    .doc-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--gray-light);
+      font-size: 0.75rem; color: var(--gray-mid);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .doc-footer strong { color: var(--blue-dark); }
+    .site-footer {
+      width: 100vw; position: relative; left: 50%; margin-left: -50vw;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- COPERTINA -->
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-label">Via Per Via Education · Starter Kit</div>
+    <h1 class="cover-title">Via Per Via ↔ Nuove Indicazioni Nazionali 2025<br>Tabella di corrispondenza</h1>
+    <p class="cover-subtitle">
+      Uno strumento pronto per il PTOF, il curricolo d'istituto e la delibera del collegio docenti:
+      da citare nelle delibere e nella programmazione.
+    </p>
+    <div class="cover-meta">
+      <span class="cover-pill">Tutte le discipline</span>
+      <span class="cover-pill">Tutti i gradi scolastici</span>
+      <span class="cover-pill">A.S. 2025/2026</span>
+    </div>
+  </div>
+</div>
+
+<div class="callout callout-blue">
+  <div class="callout-title">Riferimento normativo</div>
+  <p>D.M. 9 dicembre 2025, n. 221 (G.U. n. 21 del 27 gennaio 2026), "Indicazioni nazionali per il
+  curricolo della scuola dell'infanzia e del primo ciclo di istruzione", in vigore dall'a.s.
+  2026/27 a partire dalle classi prime. Le Indicazioni 2012 continuano ad applicarsi alle classi
+  intermedie fino a conclusione dei rispettivi cicli.</p>
+  <p>Per la scuola secondaria di II grado le nuove Indicazioni per i Licei sono in fase di
+  consultazione: i riferimenti per questo grado restano quelli vigenti (DPR 89/2010 e Indicazioni
+  Nazionali/Linee guida di indirizzo), con nota di aggiornamento futuro.</p>
+</div>
+
+<hr>
+
+<section>
+  <div class="step-title-wrap">
+    <div class="step-label">Tabella completa</div>
+    <h2 class="step-title">Corrispondenza fra Via Per Via e le Indicazioni 2025</h2>
+  </div>
+  <div class="corr-table-wrap">
+    <table class="corr-table">
+      <thead>
+        <tr>
+          <th>Elemento di Via Per Via</th>
+          <th>Cosa chiedono le Indicazioni 2025</th>
+          <th>Dove/come il progetto risponde</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Scelta di una via della propria città</strong> e domanda di ricerca «per via di chi o di cosa?»</td>
+          <td><strong>Geografia — transcalarità</strong>: collocare fatti e relazioni a scale diverse, dal proprio quartiere alle dinamiche nazionali e planetarie, "saltando" di scala per cogliere analogie e connessioni</td>
+          <td>La ricerca parte sempre dalla scala minima (una via) e risale: il personaggio locale → il suo contesto regionale/nazionale/europeo → il ritorno alla via. Ogni pagina è un esercizio di transcalarità compiuto</td>
+        </tr>
+        <tr>
+          <td><strong>Uscita sul campo, osservazione diretta, fotografia documentaria</strong></td>
+          <td><strong>Geografia — paesaggio</strong> come "spazio di co-evoluzione" fra esseri umani e ambiente (art. 9 Cost.; Convenzione Europea del Paesaggio); comprensione anche estetica ed emozionale del paesaggio</td>
+          <td>L'uscita sul campo osserva il paesaggio urbano nel suo farsi: architetture, insegne, usi, trasformazioni. Le «voci dalla classe» (sezione obbligatoria della pagina) registrano la dimensione emozionale dell'incontro con il luogo</td>
+        </tr>
+        <tr>
+          <td><strong>La via come luogo abitato e trasformato</strong> (chi ci vive, cosa è cambiato, avvenimenti recenti)</td>
+          <td><strong>Geografia — territorializzazione</strong>: comprendere come le comunità umane abitano e trasformano il territorio modellandone i paesaggi</td>
+          <td>Una via è il laboratorio perfetto di territorializzazione: nome, edifici, negozi, memorie dei residenti raccontano come una comunità ha abitato e trasformato quello spazio nel tempo</td>
+        </tr>
+        <tr>
+          <td><strong>Interviste a residenti, commercianti, esperti locali; testimonianze di familiari e anziani</strong></td>
+          <td><strong>Comunità educante</strong> aperta al territorio, capace di tessere reti allargate; il curricolo come incontro fra curricolo formale, curricolo d'istituto e "curricolo familiare e comunitario"</td>
+          <td>Le fonti orali portano dentro il curricolo il sapere della comunità: nonni, negozianti, archivisti, storici locali diventano co-educatori. Il progetto struttura (non improvvisa) questo incontro</td>
+        </tr>
+        <tr>
+          <td><strong>Testo «...per via»</strong>: bozza → revisione tra pari → revisione docente → stesura definitiva</td>
+          <td><strong>Italiano — scrittura come processo</strong>: ideazione, pianificazione, stesura e revisione; produzione di testi informativi/espositivi corretti e adeguati al destinatario; oralità (presentazione finale)</td>
+          <td>Il percorso di scrittura del progetto ricalca esattamente le quattro fasi processuali indicate dal decreto, con destinatario reale (il pubblico del sito) che dà senso alla revisione</td>
+        </tr>
+        <tr>
+          <td><strong>Ricerca su fonti multiple</strong>, valutazione dell'attendibilità, divieto di copia-incolla, citazione delle fonti</td>
+          <td><strong>Pensiero critico</strong> e uso consapevole delle tecnologie digitali: valutare le fonti, distinguere informazione affidabile, formare "un pensiero complesso"</td>
+          <td>La rubrica di valutazione premia esplicitamente rielaborazione originale e citazione corretta; il confronto fra fonti contrastanti è attività prevista in fase di ricerca</td>
+        </tr>
+        <tr>
+          <td><strong>Il personaggio o l'evento dell'intitolazione</strong> ricostruito nel suo contesto</td>
+          <td><strong>Storia</strong>: collocare la storia locale nel quadro regionale, nazionale, europeo; uso di fonti di diverso tipo (testuali, iconografiche, orali); il patrimonio come memoria</td>
+          <td>La toponomastica è usata come fonte storica: dalla delibera di intitolazione in archivio comunale al quadro storico generale in cui il personaggio/evento si colloca</td>
+        </tr>
+        <tr>
+          <td><strong>Elaborati grafici originali</strong> raccolti nel Diario visivo dell'uscita sul campo</td>
+          <td><strong>Arte e immagine</strong>: collegare la storia dell'arte al proprio vissuto; registrare riflessioni che integrano emozioni, tecnica e contesto storico in un "Diario visivo"; studio delle opere d'arte del territorio (visite guidate); collegare il patrimonio locale a quello globale</td>
+          <td>Gli elaborati grafici del progetto confluiscono in un Diario visivo di via: ogni disegno/foto è accompagnato da una didascalia in tre righe — cosa ho provato, come l'ho realizzato, cosa racconta del luogo</td>
+        </tr>
+        <tr>
+          <td><strong>Pagina web pubblicata</strong> in un database nazionale</td>
+          <td><strong>Competenza digitale</strong> applicata; <strong>metodologie attive e compiti di realtà</strong>: gli studenti protagonisti che "fanno materialmente le cose" con prodotti autentici</td>
+          <td>Il prodotto non è un'esercitazione: è un contributo pubblico, permanente, consultabile da chiunque. Il compito di realtà per definizione</td>
+        </tr>
+        <tr>
+          <td><strong>Restituzione alla comunità</strong>: Consiglio comunale dei ragazzi, Pro Loco, stampa locale, evento pubblico</td>
+          <td><strong>Cittadinanza attiva</strong> (L. 92/2019 e Linee guida DM 183/2024); la scuola che collabora con enti locali e territorio (Patti Educativi di Comunità)</td>
+          <td>Con la fase strutturale di "Restituzione alla comunità" la presentazione pubblica diventa fase con prodotto atteso, non appendice eventuale</td>
+        </tr>
+        <tr>
+          <td><strong>Lavoro in piccolo gruppo</strong>, contratto di gruppo, autovalutazione e riflessione metacognitiva</td>
+          <td><strong>Competenza personale, sociale e capacità di imparare a imparare</strong>; centralità della persona (identità, relazione, partecipazione)</td>
+          <td>Ruoli, peer review, schede di autovalutazione e riflessione metacognitiva finale sono già parte integrante delle tre UDA</td>
+        </tr>
+        <tr>
+          <td><strong>Licenza CC BY-NC-SA</strong>, privacy, attribuzione</td>
+          <td><strong>Educazione civica digitale</strong>: diritto d'autore, licenze aperte, responsabilità della pubblicazione online</td>
+          <td>Il progetto insegna facendola la cittadinanza digitale: ogni classe pubblica davvero, con licenza, attribuzione e tutela dei dati</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr>
+
+<section>
+  <div class="step-title-wrap">
+    <div class="step-label">Nota redazionale</div>
+    <h2 class="step-title">Il periodo transitorio</h2>
+  </div>
+  <div class="callout callout-blue">
+    <p><strong>Nota sui riferimenti normativi.</strong> Le UDA del progetto riportano i traguardi
+    secondo le Indicazioni Nazionali 2025 (D.M. 221/2025), in vigore dall'a.s. 2026/27 a partire
+    dalle classi prime. Per le classi intermedie già attive nell'a.s. 2025/26, alle quali
+    continuano ad applicarsi le Indicazioni 2012 fino a conclusione del ciclo, i traguardi del
+    progetto sono pienamente compatibili con entrambi i quadri.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  <span><a href="../index.html" style="color:inherit;text-decoration:none;"><strong>Via Per Via Education</strong></a></span>
+  <span>Starter Kit · A.S. 2025/2026</span>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-bottom">
+    <span class="footer-name">VIA PER VIA</span>
+    <span class="footer-sub2">Education</span>
+    <div class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="../index.html">Per gli insegnanti</a>
+      <a href="../index.html#simulazione">Simulazione</a>
+      <a href="../mappa.html">Mappa</a>
+      <a href="../chi-siamo.html">Chi siamo</a>
+      <a href="../policy-editoriale.html">Policy editoriale</a>
+      <a href="mailto:viapervia.education@gmail.com">Contatti</a>
+      <a href="../privacy.html">Privacy</a>
+    </div>
+    <p class="footer-copy">© 2026 Via Per Via Education · Contenuti rilasciati sotto licenza CC BY-NC-SA 4.0 · www.viapervia.education</p>
+  </div>
+</footer>
+
+<script src="../vpv-navbar.js" data-root="../"></script>
+</body>
+</html>

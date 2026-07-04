@@ -116,6 +116,27 @@
           '<span style="font-size:1.4rem;">📄</span>' +
           '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Template HTML</div>' +
           '<div style="font-size:0.74rem;color:#666;">File base opzionale per la pagina della via · scarica</div></div></a>' +
+        '<a href="' + ROOT + 'starter-kit/toponomastica-difficile.html" style="' +
+          'display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;' +
+          'background:#F0F7FF;border:1px solid #CCE8F8;border-radius:10px;' +
+          'text-decoration:none;transition:background 0.2s;">' +
+          '<span style="font-size:1.4rem;">🗺️</span>' +
+          '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Toponomastica difficile</div>' +
+          '<div style="font-size:0.74rem;color:#666;">Vie rinominate, figure discusse, toponomastica femminile</div></div></a>' +
+        '<a href="' + ROOT + 'starter-kit/kit-privacy.html" style="' +
+          'display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;' +
+          'background:#F0F7FF;border:1px solid #CCE8F8;border-radius:10px;' +
+          'text-decoration:none;transition:background 0.2s;">' +
+          '<span style="font-size:1.4rem;">🔒</span>' +
+          '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Kit privacy e liberatorie</div>' +
+          '<div style="font-size:0.74rem;color:#666;">Moduli pronti e regola dei soli nomi di battesimo</div></div></a>' +
+        '<a href="' + ROOT + 'starter-kit/tabella-indicazioni-2025.html" style="' +
+          'display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;' +
+          'background:#F0F7FF;border:1px solid #CCE8F8;border-radius:10px;' +
+          'text-decoration:none;transition:background 0.2s;">' +
+          '<span style="font-size:1.4rem;">📊</span>' +
+          '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Tabella Indicazioni 2025</div>' +
+          '<div style="font-size:0.74rem;color:#666;">Mappa di corrispondenza per PTOF e collegio docenti</div></div></a>' +
       '</div>' +
     '</div></div>';
 

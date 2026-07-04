@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <title>Policy editoriale · Via Per Via Education</title>
+  <meta name="description" content="Il ciclo di vita dei contributi pubblicati da Via Per Via Education: cosa pubblichiamo, come verifichiamo, come si segnalano errori, licenza e riuso.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Policy editoriale · Via Per Via Education">
+  <meta property="og:description" content="Il ciclo di vita dei contributi pubblicati da Via Per Via Education.">
+  <meta property="og:image" content="https://www.viapervia.education/ViaPerViaLogoBig.png">
+  <meta property="og:url" content="https://www.viapervia.education/policy-editoriale.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vpv.css">
+  <style>
+    .page-wrap {
+      max-width:780px; margin:0 auto;
+      padding:6rem 2rem 4rem;
+    }
+    .privacy-hero {
+      margin-bottom:3rem;
+      padding-bottom:2rem;
+      border-bottom:2px solid var(--blue-pale);
+    }
+    .sec-label {
+      display:inline-block; font-size:0.68rem; font-weight:700;
+      letter-spacing:0.22em; text-transform:uppercase;
+      color:var(--blue-main); margin-bottom:0.8rem;
+    }
+    .privacy-hero h1 {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700;
+      color:var(--blue-dark); line-height:1.2; margin-bottom:0.9rem;
+    }
+    .privacy-hero p {
+      font-size:0.9rem; color:var(--gray-mid); line-height:1.8;
+    }
+    .privacy-date {
+      display:inline-block; margin-top:0.8rem;
+      font-size:0.72rem; color:var(--blue-mid);
+      font-weight:500; letter-spacing:0.04em;
+    }
+    .privacy-sections { display:flex; flex-direction:column; gap:0; }
+    .privacy-section {
+      display:grid;
+      grid-template-columns:2.8rem 1fr;
+      gap:0 1.2rem;
+      padding:1.8rem 0;
+      border-bottom:1px solid var(--gray-light);
+    }
+    .privacy-section:last-child { border-bottom:none; }
+    .section-num {
+      display:flex; align-items:flex-start; padding-top:0.15rem;
+      font-family:'Playfair Display',serif;
+      font-size:1.4rem; font-weight:700;
+      color:var(--blue-pale);
+      line-height:1;
+    }
+    .section-body h2 {
+      font-family:'DM Sans',sans-serif;
+      font-size:0.72rem; font-weight:700;
+      letter-spacing:0.18em; text-transform:uppercase;
+      color:var(--blue-main); margin-bottom:0.7rem;
+    }
+    .section-body p {
+      font-size:0.9rem; color:var(--gray-dark); line-height:1.8;
+      margin-bottom:0.6rem;
+    }
+    .section-body p:last-child { margin-bottom:0; }
+    .section-body ul {
+      margin:0.5rem 0 0.6rem 0; padding:0; list-style:none;
+    }
+    .section-body ul li {
+      font-size:0.9rem; color:var(--gray-dark); line-height:1.8;
+      padding-left:1.2rem; position:relative; margin-bottom:0.25rem;
+    }
+    .section-body ul li::before {
+      content:''; position:absolute; left:0; top:0.72em;
+      width:5px; height:5px; border-radius:50%;
+      background:var(--blue-mid);
+    }
+    .section-body a {
+      color:var(--blue-main); text-decoration:underline;
+      text-underline-offset:2px;
+    }
+    .section-body a:hover { color:var(--blue-dark); }
+    .footnote {
+      margin-top:2.5rem; font-size:0.8rem; color:var(--gray-mid);
+      font-style:italic; text-align:center;
+    }
+    @media (max-width:768px) {
+      .page-wrap { padding:5rem 1.2rem 3rem; }
+      .privacy-section { grid-template-columns:2rem 1fr; gap:0 0.9rem; }
+      .section-num { font-size:1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- CONTENT -->
+<main class="page-wrap">
+
+  <div class="privacy-hero">
+    <span class="sec-label">Come funziona il database</span>
+    <h1>Policy editoriale</h1>
+    <p>Il ciclo di vita dei contributi: cosa pubblichiamo, come verifichiamo, come si
+    corregge, come si aggiorna e come si esce dal database.</p>
+  </div>
+
+  <div class="privacy-sections">
+
+    <div class="privacy-section">
+      <span class="section-num">1</span>
+      <div class="section-body">
+        <h2>Cosa pubblichiamo</h2>
+        <p>Via Per Via pubblica contributi realizzati da classi o gruppi di studenti di scuole
+        italiane di ogni ordine e grado, dedicati a una via o piazza della propria città. Ogni
+        contributo, per essere pubblicato, deve:</p>
+        <ul>
+          <li>contenere un testo <strong>originale</strong>, rielaborato con parole proprie e con
+          le <strong>fonti citate</strong> (i testi che riproducono estesamente le fonti vengono
+          restituiti con richiesta di revisione — è il cuore del progetto);</li>
+          <li>includere la sezione <strong>«Voci dalla classe»</strong> e la <strong>mappa</strong>
+          della via;</li>
+          <li>rispettare le regole di <strong>privacy</strong> del progetto: solo nomi di
+          battesimo degli alunni, nessun volto riconoscibile di minori, liberatorie raccolte
+          dalla scuola per gli intervistati (v. <a href="starter-kit/kit-privacy.html">Kit
+          privacy</a>);</li>
+          <li>usare <strong>immagini proprie o con licenza aperta verificata</strong> e
+          attribuita;</li>
+          <li>avere il <strong>testo alternativo</strong> su tutte le immagini;</li>
+          <li>essere inviato da un <strong>docente</strong> dell'istituto, che si fa garante dei
+          punti precedenti.</li>
+        </ul>
+        <p>Non pubblichiamo contenuti offensivi, discriminatori, promozionali o estranei alle
+        finalità del progetto. Per le vie dedicate a figure oggetto di discussione pubblica, i
+        contributi che presentano le diverse posizioni in modo documentato ed equilibrato sono
+        benvenuti (v. scheda <a href="starter-kit/toponomastica-difficile.html">Toponomastica
+        difficile</a>); non pubblichiamo testi che usino la pagina come tribuna di parte.</p>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <span class="section-num">2</span>
+      <div class="section-body">
+        <h2>Verifica e pubblicazione</h2>
+        <p>Ogni contributo viene letto dalla redazione prima della pubblicazione, che avviene
+        entro <strong>5–7 giorni lavorativi</strong> dalla ricezione. Se qualcosa non è conforme
+        (privacy, licenze, testo non rielaborato), scriviamo al docente indicando con precisione
+        cosa correggere: nessun contributo viene scartato senza possibilità di revisione. Alla
+        pubblicazione, il docente riceve il link definitivo della pagina.</p>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <span class="section-num">3</span>
+      <div class="section-body">
+        <h2>Più classi, stessa via</h2>
+        <p>Una via può essere raccontata da più classi, anche dello stesso istituto, anche in
+        anni diversi: <strong>ogni contributo è unico</strong> perché unico è lo sguardo di chi
+        lo scrive, le persone incontrate, il momento in cui la via è stata osservata.</p>
+        <ul>
+          <li>I contributi multipli sulla stessa via <strong>convivono</strong> nel database,
+          ciascuno con la propria pagina, e sono collegati tra loro da un box "Questa via è
+          raccontata anche da…".</li>
+          <li>Sulla mappa nazionale, il segnaposto della via mostra tutti i contributi
+          disponibili.</li>
+          <li>Consigliamo comunque alle nuove classi di leggere i contributi esistenti prima di
+          iniziare: confrontarsi con chi ha già raccontato la via (cosa aggiungere? cosa è
+          cambiato da allora?) è un ottimo punto di partenza per la ricerca.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <span class="section-num">4</span>
+      <div class="section-body">
+        <h2>Segnalazione di errori</h2>
+        <p>Le pagine sono ricerche scolastiche: sono fatte con metodo, ma possono contenere
+        imprecisioni. Chiunque può segnalare un errore:</p>
+        <ul>
+          <li>scrivendo a <a href="mailto:viapervia.education@gmail.com">viapervia.education@gmail.com</a>
+          con oggetto <em>"Segnalazione — [nome via] — [città]"</em>, indicando l'errore e, se
+          possibile, la <strong>fonte</strong> che supporta la correzione;</li>
+          <li>ogni pagina pubblicata riporta in calce il link "Segnala un errore in questa
+          pagina" precompilato con l'oggetto corretto.</li>
+        </ul>
+        <p><strong>Procedura:</strong> la redazione accusa ricevuta entro 5 giorni lavorativi,
+        verifica la segnalazione e la inoltra al docente referente della classe autrice. La
+        correzione è concordata con la classe (quando l'anno scolastico è in corso, correggere è
+        di per sé un'attività didattica preziosa: il confronto con un lettore reale). Se la
+        classe non è più raggiungibile (anni successivi, docente trasferito), la redazione
+        applica la correzione direttamente, indicandola in una nota: "Pagina aggiornata il [data]
+        a seguito di segnalazione". Gli errori fattuali documentati vengono corretti entro
+        <strong>30 giorni</strong>; le segnalazioni che riguardano interpretazioni o valutazioni
+        vengono gestite, dove utile, aggiungendo il punto di vista alternativo con la sua fonte,
+        non riscrivendo il lavoro degli studenti.</p>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <span class="section-num">5</span>
+      <div class="section-body">
+        <h2>Aggiornamento delle pagine</h2>
+        <ul>
+          <li>La classe autrice (tramite il docente) può chiedere in qualsiasi momento
+          l'<strong>aggiornamento</strong> della propria pagina: nuovi materiali, correzioni,
+          integrazioni.</li>
+          <li>Le pagine non vengono mai modificate nei contenuti da terzi, salvo i casi del
+          punto 4 (errori documentati) e del punto 6 (privacy).</li>
+          <li>Se la via viene <strong>rinominata</strong> dal Comune dopo la pubblicazione, la
+          pagina resta online come documento storico, con una nota di aggiornamento — e la
+          rinominazione diventa un'ottima occasione per un nuovo contributo.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <span class="section-num">6</span>
+      <div class="section-body">
+        <h2>Rimozione e diritto all'oblio</h2>
+        <ul>
+          <li>La <strong>revoca di un consenso privacy</strong> (di un genitore per un alunno, di
+          un intervistato per i propri contenuti) comporta la rimozione o l'anonimizzazione
+          della parte interessata entro <strong>15 giorni</strong>, senza necessità di
+          motivazione.</li>
+          <li>La <strong>scuola</strong> può chiedere la rimozione dell'intero contributo; la
+          richiesta deve provenire dal docente referente o dal dirigente.</li>
+          <li>I contributi rimossi vengono conservati in un archivio non pubblico per 12 mesi
+          (per consentire ripensamenti), poi cancellati.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <span class="section-num">7</span>
+      <div class="section-body">
+        <h2>Licenza e riuso</h2>
+        <p>Tutti i contributi sono pubblicati con licenza <strong>Creative Commons BY-NC-SA
+        4.0</strong>: chiunque può condividerli e rielaborarli per fini non commerciali, citando
+        gli autori (classe e scuola) e mantenendo la stessa licenza. Comuni, Pro Loco,
+        biblioteche e associazioni che vogliono riusare i materiali (siti istituzionali,
+        pannelli, QR code nelle vie) sono incoraggiati a farlo: chiediamo solo di darcene
+        notizia, per poterlo raccontare — è la prova che il lavoro delle classi vive nel
+        territorio.</p>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <span class="section-num">8</span>
+      <div class="section-body">
+        <h2>Contatti</h2>
+        <p>Redazione: <a href="mailto:viapervia.education@gmail.com">viapervia.education@gmail.com</a>
+        · Rispondiamo entro 5 giorni lavorativi.</p>
+      </div>
+    </div>
+
+  </div><!-- privacy-sections -->
+
+  <p class="footnote">Ultima revisione della policy: [data]. Le modifiche sostanziali vengono
+  annunciate sulla home del sito.</p>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-cta">
+    <h3>Vuoi portare Via Per Via nella tua scuola?</h3>
+    <p>Scrivi per ricevere il kit di avvio — con <a href="#" onclick="openUdaPopup();return false;">UDA per tutti gli ordini e gradi</a>, <a href="#" onclick="openKitPopup();return false;">guida per insegnanti e template opzionale</a> e tutte le informazioni per aderire.</p>
+    <a href="mailto:viapervia.education@gmail.com" class="footer-cta-btn"><span class="env-c">✉️</span><span class="env-o">📮</span> Scrivici</a>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-name">VIA PER VIA</span>
+    <span class="footer-sub2">Education</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="index.html">Per gli insegnanti</a>
+      <a href="index.html">Simulazione</a>
+      <a href="mappa.html">Mappa</a>
+      <a href="chi-siamo.html">Chi siamo</a>
+      <a href="policy-editoriale.html" class="footer-active">Policy editoriale</a>
+      <a href="mailto:viapervia.education@gmail.com">Contatti</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <p class="footer-copy">© 2026 Via Per Via Education · Contenuti rilasciati sotto licenza CC BY-NC-SA 4.0 · www.viapervia.education</p>
+  </div>
+</footer>
+
+<script src="vpv-navbar.js" data-root=""></script>
+</body>
+</html>
