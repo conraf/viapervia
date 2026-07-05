@@ -108,42 +108,48 @@
           'text-decoration:none;transition:background 0.2s;">' +
           '<span style="font-size:1.4rem;">📖</span>' +
           '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Guida per gli insegnanti</div>' +
-          '<div style="font-size:0.74rem;color:#666;">Come portare Via Per Via in classe, passo per passo</div></div></a>' +
+          '<div style="font-size:0.74rem;color:#666;">Come portare Via Per Via in classe, passo per passo</div></div>' +
+          '<span style="margin-left:auto;flex-shrink:0;font-size:0.58rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.22rem 0.5rem;border-radius:100px;background:#EAF4FB;color:#0B6E9E;white-space:nowrap;">Sul sito</span></a>' +
         '<a href="' + ROOT + 'starter-kit/_template.html" download="_template.html" style="' +
           'display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;' +
           'background:#F0F7FF;border:1px solid #CCE8F8;border-radius:10px;' +
           'text-decoration:none;transition:background 0.2s;">' +
           '<span style="font-size:1.4rem;">📄</span>' +
           '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Template HTML · una via</div>' +
-          '<div style="font-size:0.74rem;color:#666;">Base per documentare una sola via · scarica</div></div></a>' +
+          '<div style="font-size:0.74rem;color:#666;">Base per documentare una sola via</div></div>' +
+          '<span style="margin-left:auto;flex-shrink:0;font-size:0.58rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.22rem 0.5rem;border-radius:100px;background:#FDF1E0;color:#B26A00;white-space:nowrap;">↓ Scarica</span></a>' +
         '<a href="' + ROOT + 'starter-kit/pacchetto-scuola.zip" download="pacchetto-scuola.zip" style="' +
           'display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;' +
           'background:#F0F7FF;border:1px solid #CCE8F8;border-radius:10px;' +
           'text-decoration:none;transition:background 0.2s;">' +
           '<span style="font-size:1.4rem;">📦</span>' +
           '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Pacchetto scuola · a gruppi</div>' +
-          '<div style="font-size:0.74rem;color:#666;">Quattro vie già impostate, una per gruppo · scarica</div></div></a>' +
+          '<div style="font-size:0.74rem;color:#666;">Quattro vie già impostate, una per gruppo</div></div>' +
+          '<span style="margin-left:auto;flex-shrink:0;font-size:0.58rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.22rem 0.5rem;border-radius:100px;background:#FDF1E0;color:#B26A00;white-space:nowrap;">↓ Scarica</span></a>' +
         '<a href="' + ROOT + 'starter-kit/toponomastica-difficile.html" style="' +
           'display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;' +
           'background:#F0F7FF;border:1px solid #CCE8F8;border-radius:10px;' +
           'text-decoration:none;transition:background 0.2s;">' +
           '<span style="font-size:1.4rem;">🗺️</span>' +
           '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Toponomastica difficile</div>' +
-          '<div style="font-size:0.74rem;color:#666;">Vie rinominate, figure discusse, toponomastica femminile</div></div></a>' +
+          '<div style="font-size:0.74rem;color:#666;">Vie rinominate, figure discusse, toponomastica femminile</div></div>' +
+          '<span style="margin-left:auto;flex-shrink:0;font-size:0.58rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.22rem 0.5rem;border-radius:100px;background:#EAF4FB;color:#0B6E9E;white-space:nowrap;">Sul sito</span></a>' +
         '<a href="' + ROOT + 'starter-kit/kit-privacy.html" style="' +
           'display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;' +
           'background:#F0F7FF;border:1px solid #CCE8F8;border-radius:10px;' +
           'text-decoration:none;transition:background 0.2s;">' +
           '<span style="font-size:1.4rem;">🔒</span>' +
           '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Kit privacy e liberatorie</div>' +
-          '<div style="font-size:0.74rem;color:#666;">Moduli pronti e regola dei soli nomi di battesimo</div></div></a>' +
+          '<div style="font-size:0.74rem;color:#666;">Moduli pronti e regola dei soli nomi di battesimo</div></div>' +
+          '<span style="margin-left:auto;flex-shrink:0;font-size:0.58rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.22rem 0.5rem;border-radius:100px;background:#EAF4FB;color:#0B6E9E;white-space:nowrap;">Sul sito</span></a>' +
         '<a href="' + ROOT + 'starter-kit/tabella-indicazioni-2025.html" style="' +
           'display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;' +
           'background:#F0F7FF;border:1px solid #CCE8F8;border-radius:10px;' +
           'text-decoration:none;transition:background 0.2s;">' +
           '<span style="font-size:1.4rem;">📊</span>' +
           '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Tabella Indicazioni 2025</div>' +
-          '<div style="font-size:0.74rem;color:#666;">Mappa di corrispondenza per PTOF e collegio docenti</div></div></a>' +
+          '<div style="font-size:0.74rem;color:#666;">Mappa di corrispondenza per PTOF e collegio docenti</div></div>' +
+          '<span style="margin-left:auto;flex-shrink:0;font-size:0.58rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.22rem 0.5rem;border-radius:100px;background:#EAF4FB;color:#0B6E9E;white-space:nowrap;">Sul sito</span></a>' +
       '</div>' +
     '</div></div>';
 
