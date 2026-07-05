@@ -3,45 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="../../../favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
-  <!-- TODO-NOINDEX: rimuovere la riga seguente quando si vuole rendere il sito ricercabile -->
+  <link rel="icon" href="https://www.viapervia.education/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="https://www.viapervia.education/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.viapervia.education/favicon-32x32.png">
+  <!-- TODO-NOINDEX: rimuovere la riga seguente alla pubblicazione, per rendere la pagina ricercabile -->
   <meta name="robots" content="noindex, nofollow">
   <!--
-    ╔══════════════════════════════════════════════════════╗
-    ║   VIA PER VIA EDUCATION — Template pagina scuola     ║
-    ╠══════════════════════════════════════════════════════╣
-    ║  Struttura cartelle:                                 ║
-    ║    scuole/                                           ║
-    ║      nome-scuola/          ← cartella della scuola   ║
-    ║        nome-via/           ← una cartella per via    ║
-    ║          index.html  ← copia e compila questo file   ║
-    ║          foto1.jpg   ← metti qui le immagini         ║
-    ║        altra-via/    ← altra via della stessa scuola ║
-    ║          index.html                                  ║
-    ║                                                      ║
-    ║  Istruzioni:                                         ║
-    ║  1. Crea la cartella nome-scuola/nome-via/           ║
-    ║  2. Copia questo file come index.html                ║
-    ║  3. Sostituisci i testi in MAIUSCOLO                 ║
-    ║  4. Non modificare header, footer e gli script       ║
-    ╚══════════════════════════════════════════════════════╝
+    ╔══════════════════════════════════════════════════════════════════╗
+    ║   VIA PER VIA EDUCATION — Template pagina della via              ║
+    ╠══════════════════════════════════════════════════════════════════╣
+    ║  ANTEPRIMA: fai doppio clic su questo file per aprirlo nel        ║
+    ║  browser e vedere subito come sta venendo la pagina.             ║
+    ║  (Serve una connessione a internet: stile, logo e menù del sito  ║
+    ║   vengono caricati da www.viapervia.education.)                  ║
+    ║                                                                  ║
+    ║  COME COMPILARLO:                                                ║
+    ║  1. Sostituisci tutti i testi scritti in MAIUSCOLO.             ║
+    ║  2. Metti le foto in QUESTA stessa cartella e richiamale così:  ║
+    ║       <img src="foto1.jpg" alt="descrizione di cosa si vede">   ║
+    ║     (l'attributo alt è obbligatorio).                           ║
+    ║  3. Non toccare le due righe con gli indirizzi                  ║
+    ║     https://www.viapervia.education/… : servono per lo stile     ║
+    ║     e la barra di navigazione del sito.                         ║
+    ║                                                                  ║
+    ║  Struttura consigliata delle cartelle (una cartella per via):    ║
+    ║    nome-della-scuola/                                            ║
+    ║      nome-della-via/                                             ║
+    ║        index.html   ← questo file, rinominato index.html         ║
+    ║        foto1.jpg …  ← le immagini della via                     ║
+    ╚══════════════════════════════════════════════════════════════════╝
   -->
   <title>NOME VIA · Via Per Via Education</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../vpv.css">
+  <link rel="stylesheet" href="https://www.viapervia.education/vpv.css">
 </head>
 <body>
 
-<!-- ═══════ NON MODIFICARE: header del sito ═══════ -->
-<!-- ════════════════════════════════════════════════ -->
-
-
 <!-- ════════════════════════════════════════════════
-     CONTENUTO DELLA SCUOLA — modifica da qui in poi
+     CONTENUTO DELLA VIA — modifica da qui in poi.
+     La barra di navigazione del sito viene aggiunta
+     automaticamente dallo script in fondo alla pagina.
      ════════════════════════════════════════════════ -->
 <main class="school-page">
 
@@ -54,7 +57,7 @@
     <div class="container">
 
       <nav class="via-breadcrumb">
-        <a href="../../../mappa.html">← Mappa delle scuole</a>
+        <a href="https://www.viapervia.education/mappa.html">← Mappa delle scuole</a>
         <span>/</span>
         <span>NOME SCUOLA</span>
       </nav>
@@ -102,9 +105,12 @@
   <!-- ── 3. GALLERIA FOTOGRAFICA ──────────────────
        Foto scattate durante la visita sul campo.
        Metti i file immagine nella stessa cartella
-       di questo index.html.
-       Sostituisci i placeholder con:
+       di questo index.html, poi sostituisci ogni
+       placeholder grigio con:
          <img src="foto1.jpg" alt="descrizione">
+       In alternativa, se hai caricato le foto con lo
+       strumento "Carica materiali", incolla l'URL:
+         <img src="https://res.cloudinary.com/…" alt="descrizione">
   ─────────────────────────────────────────────── -->
   <!-- Ricorda: alt obbligatorio. Descrivi cosa si vede in una frase. -->
   <section class="school-section">
@@ -201,30 +207,21 @@
 
 
 </main>
-<!-- ═══════ FINE CONTENUTO SCUOLA ═══════ -->
+<!-- ═══════ FINE CONTENUTO DELLA VIA ═══════ -->
 
 
-<!-- ═══════ NON MODIFICARE: footer e script ═══════ -->
+<!-- ═══════ NON MODIFICARE: footer e barra di navigazione ═══════ -->
 <footer class="school-footer">
   <p>
     Contributo di <strong style="color:rgba(255,255,255,0.85)">NOME SCUOLA</strong> ·
-    <a href="../../../index.html">Via Per Via Education</a> ·
-    <a href="../../../mappa.html">Torna alla mappa</a> ·
-    <a href="../../../starter-kit/guida-insegnanti.html">Guida per gli insegnanti</a>
+    <a href="https://www.viapervia.education/index.html">Via Per Via Education</a> ·
+    <a href="https://www.viapervia.education/mappa.html">Torna alla mappa</a> ·
+    <a href="https://www.viapervia.education/starter-kit/guida-insegnanti.html">Guida per gli insegnanti</a>
   </p>
 </footer>
 
-<script>
-function toggleMenu() {
-  const menu = document.getElementById('mobileMenu');
-  const btn  = document.getElementById('hamburgerBtn');
-  const open = menu.classList.toggle('open');
-  btn.classList.toggle('open', open);
-  document.body.style.overflow = open ? 'hidden' : '';
-}
-</script>
-<!-- ════════════════════════════════════════════════ -->
+<script src="https://www.viapervia.education/vpv-navbar.js" data-root="https://www.viapervia.education/"></script>
+<!-- ═══════════════════════════════════════════════════════════════ -->
 
-<script src="../../../vpv-navbar.js" data-root="../../../"></script>
 </body>
 </html>
