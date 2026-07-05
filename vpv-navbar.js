@@ -114,15 +114,15 @@
           'background:#F0F7FF;border:1px solid #CCE8F8;border-radius:10px;' +
           'text-decoration:none;transition:background 0.2s;">' +
           '<span style="font-size:1.4rem;">📄</span>' +
-          '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Template HTML</div>' +
-          '<div style="font-size:0.74rem;color:#666;">File base opzionale per la pagina della via · scarica</div></div></a>' +
+          '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Template HTML · una via</div>' +
+          '<div style="font-size:0.74rem;color:#666;">Base per documentare una sola via · scarica</div></div></a>' +
         '<a href="' + ROOT + 'starter-kit/pacchetto-scuola.zip" download="pacchetto-scuola.zip" style="' +
           'display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;' +
           'background:#F0F7FF;border:1px solid #CCE8F8;border-radius:10px;' +
           'text-decoration:none;transition:background 0.2s;">' +
           '<span style="font-size:1.4rem;">📦</span>' +
-          '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Pacchetto scuola · 4 vie pronte</div>' +
-          '<div style="font-size:0.74rem;color:#666;">Cartella con quattro vie già impostate, una per gruppo · scarica</div></div></a>' +
+          '<div><div style="font-weight:700;font-size:0.88rem;color:#0A2A40;">Pacchetto scuola · a gruppi</div>' +
+          '<div style="font-size:0.74rem;color:#666;">Quattro vie già impostate, una per gruppo · scarica</div></div></a>' +
         '<a href="' + ROOT + 'starter-kit/toponomastica-difficile.html" style="' +
           'display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;' +
           'background:#F0F7FF;border:1px solid #CCE8F8;border-radius:10px;' +
