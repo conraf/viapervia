@@ -139,6 +139,7 @@ nav a.nav-active { color: var(--blue-main); }
 .env-o { display: none; }
 .footer-cta-btn:hover .env-o { display: inline; }
 .footer-cta-btn:hover .env-c { display: none; }
+.cta-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; }
 .site-footer .footer-bottom { padding: 1.6rem 2rem; }
 .site-footer .footer-name { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.9rem; color: white; letter-spacing: 0.1em; display: inline; }
 .site-footer .footer-sub2 { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-left: 4px; display: inline; }

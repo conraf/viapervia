@@ -216,7 +216,7 @@
       letter-spacing:0.04em; cursor:pointer; transition:all 0.25s;
       text-transform:uppercase; display:inline-flex; align-items:center; gap:0.5rem;
     }
-    .btn-outline-white:hover { border-color:white; background:rgba(255,255,255,0.1); }
+    .btn-outline-white:hover { border-color:white; background:rgba(255,255,255,0.1); transform:translateY(-2px); }
 
     /* TEACHER */
     .teacher-hero {
@@ -280,6 +280,7 @@
       cursor:pointer; width:100%; transition:background 0.2s;
     }
     .btn-contact:hover { background:var(--cream); }
+    .contact-box .cta-actions .btn-contact { width:auto; }
 
     /* SIMULATION */
     .sim-top {
@@ -758,8 +759,12 @@
         </div>
         <div class="contact-box">
           <h3>Vuoi portare Via Per Via nella tua scuola?</h3>
-          <p>Scrivi per ricevere il kit di avvio — con <a href="#" onclick="openUdaPopup();return false;">UDA per tutti gli ordini e gradi</a>, <a href="#" onclick="openKitPopup();return false;">guida per insegnanti e template opzionale</a> e tutte le informazioni per aderire.</p>
-          <a href="mailto:viapervia.education@gmail.com" class="btn-contact"><span class="env-c">✉️</span><span class="env-o">📮</span> Scrivici</a>
+          <p>Ricevi il kit di avvio: UDA per ogni grado, guida per gli insegnanti e template.</p>
+          <div class="cta-actions">
+            <a href="#" onclick="openUdaPopup();return false;" class="btn-contact">📄 UDA</a>
+            <a href="#" onclick="openKitPopup();return false;" class="btn-contact">📖 Guida</a>
+            <a href="mailto:viapervia.education@gmail.com" class="btn-contact"><span class="env-c">✉️</span><span class="env-o">📮</span> Scrivici</a>
+          </div>
         </div>
       </div>
     </div>
@@ -924,8 +929,12 @@
 <footer class="site-footer">
   <div class="footer-cta">
     <h3>Vuoi portare Via Per Via nella tua scuola?</h3>
-    <p>Scrivi per ricevere il kit di avvio — con <a href="#" onclick="openUdaPopup();return false;">UDA per tutti gli ordini e gradi</a>, <a href="#" onclick="openKitPopup();return false;">guida per insegnanti e template opzionale</a> e tutte le informazioni per aderire.</p>
-    <a href="mailto:viapervia.education@gmail.com" class="footer-cta-btn"><span class="env-c">✉️</span><span class="env-o">📮</span> Scrivici</a>
+    <p>Ricevi il kit di avvio: UDA per ogni grado, guida per gli insegnanti e template.</p>
+    <div class="cta-actions">
+      <a href="#" onclick="openUdaPopup();return false;" class="footer-cta-btn">📄 UDA</a>
+      <a href="#" onclick="openKitPopup();return false;" class="footer-cta-btn">📖 Guida</a>
+      <a href="mailto:viapervia.education@gmail.com" class="footer-cta-btn"><span class="env-c">✉️</span><span class="env-o">📮</span> Scrivici</a>
+    </div>
   </div>
   <div class="footer-bottom">
     <span class="footer-name">VIA PER VIA</span>
