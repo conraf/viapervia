@@ -7,10 +7,10 @@
   <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <title>Via Pietro Micca · Via Per Via Education</title>
-  <meta name="description" content="Via Pietro Micca a Torino, documentata dalla classe 4ª A della Scuola Primaria "Edmondo De Amicis". Storia, fotografie e voci degli studenti.">
+  <meta name="description" content="Via Pietro Micca a Torino, documentata dalla classe 3ª B della Scuola Secondaria di I grado (I.C. "Carducci–De Amicis"). Ricerca storica, intervista a un esperto, restituzione alla comunità e voci degli studenti.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Via Pietro Micca · Torino · Via Per Via Education">
-  <meta property="og:description" content="Via Pietro Micca a Torino documentata dalla Scuola Primaria De Amicis: storia, fotografie e voci della classe 4ª A.">
+  <meta property="og:description" content="Via Pietro Micca a Torino documentata dalla classe 3ª B (Secondaria di I grado, I.C. Carducci–De Amicis): ricerca storica transcalare, intervista a un esperto, restituzione alla comunità.">
   <meta property="og:image" content="https://www.viapervia.education/ViaPerViaLogoBig.png">
   <meta property="og:url" content="https://www.viapervia.education/scuole/torino-deamicis/via-pietro-micca/">
   <meta name="twitter:card" content="summary_large_image">
@@ -32,6 +32,59 @@
       background: none; border: none; opacity: 0.75;
     }
     #lightbox-close:hover { opacity: 1; }
+
+    /* ── Intervista all'esperto (taccuino) ── */
+    .expert-interview {
+      background: var(--cream);
+      border-left: 4px solid var(--blue-main);
+      border-radius: 10px;
+      padding: 1.4rem 1.6rem;
+      margin-top: 1.4rem;
+    }
+    .ei-lead { font-size: 0.82rem; color: var(--gray-mid); margin-bottom: 1.1rem; }
+    .ei-q {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--blue-main);
+      margin-top: 1.2rem; margin-bottom: 0.25rem;
+    }
+    .ei-q:first-of-type { margin-top: 0; }
+    .ei-a { color: var(--gray-dark); line-height: 1.8; margin: 0; }
+    .ei-a em { font-style: italic; }
+
+    /* ── Elenco fonti ── */
+    .sources-list { list-style: none; margin: 1rem 0 0; padding: 0; }
+    .sources-list li {
+      font-size: 0.88rem; color: var(--gray-mid);
+      padding: 0.4rem 0 0.4rem 1.5rem; position: relative; line-height: 1.65;
+      border-bottom: 1px solid var(--gray-light);
+    }
+    .sources-list li:last-child { border-bottom: none; }
+    .sources-list li::before {
+      content: '›'; position: absolute; left: 0.3rem;
+      color: var(--blue-main); font-weight: 700;
+    }
+    .src-type {
+      display: inline-block; font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--blue-mid); margin-right: 0.4rem;
+    }
+
+    /* ── Box autori e licenza ── */
+    .authors-box {
+      background: var(--blue-pale);
+      border-radius: 14px;
+      padding: 1.5rem 1.6rem;
+      margin-top: 1.4rem;
+    }
+    .authors-box p { font-size: 0.86rem; color: var(--gray-mid); line-height: 1.7; margin: 0 0 0.6rem; }
+    .authors-box p:last-child { margin-bottom: 0; }
+    .authors-box strong { color: var(--blue-dark); }
+    .cc-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: white; border: 1px solid var(--blue-pale); border-radius: 6px;
+      padding: 0.35rem 0.7rem; font-size: 0.7rem; font-weight: 600;
+      color: var(--blue-dark); margin-top: 0.4rem;
+    }
   </style>
 </head>
 <body>
@@ -45,19 +98,19 @@
       <nav class="via-breadcrumb">
         <a href="../../../mappa.html">← Mappa delle scuole</a>
         <span>/</span>
-        <span>Scuola Primaria "Edmondo De Amicis" — Torino</span>
+        <span>I.C. "Carducci–De Amicis" · Secondaria di I grado — Torino</span>
       </nav>
       <div class="via-badge">Via documentata</div>
       <p style="font-size:0.8rem;font-style:italic;opacity:0.75;margin-top:0.6rem;">📝 Pagina di esempio: scuola, classe e testimonianze sono immaginarie, create a scopo dimostrativo in attesa delle prime adesioni reali.</p>
       <h1 class="via-title">Via Pietro Micca</h1>
       <p class="via-subtitle">
         Una delle vie più eleganti del centro storico torinese, dedicata al minatore-eroe
-        che nel 1706 salvò la città dall'assedio francese al costo della propria vita.
+        che nel 1706 salvò la città dall'assedio franco-spagnolo al costo della propria vita.
       </p>
       <div class="via-meta">
         <span class="via-meta-pill">📍 Torino</span>
-        <span class="via-meta-pill">🏫 I.C. "Carducci – De Amicis"</span>
-        <span class="via-meta-pill">👩‍🎓 4ª A · Primaria</span>
+        <span class="via-meta-pill">🏫 I.C. "Carducci–De Amicis"</span>
+        <span class="via-meta-pill">👩‍🎓 3ª B · Secondaria I grado</span>
         <span class="via-meta-pill">📅 A.S. 2025/2026</span>
       </div>
     </div>
@@ -70,15 +123,23 @@
       <h2>...per via dell'eroe e minatore Pietro Micca</h2>
 
       <p>
-        Pietro Micca nacque nel 1677 a Sagliano Micca, un piccolo paese del Biellese. Nel 1706,
-        durante l'assedio di Torino da parte delle truppe franco-spagnole, lavorava come minatore
-        militare nelle gallerie sotterranee che correvano sotto le mura della Cittadella.
+        Siamo partiti da una domanda semplice, scritta su una targa che passiamo ogni giorno:
+        <em>per via di chi si chiama così questa strada?</em> La risposta ci ha portati molto
+        lontano dal nostro isolato. Pietro Micca nacque nel 1677 a Sagliano, un piccolo paese
+        del <strong>Biellese</strong>: già qui la via ci ha fatto uscire da Torino e salire di
+        scala, dalla strada alla regione.
       </p>
       <p>
-        Nella notte tra il 29 e il 30 agosto 1706, un gruppo di soldati francesi riuscì a penetrare
-        nelle gallerie. Per impedire loro di raggiungere l'interno della fortezza, Pietro Micca
-        diede fuoco alla miccia di una mina troppo corta, morendo nell'esplosione ma salvando
-        la guarnigione e, con essa, le sorti dell'assedio.
+        Nel 1706 Micca lavorava come minatore militare nelle gallerie sotto la Cittadella, durante
+        <strong>l'assedio di Torino</strong>. Ma quell'assedio non era una vicenda solo torinese:
+        era un episodio della <strong>Guerra di successione spagnola</strong>, un conflitto che in
+        quegli anni coinvolgeva mezza Europa — Francia, Spagna, Austria, i Savoia. Studiando una via
+        del nostro quartiere siamo finiti dentro una guerra <strong>continentale</strong>.
+      </p>
+      <p>
+        Nella notte tra il 29 e il 30 agosto 1706 un gruppo di soldati francesi penetrò nelle
+        gallerie. Per fermarli, Micca diede fuoco alla miccia di una mina troppo corta: morì
+        nell'esplosione, ma salvò la guarnigione e, con essa, le sorti dell'assedio.
       </p>
 
       <div class="quote-block">
@@ -87,13 +148,24 @@
           ha scelto di non scappare. Ci ha fatto capire che il coraggio non è non avere paura,
           ma fare la cosa giusta anche quando hai paura."
         </p>
-        <cite>— Giulia, 4ª A</cite>
+        <cite>— Giulia, 3ª B</cite>
       </div>
 
       <p>
-        La via che porta il suo nome attraversa il cuore di Torino, dal Teatro Alfieri fino
-        a piazza Solferino. La classe ha percorso l'intero tracciato durante l'uscita didattica
-        del 14 ottobre 2025, raccogliendo fotografie e intervistando i negozianti.
+        C'è però una cosa che ci ha colpiti più di tutte: Micca morì nel 1706, ma la via porta
+        il suo nome solo dal <strong>1864</strong>. Perché proprio allora? Consultando la delibera
+        comunale in archivio abbiamo capito che l'intitolazione nacque nel clima del
+        <strong>Risorgimento</strong>: nell'Italia appena unita si cercavano eroi che dessero un
+        volto al coraggio e al sacrificio per la patria. Il nome di una strada, insomma, è una
+        <strong>fonte storica</strong>: ci racconta tanto del 1706 quanto del 1864, cioè di chi
+        decise di ricordare Micca e del perché.
+      </p>
+      <p>
+        Alla fine siamo tornati alla scala da cui eravamo partiti: la via che percorriamo ogni
+        giorno, dal Teatro Alfieri a piazza Solferino. La classe ne ha percorso l'intero tracciato
+        durante l'uscita didattica del 14 ottobre 2025, raccogliendo fotografie e intervistando i
+        negozianti — guardando quei palazzi con occhi diversi, sapendo ora quante storie, locali ed
+        europee, si nascondono dietro un solo nome.
       </p>
     </div>
   </section>
@@ -115,6 +187,35 @@
         <div class="gallery-item"><div class="gallery-placeholder">Portone storico<br>n° 14</div></div>
         <div class="gallery-item"><div class="gallery-placeholder">Rifornimento<br>in pescheria storica</div></div>
         <div class="gallery-item"><div class="gallery-placeholder">La classe davanti<br>al Teatro Alfieri</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERVISTA ALL'ESPERTO -->
+  <section class="school-section">
+    <div class="container">
+      <span class="sec-label">Intervista all'esperto</span>
+      <h2>Quattro domande a un conservatore del Museo Pietro Micca</h2>
+      <p>
+        Per verificare quello che avevamo letto e distinguere la storia dalla leggenda, abbiamo
+        chiesto aiuto a chi studia questi fatti per mestiere. Abbiamo incontrato un conservatore
+        del <strong>Museo Pietro Micca e dell'Assedio di Torino del 1706</strong> e gli abbiamo
+        rivolto, a turno, le domande preparate in classe.
+      </p>
+      <div class="expert-interview">
+        <p class="ei-lead">Intervista raccolta dalla classe · trascrizione autorizzata.</p>
+
+        <div class="ei-q">Studente — Quanto sappiamo davvero di Pietro Micca?</div>
+        <p class="ei-a">«Meno di quanto si creda. Le fonti dirette sono poche: sappiamo con certezza dell'esplosione e del suo ruolo, ma molti dettagli del racconto si sono aggiunti dopo. Il museo serve proprio a separare i documenti dalla leggenda.»</p>
+
+        <div class="ei-q">Studentessa — Le gallerie sotto la via esistono ancora?</div>
+        <p class="ei-a">«Sì, gran parte del sistema di contromine è conservato e visitabile. Camminare là sotto fa capire meglio di qualsiasi libro cosa fosse la guerra d'assedio del Settecento.»</p>
+
+        <div class="ei-q">Studente — Perché la via fu intitolata solo nel 1864?</div>
+        <p class="ei-a">«Perché ogni epoca sceglie i propri eroi. L'Italia unita da pochi anni aveva bisogno di figure che rappresentassero il sacrificio per la patria: Micca era perfetto. Il nome della via dice tanto dell'Ottocento quanto del 1706.»</p>
+
+        <div class="ei-q">Studentessa — Un consiglio per chi fa una ricerca come la nostra?</div>
+        <p class="ei-a">«Non fermatevi alla prima fonte. Confrontatene sempre almeno due e chiedetevi <em>chi</em> l'ha scritta e <em>quando</em>. È così che una ricerca diventa seria.»</p>
       </div>
     </div>
   </section>
@@ -161,7 +262,7 @@
       <h2>Cosa ci racconta questa via</h2>
 
       <p>
-        Dopo la visita ogni bambino ha scritto un breve testo sulla via. Ne riportiamo alcuni.
+        Dopo la visita ogni studente ha scritto un breve testo sulla via. Ne riportiamo alcuni.
       </p>
 
       <div class="quote-block">
@@ -170,7 +271,7 @@
           vedi che i palazzi sono tutti diversi e belli. Uno aveva delle facce di pietra
           sopra le finestre e io le ho fotografate."
         </p>
-        <cite>— Marco, 4ª A</cite>
+        <cite>— Marco, 3ª B</cite>
       </div>
 
       <div class="quote-block">
@@ -179,7 +280,7 @@
           Mi ha detto che sua nonna aveva aperto il negozio nel 1952. Mi sembra una cosa
           incredibile: mentre tutto cambiava, lei vendeva cappelli."
         </p>
-        <cite>— Sofia, 4ª A</cite>
+        <cite>— Sofia, 3ª B</cite>
       </div>
 
       <div class="quote-block">
@@ -187,7 +288,31 @@
           "Sotto Via Pietro Micca ci sono le gallerie dove è morto l'eroe.
           Quando cammino sopra penso che lì sotto c'è la storia vera."
         </p>
-        <cite>— Luca, 4ª A</cite>
+        <cite>— Luca, 3ª B</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESTITUZIONE ALLA COMUNITÀ -->
+  <section class="school-section">
+    <div class="container">
+      <span class="sec-label">Restituzione alla comunità</span>
+      <h2>Cosa abbiamo fatto del nostro lavoro</h2>
+      <p>
+        La pagina non è rimasta in classe. L'abbiamo presentata al
+        <strong>Consiglio comunale dei ragazzi e delle ragazze di Torino</strong> e, in una visita
+        conclusiva, ai conservatori del <strong>Museo Pietro Micca</strong>, che ci hanno segnalato
+        un paio di imprecisioni poi corrette. Il contributo è stato infine inviato al
+        <strong>database nazionale di Via Per Via</strong>, dove chiunque può consultarlo: non è un
+        compito per il voto, ma un piccolo tassello pubblico sulla memoria della città.
+      </p>
+      <div class="quote-block">
+        <p>
+          "La cosa più difficile non è stata trovare le informazioni, ma metterci d'accordo su
+          quali fossero davvero affidabili. Lavorando in gruppo abbiamo imparato a discutere le
+          fonti invece di fidarci della prima che trovavamo."
+        </p>
+        <cite>— Riflessione finale della classe 3ª B</cite>
       </div>
     </div>
   </section>
@@ -195,18 +320,50 @@
   <!-- FONTI -->
   <section class="school-section">
     <div class="container">
-      <span class="sec-label">Riferimenti</span>
+      <span class="sec-label">Metodo e fonti</span>
       <h2>Come abbiamo fatto la ricerca</h2>
       <p>
-        La ricerca è stata condotta in tre fasi: consultazione dell'enciclopedia scolastica,
-        visita al Museo Nazionale del Risorgimento Italiano di Torino, e uscita didattica
-        sul campo con interviste ai residenti e ai commercianti della via.
+        La ricerca si è svolta in tre fasi: prima la raccolta di informazioni da fonti diverse,
+        poi il confronto critico tra di esse, infine l'uscita sul campo del 14 ottobre 2025 con
+        fotografie e interviste. Abbiamo distinto le <strong>fonti primarie</strong> (documenti
+        d'epoca, la delibera d'archivio) dalle <strong>fonti secondarie</strong> (libri e schede
+        che raccontano quei fatti a distanza di tempo), e dove le fonti erano discordanti l'abbiamo
+        segnalato invece di scegliere a caso.
       </p>
-      <p>
-        Le fonti utilizzate: <em>Torino, storia di una città</em> (volume della biblioteca
-        scolastica), schede del Museo Pietro Micca e delle Fortificazioni di Torino,
-        interviste raccolte dalla classe il 14/10/2025.
+      <ul class="sources-list">
+        <li><span class="src-type">Fonte primaria</span> Delibera comunale di intitolazione della via (1864), consultata in archivio storico cittadino.</li>
+        <li><span class="src-type">Fonte primaria</span> Sopralluogo al sistema di gallerie e contromine, con schede del <em>Museo Pietro Micca e dell'Assedio di Torino del 1706</em>.</li>
+        <li><span class="src-type">Fonte secondaria</span> <em>Torino, storia di una città</em> (volume della biblioteca scolastica).</li>
+        <li><span class="src-type">Fonte secondaria</span> Materiali del Museo Nazionale del Risorgimento Italiano sul contesto ottocentesco dell'intitolazione.</li>
+        <li><span class="src-type">Fonte orale</span> Intervista al conservatore del museo e conversazioni con i commercianti della via (14/10/2025).</li>
+      </ul>
+      <p style="margin-top:1rem;font-size:0.9rem;">
+        <strong>Come è stato scritto questo testo.</strong> Ogni sezione è passata attraverso quattro
+        momenti: una <strong>bozza</strong> individuale, la <strong>revisione tra pari</strong> in
+        piccolo gruppo, la <strong>revisione con la docente</strong> e la <strong>stesura
+        definitiva</strong> pubblicata qui. Nulla è stato copiato e incollato: le fonti sono state
+        rielaborate con parole nostre.
       </p>
+    </div>
+  </section>
+
+  <!-- AUTORI E LICENZA -->
+  <section class="school-section">
+    <div class="container">
+      <span class="sec-label">Autori e licenza</span>
+      <h2>Chi ha realizzato questa pagina</h2>
+      <div class="authors-box">
+        <p>
+          Contributo della <strong>classe 3ª B</strong> della Scuola Secondaria di I grado
+          dell'I.C. "Carducci–De Amicis" di Torino, A.S. 2025/2026, con la guida dei docenti.
+        </p>
+        <p>
+          Nel rispetto della privacy, gli studenti sono citati con il <strong>solo nome di
+          battesimo</strong> e nessuna fotografia mostra volti riconoscibili di minori. Tutte le
+          immagini della pagina hanno un testo alternativo per l'accessibilità.
+        </p>
+        <span class="cc-badge">🅭 CC BY-NC-SA 4.0 · condivisione con attribuzione, non commerciale</span>
+      </div>
     </div>
   </section>
 
@@ -221,7 +378,7 @@
 <!-- footer -->
 <footer class="school-footer">
   <p>
-    Contributo di esempio · <strong style="color:rgba(255,255,255,0.85)">Scuola Primaria "Edmondo De Amicis", Torino</strong> ·
+    Contributo di esempio · <strong style="color:rgba(255,255,255,0.85)">I.C. "Carducci–De Amicis" · Secondaria di I grado, Torino</strong> ·
     <a href="../../../index.html">Via Per Via Education</a> ·
     <a href="../../../mappa.html">Torna alla mappa</a> ·
     <a href="../../../starter-kit/guida-insegnanti.html">Guida per gli insegnanti</a>

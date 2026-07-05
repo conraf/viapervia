@@ -104,6 +104,61 @@
     .rp-sec--fonti     { background: #F0F8E0; }
     .rp-label--fonti   { background: #27AE60; }
 
+    .rp-sec--diario    { background: #E8EAF6; }
+    .rp-label--diario  { background: #3F51B5; }
+
+    .rp-sec--restituzione   { background: #E0F2F1; }
+    .rp-label--restituzione { background: #00897B; }
+
+    /* ── Diario visivo (disegni + didascalia in tre righe) ── */
+    .rp-diary {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem; margin-top: 1.5rem;
+    }
+    .rp-diary-card {
+      background: white; border-radius: 14px; overflow: hidden;
+      box-shadow: 2px 3px 14px rgba(0,0,0,0.09);
+    }
+    .rp-diary-draw {
+      aspect-ratio: 4/3; background: #F5F6FC;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 0.6rem;
+      font-family: 'Caveat', cursive; font-size: 1.2rem; color: #5C6BC0;
+      line-height: 1.35; border-bottom: 2px dashed #C5CAE9;
+    }
+    .rp-diary-caption { padding: 1rem 1.1rem 1.2rem; }
+    .rp-diary-line {
+      font-family: 'DM Sans', sans-serif !important;
+      font-size: 0.9rem !important; line-height: 1.5 !important;
+      color: #2D2416; margin-bottom: 0.5rem !important; max-width: none !important;
+    }
+    .rp-diary-line:last-child { margin-bottom: 0 !important; }
+    .rp-diary-line strong { color: #3F51B5; }
+
+    /* ── Restituzione alla comunità ── */
+    .rp-give {
+      background: white; border-radius: 14px; border-left: 5px solid #00897B;
+      padding: 1.5rem 1.7rem; margin-top: 1.5rem;
+      box-shadow: 2px 3px 12px rgba(0,0,0,0.07);
+    }
+    .rp-give p { margin-bottom: 0.8rem; }
+    .rp-give p:last-child { margin-bottom: 0; }
+
+    /* ── Box autori e licenza ── */
+    .rp-authors {
+      background: white; border-radius: 14px;
+      padding: 1.5rem 1.7rem; margin-top: 1.5rem;
+      box-shadow: 2px 3px 12px rgba(0,0,0,0.07);
+    }
+    .rp-authors p { font-size: 0.95rem; margin-bottom: 0.7rem; }
+    .rp-cc-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: #F0ECF8; border-radius: 8px;
+      padding: 0.4rem 0.8rem; font-size: 0.85rem; font-weight: 600;
+      color: #2D2416; margin-top: 0.3rem;
+    }
+
     /* ── citazione (storia) ── */
     .rp-quote {
       background: white; border-radius: 14px;
@@ -265,14 +320,23 @@
       </p>
       <p>
         Via delle Rondini è una piccola via di circa 120 metri che sale dal centro verso il quartiere
-        più antico del paese. Si chiama così da tantissimi anni: i vecchi documenti del Comune di Spello
-        la chiamano già "Via delle Rondini" nel registro del 1923. Ma gli abitanti ci dicono che il nome
-        è ancora più vecchio: lo usavano anche i loro nonni.
+        più antico del paese. Da quando si chiama così? Qui abbiamo dovuto <strong>confrontare due
+        fonti diverse</strong>: il registro del Comune di Spello la chiama già "Via delle Rondini"
+        nel <strong>1923</strong> (una fonte scritta, sicura); gli abitanti però ci dicono che il
+        nome è ancora più vecchio, perché lo usavano anche i loro nonni (una fonte orale, che non
+        possiamo datare con precisione). Abbiamo scritto tutte e due le cose, senza far finta che
+        una valesse più dell'altra.
       </p>
       <p>
-        Le rondini arrivano ogni anno verso la fine di aprile. Nidificano sotto le gronde di pietra
-        e fanno un rumore che si sente per tutta la via. La signora Olga, che abita al numero 4
-        e ha 98 anni, ci ha detto che le aspetta ogni anno come si aspetta una festa.
+        E qui la nostra piccola via ci ha portati lontano. Le rondini arrivano a Spello verso la
+        fine di aprile, nidificano sotto le gronde di pietra e riempiono la via del loro verso. Ma
+        prima di arrivare qui hanno attraversato il <strong>mare e il deserto del Sahara</strong>:
+        svernano in <strong>Africa</strong> e ogni primavera rifanno migliaia di chilometri per
+        tornare esattamente su queste case. Così una viuzza di 120 metri è collegata a mezzo mondo:
+        il nome che leggiamo sulla targa parla di un viaggio che unisce Spello, il
+        <strong>Monte Subasio</strong> da cui viene la pietra rosa dei muri, e un intero continente
+        lontano. La signora Olga, che abita al numero 4 e ha 98 anni, le aspetta ogni anno come si
+        aspetta una festa.
       </p>
       <div class="rp-quote">
         <p>
@@ -314,19 +378,19 @@
       </p>
       <div class="rp-gallery">
         <div class="rp-polaroid">
-          <img src="https://picsum.photos/seed/rondini-targa/800/600" alt="Targa stradale Via delle Rondini, Spello" loading="lazy">
+          <div class="rp-polaroid-ph">La targa<br>«Via delle Rondini»</div>
           <span class="rp-photo-cap">La targa!</span>
         </div>
         <div class="rp-polaroid">
-          <img src="https://picsum.photos/seed/rondini-giardino/800/600" alt="Il giardinetto in fondo alla via con l'altalena" loading="lazy">
+          <div class="rp-polaroid-ph">Il giardinetto<br>con l'altalena</div>
           <span class="rp-photo-cap">Il nostro giardinetto</span>
         </div>
         <div class="rp-polaroid">
-          <img src="https://picsum.photos/seed/rondini-gronda/800/600" alt="Le gronde di pietra dove nidificano le rondini" loading="lazy">
+          <div class="rp-polaroid-ph">Le gronde di pietra<br>dei nidi</div>
           <span class="rp-photo-cap">Le gronde delle rondini</span>
         </div>
         <div class="rp-polaroid">
-          <img src="https://picsum.photos/seed/rondini-vicolo/800/600" alt="Il vicolo di pietra rosa che porta alla via" loading="lazy">
+          <div class="rp-polaroid-ph">Il vicolo<br>di pietra rosa</div>
           <span class="rp-photo-cap">Il vicolo di pietra rosa</span>
         </div>
         <div class="rp-polaroid">
@@ -336,6 +400,45 @@
         <div class="rp-polaroid">
           <div class="rp-polaroid-ph">Il falegname<br>nel cortile</div>
           <span class="rp-photo-cap">Il falegname</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIARIO VISIVO -->
+  <section class="rp-sec rp-sec--diario">
+    <div class="rp-wrap">
+      <span class="rp-label rp-label--diario">Diario visivo</span>
+      <h2>I nostri disegni della via</h2>
+      <p>
+        Durante l'uscita non abbiamo solo fotografato: ci siamo fermati a disegnare quello che ci
+        colpiva di più. Ogni disegno ha una didascalia in tre righe — cosa abbiamo provato, come
+        l'abbiamo realizzato e cosa quel dettaglio racconta di Via delle Rondini.
+      </p>
+      <div class="rp-diary">
+        <div class="rp-diary-card">
+          <div class="rp-diary-draw">Disegno:<br>una rondine in volo</div>
+          <div class="rp-diary-caption">
+            <p class="rp-diary-line"><strong>Cosa ho provato:</strong> allegria, perché sembrava disegnare il cielo con la coda.</p>
+            <p class="rp-diary-line"><strong>Come l'ho fatto:</strong> a pennarello nero, con pochi tratti veloci per dare il senso del volo.</p>
+            <p class="rp-diary-line"><strong>Cosa racconta:</strong> che la via prende il nome da chi ci torna ogni anno, non da una persona.</p>
+          </div>
+        </div>
+        <div class="rp-diary-card">
+          <div class="rp-diary-draw">Disegno:<br>le gronde di pietra</div>
+          <div class="rp-diary-caption">
+            <p class="rp-diary-line"><strong>Cosa ho provato:</strong> tenerezza nel vedere i nidi di fango sotto i tetti.</p>
+            <p class="rp-diary-line"><strong>Come l'ho fatto:</strong> a matita, curando le ombre sotto la gronda dove stanno i nidi.</p>
+            <p class="rp-diary-line"><strong>Cosa racconta:</strong> che le case della via ospitano le rondini da generazioni.</p>
+          </div>
+        </div>
+        <div class="rp-diary-card">
+          <div class="rp-diary-draw">Disegno:<br>la pietra rosa del Subasio</div>
+          <div class="rp-diary-caption">
+            <p class="rp-diary-line"><strong>Cosa ho provato:</strong> stupore per il colore rosa dei muri al tramonto.</p>
+            <p class="rp-diary-line"><strong>Come l'ho fatto:</strong> a pastello, mescolando rosa e arancione come la pietra vera.</p>
+            <p class="rp-diary-line"><strong>Cosa racconta:</strong> che tutta Spello è costruita con la pietra del suo monte.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -441,15 +544,68 @@
       <span class="rp-label rp-label--fonti">Riferimenti</span>
       <h2>Come abbiamo fatto la ricerca</h2>
       <p>
-        Prima abbiamo cercato su internet e in biblioteca qualcosa sulla storia del nome. Poi
-        siamo andati in via con la maestra il 18 marzo 2026 e abbiamo fotografato tutto.
-        La cosa più bella è stata l'intervista alla signora Olga: ci ha aperto la porta di casa
-        e ci ha parlato per quasi un'ora.
+        Prima abbiamo cercato in biblioteca e su internet qualcosa sulla storia del nome. Poi
+        siamo andati in via con la maestra il 18 marzo 2026 e abbiamo osservato, disegnato e
+        fotografato tutto. La cosa più bella è stata l'intervista alla signora Olga: ci ha aperto
+        la porta di casa e ci ha parlato per quasi un'ora. Abbiamo confrontato quello che dicevano
+        i libri con quello che ci hanno raccontato le persone, e non sempre coincideva.
       </p>
       <p>
-        Le fonti che abbiamo usato: registro del Comune di Spello (1923), <em>Spello — guida al
-        centro storico</em> (biblioteca comunale), intervista a Olga Marchetti registrata il 18/03/2026.
+        Le fonti che abbiamo usato:
       </p>
+      <p style="margin-top:-0.4rem;">
+        📄 <strong>Fonte scritta:</strong> registro del Comune di Spello (1923), dove la via è già
+        chiamata così.<br>
+        📚 <strong>Fonte scritta:</strong> <em>Spello — guida al centro storico</em> (biblioteca comunale).<br>
+        🎙️ <strong>Fonte orale:</strong> intervista a Olga Marchetti, registrata con il suo permesso il 18/03/2026.<br>
+        🔎 <strong>Osservazione diretta:</strong> la nostra uscita sul campo del 18/03/2026.
+      </p>
+    </div>
+  </section>
+
+  <!-- RESTITUZIONE ALLA COMUNITÀ -->
+  <section class="rp-sec rp-sec--restituzione">
+    <div class="rp-wrap">
+      <span class="rp-label rp-label--restituzione">Restituzione alla comunità</span>
+      <h2>Cosa abbiamo fatto del nostro lavoro</h2>
+      <p>
+        Non volevamo che questa ricerca restasse in un cassetto. Così abbiamo presentato la pagina
+        al <strong>Comune di Spello</strong> e alla <strong>Pro Loco</strong>, che l'ha messa tra le
+        curiosità del paese. E abbiamo fatto una proposta: <strong>proteggere i nidi delle rondini</strong>
+        sotto le gronde, chiedendo di non toglierli quando si sistemano i tetti, perché quei nidi
+        sono il motivo per cui la via si chiama così.
+      </p>
+      <div class="rp-give">
+        <p>
+          La nostra pagina è stata inviata al <strong>database nazionale di Via Per Via</strong>,
+          dove chiunque in Italia può leggerla. Alla signora Olga abbiamo portato una copia stampata:
+          si è commossa nel vedere le sue parole scritte sotto il nome della sua via.
+        </p>
+        <p style="font-style:italic;">
+          «Lavorando insieme abbiamo capito che anche una via piccola può raccontare tante cose,
+          se ci fermiamo davvero a guardarla e ad ascoltare chi ci vive.» — la classe 5ª A
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTORI E LICENZA -->
+  <section class="rp-sec rp-sec--scheda">
+    <div class="rp-wrap">
+      <span class="rp-label rp-label--scheda">Autori e licenza</span>
+      <h2>Chi ha fatto questa pagina</h2>
+      <div class="rp-authors">
+        <p>
+          Questa pagina è stata realizzata dalla <strong>classe 5ª A</strong> della Scuola Primaria
+          "Giovanni Spagna" di Spello, A.S. 2025/2026, con l'aiuto della maestra.
+        </p>
+        <p>
+          Ci firmiamo con il <strong>solo nome di battesimo</strong> e nessuna foto mostra i nostri
+          volti. La signora Olga è citata con il suo permesso. Tutte le immagini hanno una
+          descrizione scritta, così anche chi non vede bene può capire cosa mostrano.
+        </p>
+        <span class="rp-cc-badge">🅭 CC BY-NC-SA 4.0 · si può condividere citando gli autori, senza scopo di lucro</span>
+      </div>
     </div>
   </section>
 
