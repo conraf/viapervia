@@ -23,9 +23,5 @@ arriverà la prima adesione reale, ricordarsi di:
    in attesa delle adesioni."* (riga vicino a `#statsRow`) non appena i dati
    in `vpv-data.js` rappresentano solo scuole reali.
 
-5. **`chi-siamo.html`** — rimuovere il banner *"il comitato scientifico è in
-   via di costituzione..."* e sostituire i `placeholder-text` (nomi, università,
-   patrocini) con i dati reali non appena disponibili.
-
 Nel frattempo, ogni pagina di esempio riporta già un avviso in-pagina
 ("📝 Pagina di esempio...") — vedi commit che ha introdotto questo file.
