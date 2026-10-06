@@ -5,7 +5,10 @@
 ### Scuola Primaria — Classi 4ª / 5ª
 
 
-> **Nota per il docente.** Questo documento è una base di lavoro: adattalo alla via che hai scelto, al gruppo classe, al contesto territoriale e alle risorse disponibili. I campi tra parentesi quadre `\[...\]` sono segnaposto da personalizzare.
+> **Nota per il docente.** Questo documento è una base di lavoro: adattalo alla via che hai scelto, al gruppo classe, al contesto territoriale e alle risorse disponibili. Tempi, ore e strumenti sono indicativi e non vincolanti. I campi tra parentesi quadre `\[...\]` sono segnaposto da personalizzare.
+
+
+> **Percorso su due anni (consigliato).** In **quarta si raccoglie**: Fasi 1–4 e uscita nella via, circa 10–12 ore. Nulla viene pubblicato online. In **quinta si pubblica**: Fasi 5–7, circa 6–8 ore; gli stessi alunni costruiscono la pagina e rileggono il lavoro dell'anno precedente. Il percorso può svolgersi anche in un solo anno.
 
 
 ## SEZIONE 1 — Dati identificativi
@@ -17,9 +20,9 @@
 | **Anno scolastico** | \[inserire\] |
 | **Istituto / Plesso** | \[inserire\] |
 | **Docenti coinvolti** | \[Italiano / Storia / Geografia / TIC / Arte\] |
-| **Durata complessiva** | 5–6 settimane, 12–16 ore didattiche |
-| **Periodo consigliato** | 2° o 3° quadrimestre |
-| **Modalità di lavoro** | Individuale o piccolo gruppo (2–3 alunni) |
+| **Durata complessiva** | Indicativa: circa 16–20 ore più l'uscita nella via, in un anno (5–6 settimane) o su due anni (v. nota iniziale) |
+| **Periodo consigliato** | A scelta del team docente |
+| **Modalità di lavoro** | Intera classe su una via, oppure piccoli gruppi con una via per gruppo (2–4 vie per classe) |
 
 
 
@@ -149,7 +152,7 @@ Al termine del percorso l'alunno è in grado di:
 
 - Il docente presenta il progetto Via per Via, il sito nazionale e la struttura della pagina da realizzare.
 
-- Visita guidata online al sito viapervia.education per vedere esempi di lavori completati.
+- Visita guidata online al sito viapervia.education per vedere la simulazione e le pagine di esempio.
 
 - Brainstorming collettivo: quali vie o piazze conoscono? Quali storie si nascondono nei nomi?
 
@@ -160,15 +163,21 @@ Al termine del percorso l'alunno è in grado di:
 **Prodotto di fase:** Foglio di progetto compilato con la scelta della via e le prime ipotesi sulla sua storia.
 
 
-### Fase 2 — Ricerca delle informazioni
+### Fase 2 — Ricerca delle informazioni e uscita nella via
 
-**Durata:** 3–4 ore | **Discipline:** Italiano, Storia, TIC
+**Durata:** 3–4 ore + uscita | **Discipline:** Italiano, Storia, Geografia, TIC
 
 - Il docente guida una lezione sulla valutazione delle fonti (come capire se un sito è affidabile).
 
 - Gli alunni ricercano informazioni usando: libri di testo, enciclopedie cartacee, siti web selezionati, eventuali testimonianze di familiari o anziani della comunità.
 
 - Ogni gruppo raccoglie le informazioni trovate in uno schema o mappa concettuale.
+
+- Uscita a piedi nella via: osservazione, schizzi, fotografie (senza volti riconoscibili), brevi domande a residenti ed esercenti (cosa sanno del nome, cosa è cambiato).
+
+- La classe cerca un ponte tra la storia del nome e il presente (v. riquadro).
+
+> **Il ponte tra ieri e oggi.** Idealmente la ricerca collega il passato dell'intitolazione al presente della classe: la via porta il nome di un partigiano e il bisnonno di un alunno ha vissuto anche lui la guerra; la via è dedicata a un mestiere che qualcuno in città fa ancora; il personaggio ha studiato in una scuola che esiste ancora. Il ponte può passare dalla famiglia, ma non deve per forza: è una possibilità aperta a tutta la classe, mai una richiesta al singolo alunno. Anche una storia arrivata da un altro paese è un ponte.
 
 **Strumenti:** Biblioteca scolastica, computer/tablet, motore di ricerca supervisionato.
 
@@ -179,7 +188,7 @@ Al termine del percorso l'alunno è in grado di:
 
 **Durata:** 3–4 ore | **Discipline:** Italiano
 
-- Il docente illustra la struttura del testo informativo: inizio, corpo, conclusione.
+- Il docente illustra la struttura del testo informativo: inizio, corpo, conclusione (la conclusione può raccontare il ponte con il presente).
 
 - Gli alunni scrivono la bozza del testo, che dovrà iniziare con "...per via" (es. "...per via del suo contributo alla resistenza partigiana...").
 
@@ -219,6 +228,8 @@ Al termine del percorso l'alunno è in grado di:
   - Titolo della via
 
   - Testo "...per via"
+
+  - La via oggi (osservazioni dall'uscita e ponte con il presente)
 
   - Voci dalla classe
 
@@ -333,6 +344,8 @@ per evitare effetti di etichettamento.
 | Pagina web (completezza e cura) | Griglia prodotto | 15% |
 | Partecipazione e collaborazione | Osservazione sistematica | 15% |
 | Restituzione alla comunità (partecipazione, cura del testo di presentazione) | Osservazione + prodotto | 10% |
+
+Nel percorso su due anni, in quarta si valutano testo, processo di ricerca, Diario visivo e partecipazione; pagina web e restituzione in quinta.
 
 Nel livello Avanzato dell'indicatore di completezza della pagina web rientrano anche il
 testo alternativo su tutte le immagini e la presenza delle «voci dalla classe»; nel livello
