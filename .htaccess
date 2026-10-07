@@ -31,10 +31,15 @@ AddDefaultCharset UTF-8
 </IfModule>
 
 # ── Cache ──
+# Pagine, CSS e JavaScript: il browser ricontrolla sempre se sono cambiati (i link non
+# hanno un numero di versione, quindi con una cache lunga una modifica alla grafica
+# arriverebbe in ritardo a chi ha già visitato il sito). Immagini e caratteri cambiano
+# di rado: un'immagine sostituita con lo stesso nome può restare vecchia per chi l'ha già vista.
 <IfModule mod_expires.c>
   ExpiresActive On
-  ExpiresByType text/css                "access plus 1 month"
-  ExpiresByType application/javascript  "access plus 1 month"
+  ExpiresByType text/css                "access plus 0 seconds"
+  ExpiresByType application/javascript  "access plus 0 seconds"
+  ExpiresByType text/javascript         "access plus 0 seconds"
   ExpiresByType image/png               "access plus 6 months"
   ExpiresByType image/jpeg              "access plus 6 months"
   ExpiresByType image/webp              "access plus 6 months"
