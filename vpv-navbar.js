@@ -29,13 +29,7 @@
     document.head.appendChild(cssLink);
   }
 
-  /* ── 2. Inietta Google Fonts ── */
-  if (!document.querySelector('link[href*="fonts.googleapis.com"]')) {
-    var fontsLink = document.createElement('link');
-    fontsLink.rel  = 'stylesheet';
-    fontsLink.href = 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap';
-    document.head.appendChild(fontsLink);
-  }
+  /* ── 2. I caratteri sono ospitati sul sito e dichiarati in vpv.css ── */
 
   /* ── 3. Inietta popup UDA ── */
   var udaHtml =
