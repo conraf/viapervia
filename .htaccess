@@ -1,0 +1,54 @@
+# .htaccess di www.viapervia.education su Aruba (preparato il 7 ottobre 2026,
+# semplificato lo stesso giorno dopo l'attivazione).
+#
+# NIENTE REDIRECT QUI. Sull'hosting condiviso Aruba il server rimanda già da solo
+# http → https e viapervia.education → www.viapervia.education (non modificabile).
+# Una regola di redirect aggiunta qui rischierebbe di creare un ciclo.
+#
+# COME USARLO: copiarlo in sito/ con il nome ".htaccess", fare il commit e pubblicare
+# con pubblica.sh (non con il File Manager: se qualcosa non va, con l'FTP lo si
+# può togliere subito, mentre i file nascosti caricati dal File Manager potrebbero
+# non essere più eliminabili a mano):
+#   cp TECNICO/migrazione-aruba/htaccess sito/.htaccess
+# Se dopo il caricamento il sito dà "500 Internal Server Error", togliere la riga
+# "Options -Indexes" (alcuni hosting non la permettono nel .htaccess) e ripubblicare.
+
+# ── Indice di directory (CRITICO: le pagine delle scuole sono cartelle) ──
+DirectoryIndex index.html
+
+# ── Niente elenco dei file nelle cartelle senza index.html ──
+Options -Indexes
+
+# ── Pagina 404 personalizzata ──
+ErrorDocument 404 /404.html
+
+AddDefaultCharset UTF-8
+
+# ── Compressione ──
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml \
+    application/javascript application/json image/svg+xml
+</IfModule>
+
+# ── Cache ──
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css                "access plus 1 month"
+  ExpiresByType application/javascript  "access plus 1 month"
+  ExpiresByType image/png               "access plus 6 months"
+  ExpiresByType image/jpeg              "access plus 6 months"
+  ExpiresByType image/webp              "access plus 6 months"
+  ExpiresByType audio/mpeg              "access plus 6 months"
+  ExpiresByType video/mp4               "access plus 6 months"
+  ExpiresByType font/woff2              "access plus 1 year"
+  ExpiresByType text/html               "access plus 0 seconds"
+</IfModule>
+
+# ── MIME (utile dopo il self-hosting dei font) ──
+AddType font/woff2 .woff2
+AddType application/manifest+json .webmanifest
+
+# ── Protezione file di lavoro ──
+<FilesMatch "\.(md|json|yml|yaml|sh|conf)$">
+  Require all denied
+</FilesMatch>
