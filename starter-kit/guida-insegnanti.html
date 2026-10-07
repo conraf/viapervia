@@ -11,8 +11,8 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Guida per gli insegnanti · Via Per Via Education">
   <meta property="og:description" content="Come portare Via Per Via nella tua classe: dalla scelta della via alla pubblicazione del contributo.">
-  <meta property="og:image" content="https://www.viapervia.education/ViaPerViaLogoBig.png">
-  <meta property="og:url" content="https://www.viapervia.education/starter-kit/guida-insegnanti.html">
+  <meta property="og:image" content="https://viapervia.education/ViaPerViaLogoBig.png">
+  <meta property="og:url" content="https://viapervia.education/starter-kit/guida-insegnanti.html">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -341,7 +341,7 @@
   </div>
   <ul>
     <li><strong>Ricercatori storici</strong> – cercano e confrontano le fonti sull'origine del nome.</li>
-    <li><strong>Fotografi e documentaristi</strong> – durante l'uscita raccolgono foto, audio e video.</li>
+    <li><strong>Fotografi e documentaristi</strong> – durante l'uscita raccolgono foto e audio (alla secondaria anche video).</li>
     <li><strong>Intervistatori</strong> – preparano le domande e raccolgono le voci di esperti o abitanti.</li>
     <li><strong>Redattori web</strong> – assemblano i testi e le immagini nella pagina della via.</li>
   </ul>
@@ -568,7 +568,8 @@
     entrambe le interviste (sia quella all'esperto locale sia quella all'abitante della via)
     possono essere incluse nel contributo in forma <strong>testuale</strong> (trascrizione o
     parafrasi), <strong>audio</strong> o <strong>video</strong>, a seconda delle preferenze
-    dell'intervistato e delle possibilità o scelte della classe.
+    dell'intervistato e delle possibilità o scelte della classe. Alla primaria le interviste
+    si pubblicano come testo o come audio: se le registrate con il telefono, basta l'audio.
   </p>
 </section>
 
@@ -622,27 +623,27 @@
     <li>Copia il file <code>_template.html</code> nella cartella e rinominalo <code>index.html</code>.</li>
     <li>Apri <code>index.html</code> con un editor di testo (Blocco Note, TextEdit o simili)
     e sostituisci tutti i testi scritti in MAIUSCOLO.</li>
-    <li>Per aggiungere foto, audio e video: caricali con lo strumento
-    <a href="carica-materiali.html"><strong>Carica materiali</strong></a>,
-    copia l'URL che ottieni e sostituisci i blocchi
+    <li>Per aggiungere le foto: mettile nella stessa cartella di <code>index.html</code>, con nomi
+    semplici, senza spazi né accenti (es. <code>targa.jpg</code>), e sostituisci i blocchi
     <code>&lt;div class="gallery-placeholder"&gt;</code> con
-    <code>&lt;img src="URL_COPIATO" alt="descrizione"&gt;</code>
-    (vedi esempio qui sotto). <em>Se lavori a gruppi, ripeti il caricamento per ogni via: stesso nome
-    scuola, nome della via diverso.</em></li>
-    <li>Invia la cartella completa secondo le istruzioni al punto 7.</li>
+    <code>&lt;img src="NOME_FOTO.jpg" alt="descrizione"&gt;</code>
+    (vedi esempio qui sotto). Nella stessa cartella vanno anche le eventuali interviste audio
+    (per esempio in mp3) e, alla secondaria, i video (al massimo 3 minuti ciascuno): li
+    inseriamo noi nella pagina. <em>Se lavori a gruppi, ogni via ha la
+    sua cartella con le sue foto.</em></li>
+    <li>Invia la cartella completa secondo le istruzioni al punto 8.</li>
   </ol>
 
   <div class="callout callout-blue">
-    <div class="callout-title">Esempio: come inserire una foto caricata</div>
-    <p>Dopo aver usato lo strumento <em>Carica materiali</em>, ricevi un URL come questo:</p>
-    <pre style="margin:0.6rem 0;padding:0.7rem 1rem;background:var(--cream);border-radius:6px;font-size:0.75rem;overflow-x:auto;line-height:1.6;color:var(--blue-dark);">https://res.cloudinary.com/dscnyoyaa/image/upload/w_1200,q_auto,f_auto/
-  v1234567890/viapervia/nome-scuola/nome-via/foto.jpg</pre>
-    <p>Nel file <code>index.html</code>, al posto del placeholder grigio, scrivi:</p>
+    <div class="callout-title">Esempio: come inserire una foto</div>
+    <p>Se nella cartella della via c'è la foto <code>targa.jpg</code>, nel file <code>index.html</code>,
+    al posto del placeholder grigio, scrivi:</p>
     <pre style="margin:0.6rem 0;padding:0.7rem 1rem;background:var(--cream);border-radius:6px;font-size:0.75rem;overflow-x:auto;line-height:1.6;color:var(--blue-dark);">&lt;div class="gallery-item"&gt;
-  &lt;img src="https://res.cloudinary.com/..." alt="Targa di Via Pietro Micca"&gt;
+  &lt;img src="targa.jpg" alt="Targa di Via Pietro Micca"&gt;
 &lt;/div&gt;</pre>
-    <p>Le immagini vengono ridimensionate automaticamente a 1200&nbsp;px di larghezza e
-    ottimizzate per il web: non è necessario modificarle prima del caricamento.</p>
+    <p>Non serve ridimensionare le foto prima dell'invio: prima della pubblicazione le riduciamo
+    noi a 1200&nbsp;px di larghezza e togliamo i dati nascosti dei file, compresa la posizione GPS.
+    Nulla va online prima del nostro controllo.</p>
   </div>
 
   <div class="callout callout-blue">
@@ -720,8 +721,8 @@
     Quando il contributo è pronto, invia al team di Via Per Via:
   </p>
   <ul>
-    <li>La <strong>cartella</strong> con il file <code>index.html</code> e tutte le immagini,
-    compressa in un archivio <code>.zip</code>.</li>
+    <li>La <strong>cartella</strong> con il file <code>index.html</code>, tutte le foto e gli
+    eventuali audio e video, compressa in un archivio <code>.zip</code>.</li>
     <li>Le <strong>coordinate geografiche</strong> della via (latitudine e longitudine,
     ricavate con Nominatim come descritto sopra).</li>
     <li>Il <strong>nome completo dell'istituto</strong>, la classe e l'anno scolastico.</li>
@@ -738,19 +739,19 @@
     è il controllo più importante e va fatto pagina per pagina.</p>
   </div>
   <p style="margin-top:0.25rem;">
-    Oppure usa questa pagina per caricare i file multimediali e inviare via mail solo il file HTML:
-    <a href="carica-materiali.html" style="display:inline-block;vertical-align:middle;background:var(--blue-main);color:white;text-decoration:none;padding:0.3rem 0.9rem;border-radius:100px;font-size:0.78rem;font-weight:600;letter-spacing:0.02em;margin-left:0.3rem;">Carica materiali →</a>
+    Se l'archivio è troppo pesante per la mail, condividi la cartella dallo spazio cloud della
+    scuola (Google Drive, OneDrive o simili) e mandaci il link.
   </p>
   <div class="callout callout-blue">
     <div class="callout-title">Checklist privacy prima dell'invio</div>
     <p>Nelle pagine pubblicate, gli alunni compaiono con il <strong>solo nome di battesimo</strong>
-    (mai il cognome, nemmeno con consenso), e nessuna foto mostra volti riconoscibili di minori.
+    (mai il cognome, nemmeno con consenso), e nessuna foto o video mostra volti riconoscibili di minori.
     Consulta il <a href="kit-privacy.html"><strong>Kit privacy e liberatorie</strong></a> per i moduli di consenso
     e l'informativa completa. Prima di inviare il contributo, verifica che:</p>
     <ul style="margin-top:0.6rem;">
       <li>tutti gli alunni citati compaiano con il solo nome di battesimo</li>
       <li>per ogni alunno citato esista il consenso firmato per i dati usati</li>
-      <li>nessuna foto mostri volti riconoscibili di minori</li>
+      <li>nessuna foto o video mostri volti riconoscibili di minori</li>
       <li>ogni intervistato abbia firmato la liberatoria e sia citato nella forma autorizzata</li>
       <li>le persone fotografate incidentalmente per strada non siano riconoscibili</li>
       <li>le immagini non prodotte dalla classe abbiano licenza aperta verificata e attribuzione</li>
@@ -784,7 +785,7 @@
       <a href="mailto:viapervia.education@gmail.com">Contatti</a>
       <a href="../privacy.html">Privacy</a>
     </div>
-    <p class="footer-copy">© 2026 Via Per Via Education · Contenuti rilasciati sotto licenza CC BY-NC-SA 4.0 · www.viapervia.education</p>
+    <p class="footer-copy">© 2026 Via Per Via Education · Contenuti rilasciati sotto licenza CC BY-NC-SA 4.0 · viapervia.education</p>
   </div>
 </footer>
 
