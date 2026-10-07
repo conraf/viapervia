@@ -1,9 +1,9 @@
 # robots.txt — Via Per Via Education
-# https://viapervia.education
+# https://www.viapervia.education
 
 User-agent: *
 Allow: /
 Disallow: /starter-kit/_template.html
 Disallow: /scuole/_template.html
 
-Sitemap: https://viapervia.education/sitemap.xml
+Sitemap: https://www.viapervia.education/sitemap.xml
