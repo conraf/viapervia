@@ -31,7 +31,7 @@ window.VPV_SCUOLE = [
     citta: "Torino",
     provincia: "Torino", sigla: "TO",
     regione: "Piemonte",
-    lat: 45.0744, lng: 7.6825,
+    lat: 45.0707, lng: 7.6823,
     classe: "4ª A", grado: "primaria", anno: "2025/2026",
     via: "Via Pietro Micca",
     pagina: "scuole/torino-deamicis/via-pietro-micca/"
