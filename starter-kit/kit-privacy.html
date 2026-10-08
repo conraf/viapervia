@@ -166,9 +166,33 @@
       width: 100vw; position: relative; left: 50%; margin-left: -50vw;
       margin-top: 3rem;
     }
+    /* ── STAMPA: A4, ogni modulo e l'informativa su una pagina intera ── */
+    @page { size: A4; margin: 14mm 15mm; }
     @media print {
-      header, .toc, .doc-footer, .site-footer { display: none; }
-      .cover { position: static; margin: 0; width: auto; }
+      html { font-size: 10pt; }
+      header, .toc, .doc-footer, .site-footer, hr, .cover-meta { display: none; }
+      body { max-width: none; padding: 0; line-height: 1.5; }
+      .cover {
+        position: static; left: auto; margin: 0 0 6mm 0; width: auto;
+        background: none; color: var(--blue-dark); padding: 0 0 3mm 0;
+        border-bottom: 2pt solid var(--blue-main);
+      }
+      .cover::before { display: none; }
+      .cover-label { color: var(--blue-main); margin-bottom: 1mm; }
+      .cover-title { font-size: 20pt; margin-bottom: 1mm; }
+      .cover-subtitle { color: var(--gray-mid); margin-bottom: 0; }
+      section { margin-bottom: 5mm; }
+      .nuova-pagina { break-before: page; }
+      .step-header { break-after: avoid; margin-bottom: 3mm; }
+      p, li { line-height: 1.5; }
+      .callout { break-inside: avoid; }
+      .form-box {
+        break-inside: avoid; background: white; border: 0.8pt solid var(--gray-mid);
+        border-radius: 0; padding: 6mm 7mm; margin: 4mm 0 0 0;
+      }
+      .form-box p { margin-bottom: 3mm; line-height: 2; }
+      .form-box label { margin: 2mm 0; font-size: 1rem; line-height: 1.5; }
+      .form-fill { min-width: 11rem; }
     }
   </style>
 </head>
@@ -250,7 +274,7 @@
 <hr>
 
 <!-- 2 -->
-<section>
+<section class="nuova-pagina">
   <div class="step-header">
     <div class="step-number">2</div>
     <div class="step-title-wrap">
@@ -279,7 +303,7 @@
 <hr>
 
 <!-- 3 -->
-<section>
+<section class="nuova-pagina">
   <div class="step-header">
     <div class="step-number">3</div>
     <div class="step-title-wrap">
@@ -309,7 +333,7 @@
 <hr>
 
 <!-- 4 -->
-<section>
+<section class="nuova-pagina">
   <div class="step-header">
     <div class="step-number">4</div>
     <div class="step-title-wrap">
