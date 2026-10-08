@@ -329,3 +329,11 @@ nav a.nav-active { color: var(--blue-main); }
 }
 .school-footer a { color: var(--blue-light); text-decoration: none; }
 .school-footer a:hover { color: white; }
+
+/* ── STAMPA (tutte le pagine) ──
+   Il menu è fisso: in stampa si ripeterebbe in cima a ogni pagina, coprendo il testo.
+   Si tolgono anche il menu mobile e il piè di pagina con i pulsanti. */
+@media print {
+  header, .mobile-menu, .site-footer { display: none !important; }
+  .privacy-section { break-inside: avoid; }
+}

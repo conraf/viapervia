@@ -282,16 +282,22 @@ Via Per Via è strutturalmente inclusivo perché la scelta è libera, la profond
 adattabile e ogni contributo è valido: questo paragrafo traduce il principio in
 strumenti operativi, da raccordare con PEI e PDP degli alunni coinvolti.
 
-- **Formati alternativi del testo "...per via"** (equivalenti a tutti gli effetti, da
-  indicare nel PEI/PDP come modalità di verifica personalizzata):
+- **Formati alternativi del testo "...per via"**, equivalenti a tutti gli effetti e
+  **aperti a tutta la classe**: chiunque può sceglierli, e per gli alunni con PEI o PDP
+  si indicano nel piano come modalità di verifica personalizzata:
   - **audio**: il testo registrato con la propria voce (anche a partire da una scaletta),
-    pubblicato come traccia nella pagina;
+    pubblicato come traccia nella pagina; è facoltativo e richiede il consenso dei
+    genitori alla voce (Modulo B del kit privacy);
   - **mappa visuale**: mappa concettuale o storyboard illustrato che organizza le
     informazioni per immagini e parole-chiave;
   - **contributo fotografico come prodotto principale**: un racconto per immagini della
     via (8–12 foto con didascalie brevi), in cui il testo scritto si riduce alle didascalie;
   - **testo facilitato**: struttura a domande-guida (Chi? Quando? Perché questa via?),
     frasi brevi, supporto di un compagno tutor o del docente.
+- **Riservatezza**: la pagina pubblicata non deve mai far capire quali alunni hanno un
+  PEI o un PDP. Nessun formato, ruolo, didascalia o nota si collega a misure
+  personalizzate: sono informazioni riservate, protette in modo particolare dalla
+  normativa sulla privacy. La redazione lo controlla prima di pubblicare.
 - **Ruoli differenziati nel gruppo**: fotografo di via, cartografo (mappa e coordinate),
   intervistatore, illustratore del Diario visivo, ricercatore di fonti, curatore della
   pagina. Ogni ruolo produce una parte visibile e firmata del risultato: nessuno "aiuta
